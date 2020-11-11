@@ -1,0 +1,13 @@
+mixin type
+    - var types = [
+    -     { tag: 'H1', classTag: 'type__tag-font-h1', text: 'This one is the sub-section or widget title', classText: 'type__text-font-h1' },
+    -     { tag: 'H2', classTag: 'type__tag-font-h2', text: 'Next one is the item title inside widgets', classText: 'type__text-font-h2' },
+    -     { tag: 'H3', classTag: 'type__tag-font-h3', text: 'This is a label or CTA text', classText: 'type__text-font-h3' },
+    -     { tag: 'Body', classTag: 'type_tag-font-body', text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', classText: 'type__text-font-body' },
+    - ]
+
+    each typee in types
+        .type
+            div(class= typee.classTag).type__tag= typee.tag
+            div
+            div(class= typee.classText)= typee.text

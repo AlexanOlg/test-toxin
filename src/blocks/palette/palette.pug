@@ -1,7 +1,19 @@
-mixin palette(header, signature)
-    .palette
-        .palette__item(class!=attributes.class)
+mixin palette
+
+  - var items = [
+  -   { header: 'Dark Shade 100%', text: '#1F2041', color: 'ds100' },
+  -   { header: 'Dark Shade 75%', text: '#1F2041', color: 'ds75' },
+  -   { header: 'Dark Shade 50%', text: '#1F2041', color: 'ds50' },
+  -   { header: 'Dark Shade 25%', text: '#1F2041', color: 'ds25' },
+  -   { header: 'Dark Shade 5%', text: '#1F2041', color: 'ds5' },
+  -   { header: 'Purple', text: '#BC9CFF', color: 'purple' },
+  -   { header: 'Green', text: '#6FCF97', color: 'green' } 
+  - ]
+
+  .palette
+    each item in items
+      .palette__item
+        div(class= 'palette__color-' + item.color).palette__color
         .palette__text
-            span.palette__header= header 
-            br
-            span.palette__signature= signature
+          h2.palette__color-name= item.header 
+          span.palette__color-value= item.text

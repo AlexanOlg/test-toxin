@@ -1,0 +1,49 @@
+.palette {
+	&__item {
+		display: flex;
+		margin-bottom: 20px;
+	}
+	&__color {
+		height: 70px;
+    width: 70px;
+    border-radius: 6px;
+    margin-right: 40px;
+	}
+  &__color-ds100 {
+		background: rgba(31, 32, 65, 1);
+	}
+  &__color-ds75 {
+		background: rgba(31, 32, 65, 0.75);
+	}
+  &__color-ds50 {
+		background: rgba(31, 32, 65, 0.5);
+	}
+  &__color-ds25 {
+		background: rgba(31, 32, 65, 0.25);
+	}
+  &__color-ds5 {
+		background: rgba(31, 32, 65, 0.05);
+	}
+  &__color-purple {
+		background: #BC9CFF;
+	}
+	&__color-green {
+		background: #6FCF97;
+	}
+  &__color-name {
+		font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 29px;
+    margin: 0;
+		padding-top: 8px;
+	}
+  &__color-value {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+		line-height: 29px;
+	}
+}
