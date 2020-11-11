@@ -1,92 +1,118 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+// Utils
+const path = require('path');
+const fs = require('fs');
 
-module.exports = {
-  entry: {
-    main: "./src/main.js",
-  },
+// Plugins
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].js",
-  },
+// Get Pages
+const pagesDir = path.resolve(__dirname, 'src/pages');
+const pages = fs.readdirSync(pagesDir);
 
-  module: {
-    rules: [
-      {
-        test: /\.pug$/,
-        use: "pug-loader",
+module.exports = (_, options) => {
+  const isDev = options.mode === 'development';
+  return {
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js'],
+      alias: {
+        scss: path.resolve(__dirname, 'src/scss/'),
+        fonts: path.resolve(__dirname, 'src/fonts/'),
       },
-      {
-        test: /\.s?css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "./font/[name].[ext]",
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg|ico)$/i,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "./img/[name].[ext]",
-            },
-          },
-        ],
-      },
-    ],
-  },
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    compress: true,
-    port: 8585,
-  },
-  plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
+      modules: [
+        path.resolve(__dirname, 'src'),
+        path.resolve(__dirname, 'node_modules'),
+      ],
+    },
+    entry: {
+      index: './src/index.js',
+    },
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+			filename: '[name].js',
+			publicPath: '/',
+    },
+    module: {
+      rules: [
         {
-          from: "src/**/*.png",
-          to: "img",
-          flatten: true,
+          test: /\.tsx?$/,
+          use: ['ts-loader'],
+          exclude: /node_modules/,
         },
         {
-          from: "src/**/*.svg",
-          to: "img",
-          flatten: true,
+          test: /\.pug$/,
+          loader: 'pug-loader',
+          options: {
+            pretty: isDev,
+            root: path.resolve(__dirname, 'src'),
+          },
+        },
+        {
+          test: /\.s?css$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+            },
+            {
+              loader: 'css-loader',
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true,
+              },
+            },
+          ],
+        },
+        {
+          test: /\.(woff(2)?|ttf|eot|svg)$/,
+          include: [
+            path.resolve(__dirname, 'src/fonts'),
+            path.resolve(__dirname, 'node_modules'),
+          ],
+          use: {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/fonts',
+            },
+          },
+        },
+        {
+          test: /\.(png|jpg|jpeg|svg|gif)$/,
+          exclude: [path.resolve(__dirname, 'src/fonts')],
+          use: {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images',
+            },
+          },
         },
       ],
-    }),
-    new MiniCssExtractPlugin(),
-    new HtmlWebpackPlugin({
-      template: "./src/pages/index/index.pug",
-      filename: "index.html",
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/pages/colors-and-type/colors-and-type.pug",
-      filename: "colors-and-type.html",
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/pages/form_elements/form_elements.pug",
-      filename: "form_elements.html",
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/pages/headers_footers/headers_footers.pug",
-      filename: "headers_footers.html",
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/pages/cards/cards.pug",
-      filename: "cards.html",
-    }),
-  ],
+    },
+    plugins: [
+      ...pages.map(
+        (page) =>
+          new HtmlWebpackPlugin({
+            filename: `${page}.html`,
+            template: `${pagesDir}/${page}/${page}.pug`,
+          }),
+      ),
+      new CleanWebpackPlugin(),
+      new MiniCssExtractPlugin({
+        filename: '[name].css',
+      }),
+    ],
+    devServer: {
+      contentBase: path.join(__dirname, 'dist'),
+      compress: true,
+      port: 9000,
+      overlay: {
+        warnings: true,
+        errors: true,
+      },
+    },
+  };
 };
