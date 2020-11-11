@@ -3,6 +3,8 @@
 }
   
 .colors-and-type__main {
+	display: flex;
+	justify-content: space-between;
   max-width: 1160px;
 	margin: 0 auto;
 }
