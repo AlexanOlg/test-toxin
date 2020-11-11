@@ -1,0 +1,17 @@
+@import '../../scss/responsive.scss';
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  @include media-up($xl) {
+    max-width: $xl;
+  }
+  &_outer {
+    padding: 0;
+    @include media-up($xxl) {
+      max-width: $xxl;
+      padding: 0 20px;
+    }
+  }
+}
