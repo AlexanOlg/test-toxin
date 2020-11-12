@@ -1,0 +1,8 @@
+include ../blocks/logo/logo.pug
+include ../blocks/menu/menu.pug
+
+mixin header(login, name)
+  .header 
+    +logo('true')
+    .header__nav
+      +menu
