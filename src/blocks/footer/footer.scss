@@ -1,6 +1,62 @@
+@import '../../scss/responsive.scss';
+@import '../../../node_modules/normalize.css/normalize.css';
+
+.footer__body {
+	background-color: #fff;
+	margin-top: 40px;
+	box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+}
 .footer {
   max-width: 1160px;
   margin: 0 auto;
 	height: 443px;
 	background-color: #ffffff;
+}
+.footer__inner {
+	padding: 100px 0;
+	display: flex;
+  justify-content: space-between;
+  
+}
+.footer__item {
+	max-width: 260px;
+	margin-right: 40px;
+}
+.footer__item:last-child {
+	margin-right: 0;
+}
+p.footer__logo-title {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	color: rgba(31, 32, 65, 0.75);
+	margin-top: 20px;
+}
+
+h3.footer__nav {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	text-transform: uppercase;
+	color: #1F2041;
+	margin: 4px 0 21px 0;
+
+}
+a.footer__link {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 17px;
+	color: rgba(31, 32, 65, 0.5);
+}
+li.footer__nav-item {
+	padding-bottom: 20px;
+}
+li.footer__nav-item:last-child {
+	padding-bottom: 0;
 }
