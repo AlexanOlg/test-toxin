@@ -1,3 +1,5 @@
+@import '../../scss/responsive.scss';
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -21,9 +23,18 @@
   justify-content: end;
 	align-items: center;
 }
-
+.header__buttons {
+	display: flex;
+}
 .header__button {
-	margin-right: 20px;
+		margin-right: 20px;
+    @include media-up($lg) {
+      flex-direction: row;
+  
+		}
+		&:last-child {
+			margin-right: 0;
+		}
 }
 
 .header__nameuser {

@@ -1,5 +1,6 @@
 include ../logo/logo.pug
 include ../menu/menu.pug
+include ../button/button.pug
 
 mixin header(login, name)
 	.header__body
@@ -7,3 +8,11 @@ mixin header(login, name)
 			+logo('true')
 			.header__nav
 				+menu
+			if login
+				.header__nameuser= name
+			else
+				.header__buttons
+					.header__button
+						+button('Войти')
+					.header__button
+						+button__border('Зарегистрироваться')
