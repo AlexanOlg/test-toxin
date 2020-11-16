@@ -2,7 +2,8 @@ include ../logo/logo.pug
 include ../input/input.pug
 
 
-mixin footer
+mixin footer()
+	<script src="https://kit.fontawesome.com/ed00200816.js" crossorigin="anonymous"></script>
 	.footer__body
 		.footer
 			.footer__inner
@@ -46,11 +47,14 @@ mixin footer
 					.footer__input
 						+input-subscript
 			.footer__copyright
-				.footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
-				.footer__social
-					a(href="#")
-						img(src=requare('./twitter.svg'.default).footer__social-img
-					a(href="#")
-						img(src='./facebook.svg'.default).footer__social-img
-					a(href="#")
-						img(src='./instagram.svg'.default).footer__social-img
+				span.footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
+				ul.footer__socials-list
+					li.footer__socials-item
+						a.footer__socials-link(href="empty")
+							span.footer__socials-ico.fab.fa-twitter
+					li.footer__socials-item
+						a.footer__socials-link(href="empty")
+							span.footer__socials-ico.fab.fa-facebook-square
+					li.footer__socials-item
+						a.footer__socials-link(href="empty")
+							span.footer__socials-ico.fab.fa-instagram
