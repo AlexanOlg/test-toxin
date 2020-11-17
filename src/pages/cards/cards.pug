@@ -1,6 +1,7 @@
 include ../../layout/ui-kit.pug
 include ../../blocks/container/container.pug
 include ../../blocks/search-room/search-room.pug
+include ../../blocks/registration/registration.pug
 
 block title
 	title Cards
@@ -10,3 +11,10 @@ block content
 			.cards__col
 				.cards__item
 					
+					+registration
+				.cards__item
+					restangle-card
+					login-card
+				.cards__item
+					calendar
+					room-card

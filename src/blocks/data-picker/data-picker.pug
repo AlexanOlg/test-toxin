@@ -1,0 +1,17 @@
+include ../signature/signature.pug
+
+mixin data-picker(options)
+
+  - var inputClass = ''
+  - inputClass += options.hover ? ' data-picker__input_hovered' : ''
+  - inputClass += options.masked ? ' js-data-picker__input_masked' : ''
+
+  label.data-picker
+    if options.header 
+      .data-picker__input-header
+        +signature({header: options.header, symbol: options.symbol})
+    input.text-field__input(
+      class= inputClass
+      placeholder= options.value
+      wrap= 'off'
+    )

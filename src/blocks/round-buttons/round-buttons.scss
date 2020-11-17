@@ -1,0 +1,33 @@
+.round-buttons {
+  display: flex;
+  &__label {
+    display: flex;
+		
+		font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+		
+		color: rgba(31, 32, 65, 0.5);
+		margin-right: 20px;
+	}
+  &__input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-image: url(./img/off.svg);
+    margin-right: 10px;
+    &:checked {
+      background-image: url(./img/on.svg);
+      & + .round-buttons__text {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+				color: rgba(31, 32, 65, 0.75);
+			}
+		}
+	}
+}

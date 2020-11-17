@@ -6,6 +6,7 @@ const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Jquery = require('jquery');
 
 // Get Pages
 const pagesDir = path.resolve(__dirname, 'src/pages');
@@ -56,6 +57,9 @@ module.exports = (_, options) => {
             },
             {
               loader: 'css-loader',
+						},
+						{
+              loader: 'resolve-url-loader',
             },
             {
               loader: 'sass-loader',
@@ -86,7 +90,7 @@ module.exports = (_, options) => {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'assets/images',
+							outputPath: 'assets/images',
             },
           },
         },
@@ -103,7 +107,12 @@ module.exports = (_, options) => {
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
         filename: '[name].css',
-      }),
+			}),
+			new webpack.Provide({
+				$: "jquery",
+				jQuery: "jquery",
+				"window.jQuery": "jquery"
+			}),
     ],
     devServer: {
       contentBase: path.join(__dirname, 'dist'),

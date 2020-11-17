@@ -1,0 +1,30 @@
+include ../../blocks/data-picker/data-picker.pug
+include ../../blocks/round-buttons/round-buttons.pug
+include ../../blocks/special-offer/special-offer.pug
+include ../../blocks/button/button.pug
+
+mixin registration
+  .registration
+    h3.registration__header Регистрация аккаунта
+    .registration__input-fullname
+      .registration__input-name
+        +data-picker({value: 'Имя'})
+      +data-picker({value: 'Фамилия'})
+    .registration__round-buttons
+      +round-buttons
+    .registration__input-birthday
+      +data-picker({header: 'Дата рождения', value: 'ДД.ММ.ГГГГ'})
+    .registration__input-information
+      .registration__input-email
+        +data-picker({
+          header: 'Данные для входа в сервис', 
+          value: 'Email'
+        })
+      +data-picker({value: 'Пароль'})
+    .registration__special-offer
+      +special-offer
+    .registration__button
+      +button('Перейти к оплате')
+    .registration__login
+      span.registration__text Уже есть аккаунт на Toxin?
+      +button('Войти')
