@@ -7,5 +7,9 @@ mixin button__border(text, link)
 
 mixin button__long(text, link)
 	a(href= link ).button__long= text
+	block
+	span.button__icon-wrap
+		button.button__icon
+			img(src=require('blocks/button/img/button.svg').default)
 
 

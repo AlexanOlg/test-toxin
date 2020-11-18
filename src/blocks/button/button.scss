@@ -1,3 +1,6 @@
+@import '../../scss/responsive.scss';
+@import '../input/input.scss';
+
 .button {
 	background-color: #FFFFFF;
 	border-radius: 22px;
@@ -36,6 +39,7 @@ a.button__border, a.button__long {
 	line-height: 15px;
 	text-transform: uppercase;
 	color: #FFFFFF;
+	text-align: center;
 	&:focus {
 	outline: none;
 	}
@@ -66,10 +70,26 @@ a.button__border, a.button__long {
   padding: 14px 20px 15px 20px;
   color: #ffffff;
   text-transform: uppercase;
-  &:focus {
+	display: block;
+
+	
+	&:focus {
 		outline: none;
 	}   
   &:hover {
 		opacity: 0.5;
 	}
+}
+.button__icon-wrap {
+	position: relative;
+	
+}
+.button__icon {
+
+	position: absolute;
+	top: -30px;
+	right: -305px;
+	z-index: 1;
+	color: #FFFFFF;
+	background-color: transparent;
 }
