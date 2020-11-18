@@ -1,12 +1,13 @@
 // Utils
 const path = require('path');
 const fs = require('fs');
+const webpack = require('webpack');
 
 // Plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const Jquery = require('jquery');
+
 
 // Get Pages
 const pagesDir = path.resolve(__dirname, 'src/pages');
@@ -108,16 +109,16 @@ module.exports = (_, options) => {
       new MiniCssExtractPlugin({
         filename: '[name].css',
 			}),
-			new webpack.Provide({
-				$: "jquery",
-				jQuery: "jquery",
-				"window.jQuery": "jquery"
-			}),
+			new webpack.ProvidePlugin({
+				$: 'jquery',
+				jQuery: 'jquery',
+				'window.jQuery': 'jquery'
+		}),
     ],
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
       compress: true,
-      port: 9000,
+      port: 8585,
       overlay: {
         warnings: true,
         errors: true,

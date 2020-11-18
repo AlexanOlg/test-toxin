@@ -4,27 +4,27 @@ include ../../blocks/special-offer/special-offer.pug
 include ../../blocks/button/button.pug
 
 mixin registration
-  .registration
-    h3.registration__header Регистрация аккаунта
-    .registration__input-fullname
-      .registration__input-name
-        +data-picker({value: 'Имя'})
-      +data-picker({value: 'Фамилия'})
-    .registration__round-buttons
-      +round-buttons
-    .registration__input-birthday
-      +data-picker({header: 'Дата рождения', value: 'ДД.ММ.ГГГГ'})
-    .registration__input-information
-      .registration__input-email
-        +data-picker({
-          header: 'Данные для входа в сервис', 
-          value: 'Email'
-        })
-      +data-picker({value: 'Пароль'})
-    .registration__special-offer
-      +special-offer
-    .registration__button
-      +button('Перейти к оплате')
-    .registration__login
-      span.registration__text Уже есть аккаунт на Toxin?
-      +button('Войти')
+	.registration
+		h3.registration__header Регистрация аккаунта
+		.registration__input-fullname
+			.registration__input-name
+				+data-picker({value: 'Имя'})
+			.registration__input-name
+				+data-picker({value: 'Фамилия'})
+			.registration__round-buttons
+				+round-buttons
+			.registration__input-header Дата рождения
+				.registration__input-name
+					+data-picker({value: 'ДД.ММ.ГГГГ'})
+			.registration__input-header1 Данные для входа в сервис
+				.registration__input-name
+					+data-picker({value: 'Email'})
+				.registration__input-name
+					+data-picker({value: 'Пароль'})
+			.registration__special-offer
+				+special-offer
+			.registration__button
+				+button__long('Перейти к оплате')
+			.registration__login
+				span.registration__text Уже есть аккаунт на Toxin?
+				+button('Войти')
