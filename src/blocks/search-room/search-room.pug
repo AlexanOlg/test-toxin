@@ -1,0 +1,14 @@
+include ../dropdown/dropdown
+include ../date-dropdown/date-dropdown
+include ../button/button
+
+mixin search-room(isShow)
+		.search-room
+				.search-room__container
+						h1.search-room__title Найдём номера под ваши пожелания
+						.search-room__date
+								+date-dropdown(isShow)
+						.search-room__guest
+								+dropdown
+						.search-room__button
+								+button__long('подобрать номер')

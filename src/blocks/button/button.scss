@@ -1,7 +1,7 @@
 @import '../../scss/responsive.scss';
 @import '../input/input.scss';
 
-.button {
+.button__border {
 	background-color: #FFFFFF;
 	border-radius: 22px;
 	border: 2px solid #BC9CFF;
@@ -15,7 +15,7 @@
 		opacity: 0.5;
 	}
 }
-a.button {
+a.button__border {
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: bold;
@@ -31,7 +31,7 @@ a.button {
 		color: rgba(31, 32, 65, 0.5);
 		}
 }
-a.button__border, a.button__long {
+a.button, a.button__long {
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: bold;
@@ -47,7 +47,7 @@ a.button__border, a.button__long {
 	opacity: 0.5;
 	}
 }
-.button__border {
+.button {
 	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 	border-radius: 22px;
 	padding: 9px 20px 10px 19px;

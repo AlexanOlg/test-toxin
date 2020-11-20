@@ -39,6 +39,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "air-datepicker": "^2.2.3",
     "jquery-mask-plugin": "^1.14.16"
   }
 }

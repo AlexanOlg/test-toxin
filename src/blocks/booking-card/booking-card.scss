@@ -1,0 +1,15 @@
+.booking-card {
+	background-color: #fff;
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+	}
+	&__container {
+    padding: 40px 30px 30px 30px;
+    max-width: 320px;
+	}
+	&__date-dropdown {
+		margin-bottom: 20px;
+	}
+}

@@ -1,0 +1,11 @@
+include ../button/button.pug
+
+mixin calendar(isOpen)
+	if isOpen
+		.calendar.calendar_showed
+			.calendar__button
+				+button('Применить')
+	else
+		.calendar
+			.calendar__button
+				+button('Применить')

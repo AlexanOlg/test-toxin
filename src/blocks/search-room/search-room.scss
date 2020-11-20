@@ -1,0 +1,35 @@
+.search-room {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+	max-width: 380px;
+	margin-bottom: 40px;
+
+  &__container {
+    padding: 40px 30px 30px 30px;
+
+  }
+  &__title {
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 29px;
+		color: #1F2041;
+    margin-top: 39px;
+  }
+
+  &__date {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 21px;
+    margin-top: 20px;
+  }
+
+  &__button {
+    margin-top: 31px;
+  }
+}
+
