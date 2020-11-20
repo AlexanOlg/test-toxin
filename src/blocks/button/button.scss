@@ -1,20 +1,76 @@
 @import '../../scss/responsive.scss';
 @import '../input/input.scss';
 
-.button__border {
-	background-color: #FFFFFF;
+.button {
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 	border-radius: 22px;
-	border: 2px solid #BC9CFF;
-	padding: 9px 20px 10px 20px;
+	padding: 9px 20px 10px 19px;
 	cursor: pointer;
+	border: none;
 	&:focus {
 	outline: none;
-	}     
+	}       
 	&:hover,
 	&_hovered {
+	opacity: 0.5;
+	}
+	&__border {
+		background-color: #FFFFFF;
+		border-radius: 22px;
+		border: 2px solid #BC9CFF;
+		padding: 9px 20px 10px 20px;
+		cursor: pointer;
+		&:focus {
+		outline: none;
+		}     
+		&:hover,
+		&_hovered {
+			opacity: 0.5;
+		}
+	}
+	&__long {
+		width: 100%;
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+		border-radius: 22px;
+		border: none;
+		padding: 14px 20px 15px 20px;
+		color: #ffffff;
+		text-transform: uppercase;
+		display: block;
+		&:focus {
+			outline: none;
+		}   
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+	&__icon {
+		position: absolute;
+		top: -30px;
+		right: -305px;
+		z-index: 1;
+		color: #FFFFFF;
+		background-color: transparent;
+	}
+	&__icon-wrap {
+		position: relative;
+	}
+	&__calendar {
+		background: none;
+		border-radius: none;
+		padding: none;
+		cursor: pointer;
+		border: none;
+		&:focus {
+		outline: none;
+		}       
+		&:hover,
+		&_hovered {
 		opacity: 0.5;
+		}
 	}
 }
+
 a.button__border {
 	font-family: Montserrat;
 	font-style: normal;
@@ -47,49 +103,14 @@ a.button, a.button__long {
 	opacity: 0.5;
 	}
 }
-.button {
-	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-	border-radius: 22px;
-	padding: 9px 20px 10px 19px;
-	cursor: pointer;
-	border: none;
-	&:focus {
-	outline: none;
-	}       
-	&:hover,
-	&_hovered {
-	opacity: 0.5;
-	}
+a.button__calendar {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	text-transform: uppercase;
+	color: #BC9CFF;
 }
 
-.button__long {
-	width: 100%;
-	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-	border-radius: 22px;
-	border: none;
-  padding: 14px 20px 15px 20px;
-  color: #ffffff;
-  text-transform: uppercase;
-	display: block;
 
-	
-	&:focus {
-		outline: none;
-	}   
-  &:hover {
-		opacity: 0.5;
-	}
-}
-.button__icon-wrap {
-	position: relative;
-	
-}
-.button__icon {
-
-	position: absolute;
-	top: -30px;
-	right: -305px;
-	z-index: 1;
-	color: #FFFFFF;
-	background-color: transparent;
-}

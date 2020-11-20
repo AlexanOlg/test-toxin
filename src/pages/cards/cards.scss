@@ -1,13 +1,18 @@
-.cards__wrap {
+.cards {
+	&__wrap {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 72px;
-	&-item {
-		width: 33%;
-		max-width: 380px;
-		margin-right: 40px;
-		:last-child {
-			margin-right: 0;
+		&-item {
+			width: 33%;
+			max-width: 380px;
+			margin-right: 40px;
+			:last-child {
+				margin-right: 0;
+			}
 		}
+	}
+	&__item {
+		margin-bottom: 40px;
 	}
 }

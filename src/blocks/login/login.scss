@@ -1,0 +1,38 @@
+.login {
+	max-width: 380px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 40px 30px 30px 30px;
+	&__header {
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 29px;
+		color: #1F2041;
+		margin-bottom: 20px;
+	}
+	&__input-name {
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 18px;
+		color: rgba(31, 32, 65, 0.25);
+		margin-bottom: 10px;
+		background: #FFFFFF;
+		border: 1px solid rgba(31, 32, 65, 0.25);
+		box-sizing: border-box;
+		border-radius: 4px;
+		padding: 13px 0 13px 15px;
+		margin-bottom: 20px;
+		:hover {
+			border: none;
+		}
+	}
+	&__button {
+		margin-bottom: 30px;
+	}
+}

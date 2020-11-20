@@ -1,13 +1,10 @@
 include ../calendar/calendar.pug
 
--var ddId=0
+
 mixin date-dropdown(isOpen, text='ДД.ММ.ГГГГ')
 	.date-dropdown
 		.date-dropdown__item
-			label.date-dropdown__item-label(for="date-dropdown-in"+ddId) Прибытие
-				input.date-dropdown__input.in(type="text" readonly placeholder=text id="date-dropdown-in"+ddId)
-			label.date-dropdown__item-label(for="date-dropdown-out"+ddId) Выезд
-				input.date-dropdown__input.out(type="text" readonly placeholder=text id="date-dropdown-out"+ddId)
-				-ddId++
-					.date-dropdown__item-calendar
-						+calendar(isOpen)
+			label.date-dropdown__item-label Прибытие
+				input.date-dropdown__input.in(type="text" readonly placeholder=text)
+			label.date-dropdown__item-label Выезд
+				input.date-dropdown__input.out(type="text" readonly placeholder=text)

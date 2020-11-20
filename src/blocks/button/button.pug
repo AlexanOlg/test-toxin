@@ -12,4 +12,5 @@ mixin button__long(text, link)
 		button.button__icon
 			img(src=require('blocks/button/img/button.svg').default)
 
-
+mixin button__calendar(text, link)
+	a(href= link ).button__calendar= text

@@ -2,6 +2,7 @@ include ../../blocks/data-picker/data-picker.pug
 include ../../blocks/round-buttons/round-buttons.pug
 include ../../blocks/special-offer/special-offer.pug
 include ../../blocks/button/button.pug
+include ../../blocks/account/account.pug
 
 mixin registration
 	.registration
@@ -26,5 +27,4 @@ mixin registration
 			.registration__button
 				+button__long('Перейти к оплате')
 			.registration__login
-				span.registration__text Уже есть аккаунт на Toxin?
-				+button('Войти')
+				+account('Уже есть аккаунт на Toxin?')

@@ -4,6 +4,8 @@ include ../../blocks/search-room/search-room.pug
 include ../../blocks/registration/registration.pug
 include ../../blocks/search-room/search-room.pug
 include ../../blocks/booking-card/booking-card.pug
+include ../../blocks/login/login.pug
+include ../../blocks/calendar/calendar.pug
 
 block title
 	title Cards
@@ -15,12 +17,14 @@ block content
 					.cards__wrap-item
 						.cards__item
 							+search-room
-						+registration
+						.cards__item
+							+registration
 					.cards__wrap-item
 						.cards__item
 							+booking-card
-							login-card
+						.cards__item
+							+login
 					.cards__wrap-item
 						.cards__item
-							calendar
+							+calendar(isOpen)
 							room-card
