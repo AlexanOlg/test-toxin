@@ -1,0 +1,15 @@
+mixin room-card(image, number='', price='', stars=0, reviews=0, extra)
+		.room-card
+				.room-card__slider
+						slider(image)
+				.room-card__container
+						.room-card__number=number
+								span.room-card__extra=extra
+						.room-card__price=price+'₽'
+								span.room-card__price-subtitle в сутки
+				hr.room-card__separator
+				.room-card__container
+						.room-card__rate
+								rate-button(stars)
+						.room-card__reviews=reviews
+								span.room-card__reviews-subtitle Отзывов

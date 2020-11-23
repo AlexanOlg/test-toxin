@@ -1,5 +1,3 @@
-
-
 function importAll(resolve) {
 	resolve.keys().forEach(resolve);
 }

@@ -6,6 +6,7 @@ include ../../blocks/search-room/search-room.pug
 include ../../blocks/booking-card/booking-card.pug
 include ../../blocks/login/login.pug
 include ../../blocks/calendar/calendar.pug
+include ../../blocks/room-card/room-card.pug
 
 block title
 	title Cards
@@ -27,4 +28,5 @@ block content
 					.cards__wrap-item
 						.cards__item
 							+calendar(isOpen)
-							room-card
+						.cards__item
+							+room-card
