@@ -1,8 +1,9 @@
 @import '../../scss/responsive.scss';
+@import '../../scss/variables.scss';
 @import '../input/input.scss';
 
 .button {
-	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	background: $purple-gradient;
 	border-radius: 22px;
 	padding: 9px 20px 10px 19px;
 	cursor: pointer;
@@ -15,9 +16,9 @@
 	opacity: 0.5;
 	}
 	&__border {
-		background-color: #FFFFFF;
+		background-color: $white;
 		border-radius: 22px;
-		border: 2px solid #BC9CFF;
+		border: 2px solid $purple;
 		padding: 9px 20px 10px 20px;
 		cursor: pointer;
 		&:focus {
@@ -30,11 +31,11 @@
 	}
 	&__long {
 		width: 100%;
-		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+		background: $purple-gradient;
 		border-radius: 22px;
 		border: none;
 		padding: 14px 20px 15px 20px;
-		color: #ffffff;
+		color: $white;
 		text-transform: uppercase;
 		display: block;
 		&:focus {
@@ -49,7 +50,7 @@
 		top: -30px;
 		right: -305px;
 		z-index: 1;
-		color: #FFFFFF;
+		color: $white;
 		background-color: transparent;
 	}
 	&__icon-wrap {
@@ -72,29 +73,21 @@
 }
 
 a.button__border {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 12px;
-	line-height: 15px;
+	@include h3-text;
 	text-transform: uppercase;
-	color: #BC9CFF;
+	color: $purple;
 	&:focus {
 		outline: none;
 		}  
 		&:hover,
 		&_hovered {
-		color: rgba(31, 32, 65, 0.5);
+		color: $ds50;
 		}
 }
 a.button, a.button__long {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 12px;
-	line-height: 15px;
+	@include h3-text;
 	text-transform: uppercase;
-	color: #FFFFFF;
+	color: $white;
 	text-align: center;
 	&:focus {
 	outline: none;
@@ -104,13 +97,9 @@ a.button, a.button__long {
 	}
 }
 a.button__calendar {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 12px;
-	line-height: 15px;
+	@include h3-text;
 	text-transform: uppercase;
-	color: #BC9CFF;
+	color: $purple;
 }
 
 

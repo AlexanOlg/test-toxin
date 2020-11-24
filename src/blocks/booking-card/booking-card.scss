@@ -1,5 +1,7 @@
+@import '../../scss/variables.scss';
+
 .booking-card {
-	background-color: #fff;
+	background-color: $white;
 	&__header {
 		display: flex;
 		justify-content: space-between;

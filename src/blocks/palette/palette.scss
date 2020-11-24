@@ -1,3 +1,5 @@
+@import '../../scss/variables.scss';
+
 .palette {
 	&__item {
 		display: flex;
@@ -10,40 +12,38 @@
     margin-right: 40px;
 	}
   &__color-ds100 {
-		background: rgba(31, 32, 65, 1);
+		background: $ds100;
 	}
   &__color-ds75 {
-		background: rgba(31, 32, 65, 0.75);
+		background: $ds75;
 	}
   &__color-ds50 {
-		background: rgba(31, 32, 65, 0.5);
+		background: $ds50;
 	}
   &__color-ds25 {
-		background: rgba(31, 32, 65, 0.25);
+		background: $ds25;
 	}
   &__color-ds5 {
-		background: rgba(31, 32, 65, 0.05);
+		background: $ds5;
 	}
   &__color-purple {
-		background: #BC9CFF;
+		background: $purple;
 	}
 	&__color-green {
-		background: #6FCF97;
+		background: $green;
 	}
   &__color-name {
-		font-family: Quicksand;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 19px;
-    line-height: 29px;
+		@include text-bold;
+		font-size: 19px;
+		line-height: 28px;
+		color: $ds100;
     margin: 0;
 		padding-top: 8px;
 	}
   &__color-value {
-    font-family: Quicksand;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 19px;
-		line-height: 29px;
+		@include montserrat;
+		font-size: 19px;
+		line-height: 28px;
+		color: $ds100;
 	}
 }

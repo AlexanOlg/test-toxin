@@ -1,8 +1,9 @@
 @import '../../scss/responsive.scss';
+@import '../../scss/variables.scss';
 @import '../../../node_modules/normalize.css/normalize.css';
 
 .footer__body {
-	background-color: #fff;
+	background-color: $white;
 	margin-top: 40px;
 	box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
 }
@@ -10,7 +11,7 @@
   max-width: 1160px;
   margin: 0 auto;
 	height: 443px;
-	background-color: #ffffff;
+	background-color: $white;
 	&__inner {
 	padding: 100px 0;
 	display: flex;
@@ -24,33 +25,22 @@
 	}
 }
 p.footer__logo-title {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 24px;
-	color: rgba(31, 32, 65, 0.75);
+	@include body-text;
 	margin-top: 20px;
 }
 
 h3.footer__nav {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 12px;
-	line-height: 15px;
+	@include h3-text;
 	text-transform: uppercase;
-	color: #1F2041;
+	color: $ds100;
 	margin: 4px 0 21px 0;
 
 }
 a.footer__link {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
+	@include montserrat;
 	font-size: 14px;
 	line-height: 17px;
-	color: rgba(31, 32, 65, 0.5);
+	color: $ds50;
 }
 li.footer__nav-item {
 	padding-bottom: 20px;
@@ -69,12 +59,10 @@ li.footer__nav-item:last-child {
 	padding-top: 23px;
 	padding-bottom: 13px;
 	&-text {
-		font-family: Montserrat;
-		font-style: normal;
-		font-weight: normal;
+		@include montserrat;
 		font-size: 14px;
 		line-height: 17px;
-		color: rgba(31, 32, 65, 0.75);
+		color: $ds50;
 	}
 }
 .footer__socials {
@@ -84,15 +72,14 @@ li.footer__nav-item:last-child {
 	text-align: center;
 	}
 	&-ico {
-		font-style: normal;
-		font-weight: normal;
+		@include montserrat;
 		font-size: 24px;
 		line-height: 23px;
 	}
 	&-item {
 		a {
 			span {
-				color: #BC9CFF;
+				color: $purple;
 			}
 		}
 		margin-right: 20px;
@@ -105,10 +92,10 @@ li.footer__nav-item:last-child {
 .footer__mobile {
 	width: 100%;
 	max-width: 768px;
-	background: #ffffff;
+	background: $white;
 	margin: 0 auto 140px;
 	padding: 120px 0;
-	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+	box-shadow: 0px 10px 20px $ds5;
 	&-logo {
 		padding-bottom: 20px;
 	}

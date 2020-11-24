@@ -1,0 +1,33 @@
+@import '../../scss/variables.scss';
+
+.booking-photo__room {
+	&-tag {
+		@include text-bold;
+		font-size: 14px;
+		line-height: 17px;
+		color: $ds100;
+	}
+	&-number {
+		@include text-bold;
+		font-size: 24px;
+		line-height: 17px;
+		color: $ds100;
+	}
+	&-type {
+		@include h3-text;
+		text-transform: uppercase;
+		color: $purple;
+	}
+	&-price {
+		@include text-bold;
+		font-size: 14px;
+		line-height: 18px;
+		color: $ds50;
+	}
+	&-text {
+		@include text-bold;
+		font-size: 12px;
+		line-height: 18px;
+		color: $ds50;
+	}
+}

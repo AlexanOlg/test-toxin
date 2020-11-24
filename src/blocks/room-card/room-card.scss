@@ -18,19 +18,12 @@
 		border:none;
 		border-top: 1px solid rgba(31, 32, 65, 0.1);			
 	}
-	&__number { 
-		&::before {
-			font-weight: bold;
-			font-size: 14px;
-			line-height: 17px;
-			content: "№ ";
-			margin-right: 3px;
-			}
-		}
 	&__extra {
 		margin-left: 5px;
 	}
-	
+	&__number {
+		min-width: 230px;
+	}
 	&__price {
 		margin-top: 2px;
 		margin-right: -3px;

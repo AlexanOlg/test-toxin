@@ -1,3 +1,5 @@
+@import '../../scss/variables.scss';
+
 .menu {
   display: flex;
   list-style: none;
@@ -10,31 +12,25 @@
 }
 
 .menu__item {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
+	@include montserrat;
   font-size: 14px;
 	line-height: 17px;
 	margin-right: 20px;
-  color: rgba(31, 32, 65, 0.5);
+  color: $ds50;
 }
 
 .menu__item:hover {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
+	@include text-bold;
   font-size: 14px;
 	line-height: 17px;
 	margin-right: 20px;
-  color: rgba(31, 32, 65, 0.75);
+  color: $ds75;
 }
 
 .menu__item_active {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
+	@include text-bold;
   font-size: 14px;
 	line-height: 17px;
 	margin-right: 20px;
-	color: rgba(31, 32, 65, 0.75);
+	color: $ds75;
 }

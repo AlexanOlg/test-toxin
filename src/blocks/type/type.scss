@@ -1,3 +1,5 @@
+@import '../../scss/variables.scss';
+
 .type {
     display: grid;
     grid-template-columns: 37px 30px 336px;
@@ -9,79 +11,50 @@
 }
 
 .type__tag-h1 {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
+		@include montserrat;
     font-size: 24px;
     line-height: 29px;
     text-align: right;
-		color: rgba(31, 32, 65, 0.25);
+		color: $ds25;
 }
 
 .type__tag-h2 {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
+	@include montserrat;
     font-size: 19px;
     line-height: 23px;
     text-align: right;
-    color: rgba(31, 32, 65, 0.25);
+    color: $ds25;
 }
 
 .type__tag-h3 {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 15px;
+	@include h3-text;
     text-align: right;
     text-transform: uppercase;
-    color: rgba(31, 32, 65, 0.25);
+    color: $ds25;
 }
 
 .type_tag-body {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
+		@include montserrat;
     font-size: 14px;
     line-height: 24px;
     text-align: right;
-    color: rgba(31, 32, 65, 0.25);
+    color: $ds25;
 }
 
 .type__text-h1 {
-    font-family: Quicksand;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
-		color: #1F2041;
+	@include h1-text;
 }
 
 .type__text-h2 {
-    font-family: Quicksand;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 19px;
-    line-height: 24px;
-    color: #1F2041;
+	@include h2-text;
 }
 
 .type__text-h3 {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
+		@include h3-text;
     text-transform: uppercase;
-		color: #1F2041;
+		color: $ds100;
 }
 
 .type__text-body {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(31, 32, 65, 0.75);
+	@include body-text;
 }

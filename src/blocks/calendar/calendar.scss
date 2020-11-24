@@ -1,3 +1,5 @@
+@import '../../scss/variables.scss';
+
 .calendar {
   max-width: 380px;
   position: relative;
@@ -11,46 +13,41 @@
 .datepicker {
 	width: 100%;
 	position: relative;
-	background: #FFFFFF;
-	border: 1px solid rgba(31, 32, 65, 0.25);
+	background: $white;
+	border: 1px solid $ds25;
 	box-sizing: border-box;
-	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+	box-shadow: 0px 10px 20px $ds5;
 	border-radius: 4px;
 	padding: 20px;
   &--cell {
     width: 40px;
     height: 40px;
-    font-family: "Montserrat";
+    @include montserrat;
 		font-size: 12px;
 		&.-focus- {
 			background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 			border-radius: 22px;
 		}
 		&-day {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 12px;
-			line-height: 15px;
-			color: rgba(31, 32, 65, 0.5);
+			@include h3-text;
+			color: $ds50;
 			}
 		&.-in-range- {
-			background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+			background: $purple-gradient;
 			opacity: 0.25;
       &.-current- {
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        background: $purple-gradient;
 				opacity: 0.25;
         border-radius: 0;
       }
     }
     &.-current- {
-      color: #fff;
-      
+      color: $white;
       border-radius: 50%;
     }
     &.-selected- {
 			border-radius: 50%;
-			background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+			background: $purple-gradient;
 			border-radius: 22px;
 			 &.-focus- {
 				background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
@@ -76,12 +73,8 @@
     }
   }
   &--day-name {
-    font-family: Montserrat;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		line-height: 15px;
-		color: #BC9CFF;
+		@include h3-text;
+		color: $purple;
 	  text-transform: none;
     margin-bottom: 10px;
   }
@@ -94,31 +87,23 @@
     padding: 3px 15px 18px 15px;
     border: none;
     &-action {
-      color: #bc9cff;
+      color: $purple;
       font-size: 24px;
 		}
 		&-title {
 			h2 {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: bold;
-			font-size: 19px;
-			line-height: 23px;
+			@include h2-text;
 			text-align: center;
-			color: #1F2041;
+			color: $ds100;
 			max-width: 114px;
 			}
 		}
   }
   &--button {
     display: inline-block;
-		font-family: Montserrat;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		line-height: 15px;
+		@include h3-text;
 		text-transform: uppercase;
-		color: #BC9CFF;
+		color: $purple;
     cursor: pointer;
     &:hover {
       opacity: 0.5;

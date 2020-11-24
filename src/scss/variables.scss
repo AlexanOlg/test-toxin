@@ -1,0 +1,61 @@
+$ds100: #1F2041;
+$ds75: rgba(31, 32, 65, 0.75);
+$ds50: rgba(31, 32, 65, 0.5);
+$ds25: rgba(31, 32, 65, 0.25);
+$ds5: rgba(31, 32, 65, 0.05);
+$purple: #BC9CFF;
+$green: #6fcf97;
+$white: #FFFFFF;
+$black: #000000;
+$blue: #8BA4F9;
+$light-blue: #66d2ea;
+$purple-gradient: linear-gradient(180deg, $purple 0%, $blue 100%);
+$green-gradient: linear-gradient(180deg, $green 0%, $light-blue 100%);
+
+
+@mixin h1-text {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 29px;
+	color: $ds100;
+}
+
+@mixin h2-text {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 23px;
+	color: $ds100;
+}
+
+@mixin h3-text {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+}
+
+@mixin body-text {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	color: $ds75;
+}
+
+@mixin montserrat {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+}
+
+@mixin text-bold {
+	font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+}

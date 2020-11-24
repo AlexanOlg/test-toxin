@@ -1,15 +1,13 @@
+@import '../../scss/variables.scss';
+
 .round-buttons {
   display: flex;
   &__label {
     display: flex;
-		
-		font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
+		@include montserrat;
     font-size: 14px;
     line-height: 20px;
-		
-		color: rgba(31, 32, 65, 0.5);
+		color: $ds50;
 		margin-right: 20px;
 	}
   &__input {
@@ -21,12 +19,10 @@
     &:checked {
       background-image: url(./img/on.svg);
       & + .round-buttons__text {
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: normal;
+				@include montserrat;
         font-size: 14px;
         line-height: 20px;
-				color: rgba(31, 32, 65, 0.75);
+				color: $ds50;
 			}
 		}
 	}

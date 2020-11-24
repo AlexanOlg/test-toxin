@@ -1,26 +1,23 @@
+@import '../../scss/variables.scss';
+
 .text__input {
-		font-family: Montserrat;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 14px;
-		line-height: 24px;
-		color: rgba(31, 32, 65, 0.75);
+		@include body-text;
 		height: 44px;
 		width: 100%;
-		border: 1px solid rgba(31, 32, 65, 0.25);
+		border: 1px solid $ds25;
 		border-radius: 4px;
 		padding: 10px 0 8px 15px;
 		&::placeholder {
-			color: rgba(31, 32, 65, 0.25);
+			color: $ds25;
 		}
 
 		&:focus,
 		&:hover {
-			border-color: rgba(31, 32, 65, 0.5);
-			color: rgba(31, 32, 65, 0.75);
+			border-color: $ds5;
+			color: $ds75;
 
 			&::placeholder {
-				color: rgba(31, 32, 65, 0.75);
+				color: $ds75;
 				}
 			}
 	}
@@ -29,8 +26,8 @@
 .input-subscript {
 	position: relative;
 	max-width: 267px;
-	background: #FFFFFF;
-	border: 1px solid rgba(31, 32, 65, 0.25);
+	background: $white;
+	border: 1px solid $ds25;
 	border-radius: 4px;
 	margin-top: 20px;
 
@@ -41,7 +38,7 @@
 			
 			font-size: 24px;
 			mix-blend-mode: screen;
-			background-color: #ffffff;
+			background-color: $white;
 			width: 20px;
 			height: 20px;
 
@@ -50,8 +47,7 @@
 					right: 2px;
 					top: 10px;
 					border-radius: 50%;
-					background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-
+					background: $purple-gradient;
 			}
 		}
 }

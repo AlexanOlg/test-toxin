@@ -49,6 +49,7 @@
   "dependencies": {
     "air-datepicker": "^2.2.3",
     "eslint-cli": "^1.1.1",
-    "jquery-mask-plugin": "^1.14.16"
+    "jquery-mask-plugin": "^1.14.16",
+    "slick-carousel": "^1.8.1"
   }
 }
