@@ -5,15 +5,10 @@
 		margin-bottom: 5px;
 	}
   &__input {
-		@include montserrat;
-    font-size: 14px;
-    line-height: 14px;
-		color: $ds100;
-		
+		@include montserrat(14px, 14px, $ds100);
 		padding: 13px 15px;
     border: 1px solid $ds100;
     border-radius: 4px;
-    
     width: 100%;
 		opacity: 0.25;
 	}

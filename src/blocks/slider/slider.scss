@@ -1,3 +1,5 @@
+@import '../../scss/variables.scss';
+
 .slick{
 	&-slider{
 	position: relative;
@@ -19,7 +21,7 @@
 			top: 42%;
 			z-index: 1;
 			font-size: 24px;
-			color: #FFFFFF;
+			color: $white;
 			border: none;
 			background-color: transparent;
 			outline: none;
@@ -39,7 +41,7 @@
 			width: 41px;
 			& button{
 				cursor: pointer;
-				border: 1px solid #FFFFFF;
+				border: 1px solid $white;
 				background-color: transparent;
 				border-radius: 50%;
 				width: 7.5px;
@@ -58,7 +60,7 @@
 				list-style: none;
 			}
 			& .slick-active button{
-				background-color: #fff;
+				background-color: $white;
 			}
 	}
 }

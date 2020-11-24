@@ -12,25 +12,16 @@
 }
 
 .menu__item {
-	@include montserrat;
-  font-size: 14px;
-	line-height: 17px;
+	@include montserrat(14px, 17px, $ds50);
 	margin-right: 20px;
-  color: $ds50;
 }
 
 .menu__item:hover {
-	@include text-bold;
-  font-size: 14px;
-	line-height: 17px;
+	@include text-bold(14px, 17px, $ds75);
 	margin-right: 20px;
-  color: $ds75;
 }
 
 .menu__item_active {
-	@include text-bold;
-  font-size: 14px;
-	line-height: 17px;
+	@include text-bold(14px, 17px, $ds75);
 	margin-right: 20px;
-	color: $ds75;
 }

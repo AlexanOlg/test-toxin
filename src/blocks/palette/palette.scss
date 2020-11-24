@@ -33,17 +33,11 @@
 		background: $green;
 	}
   &__color-name {
-		@include text-bold;
-		font-size: 19px;
-		line-height: 28px;
-		color: $ds100;
+		@include text-bold(19px, 28px, $ds100);
     margin: 0;
 		padding-top: 8px;
 	}
   &__color-value {
-		@include montserrat;
-		font-size: 19px;
-		line-height: 28px;
-		color: $ds100;
+		@include montserrat(19px, 28px, $ds100);
 	}
 }

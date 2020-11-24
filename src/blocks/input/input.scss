@@ -1,7 +1,7 @@
 @import '../../scss/variables.scss';
 
 .text__input {
-		@include body-text;
+		@include montserrat(14px, 24px, $ds75);
 		height: 44px;
 		width: 100%;
 		border: 1px solid $ds25;

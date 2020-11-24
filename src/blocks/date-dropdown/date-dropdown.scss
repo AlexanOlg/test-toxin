@@ -10,9 +10,7 @@
 		&-label {
 			position: relative;
 			cursor: pointer;
-			@include h3-text;
-			text-transform: uppercase;
-			color: $ds100;
+			@include h3-text(uppercase, $ds100);
 		}
 		&-calendar {
 			margin-top: 6px;
@@ -21,10 +19,7 @@
 		}
   }
   &__input {
-		@include montserrat;
-		font-size: 14px;
-		line-height: 18px;
-		color: $ds75;
+		@include montserrat(14px, 18px, $ds75);
     border: 1px solid $ds25;
     box-sizing: border-box;
     border-radius: 4px;

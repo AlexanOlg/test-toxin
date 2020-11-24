@@ -12,50 +12,30 @@ $light-blue: #66d2ea;
 $purple-gradient: linear-gradient(180deg, $purple 0%, $blue 100%);
 $green-gradient: linear-gradient(180deg, $green 0%, $light-blue 100%);
 
-
-@mixin h1-text {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 24px;
-	line-height: 29px;
-	color: $ds100;
-}
-
-@mixin h2-text {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 19px;
-	line-height: 23px;
-	color: $ds100;
-}
-
-@mixin h3-text {
+@mixin h3-text($tt, $color) {
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 12px;
 	line-height: 15px;
+	text-transform: $tt;
+	color: $color;
 }
 
-@mixin body-text {
+@mixin montserrat($fs, $lh, $color) {
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 14px;
-	line-height: 24px;
-	color: $ds75;
+	font-size: $fs;
+	line-height: $lh;
+	color: $color;
 }
 
-@mixin montserrat {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
-}
-
-@mixin text-bold {
+@mixin text-bold($fs, $lh, $color) {
 	font-family: Montserrat;
   font-style: normal;
-  font-weight: bold;
+	font-weight: bold;
+	font-size: $fs;
+	line-height: $lh;
+	color: $color;
 }

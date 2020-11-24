@@ -8,13 +8,11 @@
   border-radius: 4px;
   padding: 40px 30px 30px 30px;
 	&__header {
-		@include h1-text;
+		@include text-bold(24px, 29px, $ds100);
 		margin-bottom: 20px;
 	}
 	&__input-name {
-		@include montserrat;
-		line-height: 18px;
-		color: $ds25;
+		@include montserrat(14px, 18px, $ds25);
 		margin-bottom: 10px;
 		background: $white;
 		border: 1px solid $ds25;

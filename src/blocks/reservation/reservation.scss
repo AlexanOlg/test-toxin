@@ -19,14 +19,14 @@
     margin-bottom: 10px;
     min-height: 24px;
     &-name {
-			@include body-text;
+			@include montserrat(14px, 24px, $ds75);
       display: inline-block;
       width: 214px;
     }
   }
   &__cost {
 		float: right;
-		@include body-text;
+		@include montserrat(14px, 24px, $ds75);
   }
 
   &__details-info {
@@ -44,7 +44,7 @@
   }
 
   &__total-label {
-		@include h2-text;
+		@include text-bold(19px, 23px, $ds100);
     margin-left: 1px;
     margin-top: 31px;
     display: flex;

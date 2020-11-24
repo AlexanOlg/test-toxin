@@ -8,7 +8,7 @@
   border-radius: 4px;
   padding: 40px 30px 30px 30px;
   &__header {
-		@include h1-text;
+		@include text-bold(24px, 29px, $ds100);
 		padding-bottom: 20px;
 		}
   &__input-fullname  {
@@ -16,10 +16,7 @@
 
 	}
 	&__input-name {
-		@include montserrat;
-		font-size: 14px;
-		line-height: 18px;
-		color: $ds25;
+		@include montserrat(14px, 18px, $ds25);
 		margin-bottom: 10px;
 		background: $white;
 		border: 1px solid $ds25;
@@ -35,16 +32,13 @@
 	}
 
   &__input-header {
-		@include h3-text;
-		text-transform: uppercase;
-		color: $ds100;
+		@include h3-text(uppercase, $ds100);
 	}
   &__input-header1 {
 		margin-bottom: 10px;
-		@include h3-text;
-		text-transform: uppercase;
-		color: $ds100;
+		@include h3-text(uppercase, $ds100);
 	}
+	
   &__special-offer {
 		margin-bottom: 24px;
 	}

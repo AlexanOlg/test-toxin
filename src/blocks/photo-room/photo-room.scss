@@ -2,32 +2,18 @@
 
 .booking-photo__room {
 	&-tag {
-		@include text-bold;
-		font-size: 14px;
-		line-height: 17px;
-		color: $ds100;
+		@include text-bold(14px, 17px, $ds100);
 	}
 	&-number {
-		@include text-bold;
-		font-size: 24px;
-		line-height: 17px;
-		color: $ds100;
+		@include text-bold(24px, 17px, $ds100);
 	}
 	&-type {
-		@include h3-text;
-		text-transform: uppercase;
-		color: $purple;
+		@include h3-text(uppercase, $purple);
 	}
 	&-price {
-		@include text-bold;
-		font-size: 14px;
-		line-height: 18px;
-		color: $ds50;
+		@include text-bold(14px, 18px, $ds50);
 	}
 	&-text {
-		@include text-bold;
-		font-size: 12px;
-		line-height: 18px;
-		color: $ds50;
+		@include text-bold(12px, 18px, $ds50);
 	}
 }

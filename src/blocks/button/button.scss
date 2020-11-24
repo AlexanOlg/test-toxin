@@ -73,9 +73,7 @@
 }
 
 a.button__border {
-	@include h3-text;
-	text-transform: uppercase;
-	color: $purple;
+	@include h3-text(uppercase, $purple);
 	&:focus {
 		outline: none;
 		}  
@@ -85,9 +83,7 @@ a.button__border {
 		}
 }
 a.button, a.button__long {
-	@include h3-text;
-	text-transform: uppercase;
-	color: $white;
+	@include h3-text(uppercase, $white);
 	text-align: center;
 	&:focus {
 	outline: none;
@@ -97,9 +93,7 @@ a.button, a.button__long {
 	}
 }
 a.button__calendar {
-	@include h3-text;
-	text-transform: uppercase;
-	color: $purple;
+	@include h3-text(uppercase, $purple);
 }
 
 

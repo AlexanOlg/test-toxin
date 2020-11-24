@@ -5,11 +5,8 @@
 	justify-content: space-between;
 	align-items: center;
 	&__text {
-		@include montserrat;
-		font-size: 14px;
-		line-height: 18px;
+		@include montserrat(14px, 18px, $black);
 		align-items: center;
 		text-align: center;
-		color: $black;
 	}
 }

@@ -4,10 +4,7 @@
   display: flex;
   &__label {
     display: flex;
-		@include montserrat;
-    font-size: 14px;
-    line-height: 20px;
-		color: $ds50;
+		@include montserrat(14px, 20px, $ds50);
 		margin-right: 20px;
 	}
   &__input {
@@ -19,10 +16,7 @@
     &:checked {
       background-image: url(./img/on.svg);
       & + .round-buttons__text {
-				@include montserrat;
-        font-size: 14px;
-        line-height: 20px;
-				color: $ds50;
+				@include montserrat(14px, 20px, $ds50);
 			}
 		}
 	}

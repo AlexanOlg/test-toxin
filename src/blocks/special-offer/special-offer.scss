@@ -13,10 +13,7 @@
 		}
 	}
   &__text {
-		@include montserrat;
-    font-size: 14px;
-    line-height: 20px;
-    color: $ds75;
+		@include montserrat(14px, 20px, $ds75);
 		padding-bottom: 5px;
 	}
 }

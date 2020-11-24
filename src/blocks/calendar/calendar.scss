@@ -22,15 +22,13 @@
   &--cell {
     width: 40px;
     height: 40px;
-    @include montserrat;
-		font-size: 12px;
+    @include montserrat(12px, 1, $black);
 		&.-focus- {
 			background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 			border-radius: 22px;
 		}
 		&-day {
-			@include h3-text;
-			color: $ds50;
+			@include h3-text(none, $ds50);
 			}
 		&.-in-range- {
 			background: $purple-gradient;
@@ -73,9 +71,7 @@
     }
   }
   &--day-name {
-		@include h3-text;
-		color: $purple;
-	  text-transform: none;
+		@include h3-text(none, $purple);
     margin-bottom: 10px;
   }
   &--content {
@@ -92,18 +88,15 @@
 		}
 		&-title {
 			h2 {
-			@include h2-text;
+			@include text-bold(19px, 23px, $ds100);
 			text-align: center;
-			color: $ds100;
 			max-width: 114px;
 			}
 		}
   }
   &--button {
     display: inline-block;
-		@include h3-text;
-		text-transform: uppercase;
-		color: $purple;
+		@include h3-text(uppercase, $purple);
     cursor: pointer;
     &:hover {
       opacity: 0.5;

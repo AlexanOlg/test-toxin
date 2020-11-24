@@ -1,6 +1,8 @@
+@import '../../scss/variables.scss';
+
 .room-card {
-	background-color: #fff;
-	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+	background-color: $white;
+	box-shadow: 0px 10px 20px $ds5;
 	border-radius: 4px;
 	overflow: hidden;
 	width: 270px;

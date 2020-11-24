@@ -11,50 +11,37 @@
 }
 
 .type__tag-h1 {
-		@include montserrat;
-    font-size: 24px;
-    line-height: 29px;
+		@include montserrat(24px, 29px, $ds25);
     text-align: right;
-		color: $ds25;
 }
 
 .type__tag-h2 {
-	@include montserrat;
-    font-size: 19px;
-    line-height: 23px;
+	@include montserrat(19px, 23px, $ds25);
     text-align: right;
-    color: $ds25;
 }
 
 .type__tag-h3 {
-	@include h3-text;
+	@include h3-text(uppercase, $ds25);
     text-align: right;
-    text-transform: uppercase;
-    color: $ds25;
 }
 
 .type_tag-body {
-		@include montserrat;
-    font-size: 14px;
-    line-height: 24px;
+		@include montserrat(14px, 24px, $ds25);
     text-align: right;
-    color: $ds25;
 }
 
 .type__text-h1 {
-	@include h1-text;
+	@include text-bold(24px, 29px, $ds100);
 }
 
 .type__text-h2 {
-	@include h2-text;
+	@include text-bold(19px, 23px, $ds100);
 }
 
 .type__text-h3 {
-		@include h3-text;
-    text-transform: uppercase;
-		color: $ds100;
+		@include h3-text(uppercase, $ds100);
 }
 
 .type__text-body {
-	@include body-text;
+	@include montserrat(14px, 24px, $ds75);
 }
