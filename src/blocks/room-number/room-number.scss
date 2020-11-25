@@ -1,6 +1,9 @@
 @import '../../scss/variables.scss';
 
-.booking-photo__room {
+.room__number {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
 	&-tag {
 		@include text-bold(14px, 17px, $ds100);
 	}

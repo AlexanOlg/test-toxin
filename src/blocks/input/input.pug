@@ -1,12 +1,12 @@
-mixin input-subscript(text='',type='text', placeholder='Email')
-	.input-subscript
-		.text__input
+mixin input(text='',type='text', placeholder='Email')
+	.input
+		.input__text
 			input(
 				placeholder=placeholder,
 				type=type,
 				text=''
 				)
 			block
-			span.input-subscript__icon-wrap
-				button.input-subscript__icon
+			span.input__icon-wrap
+				button.input__icon
 					img(src=require('blocks/input/img/arrow_forward.svg').default)

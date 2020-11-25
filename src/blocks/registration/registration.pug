@@ -1,5 +1,4 @@
 include ../../blocks/data-picker/data-picker.pug
-include ../../blocks/round-buttons/round-buttons.pug
 include ../../blocks/special-offer/special-offer.pug
 include ../../blocks/button/button.pug
 include ../../blocks/account/account.pug
@@ -13,7 +12,7 @@ mixin registration
 			.registration__input-name
 				+data-picker({value: 'Фамилия'})
 			.registration__round-buttons
-				+round-buttons
+				+button__round
 			.registration__input-header Дата рождения
 				.registration__input-name
 					+data-picker({value: 'ДД.ММ.ГГГГ'})

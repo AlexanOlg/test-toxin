@@ -20,11 +20,10 @@
 			position: absolute;
 			top: 42%;
 			z-index: 1;
-			font-size: 24px;
-			color: $white;
 			border: none;
 			background-color: transparent;
 			outline: none;
+			@include material-font($white);
 	}
 	&-prev{
 			left: 4px;

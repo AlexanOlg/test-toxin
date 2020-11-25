@@ -1,18 +1,19 @@
 .cards {
 	&__wrap {
 	display: flex;
-	justify-content: space-between;
-	margin-top: 72px;
+	margin: 72px auto 0;
+	justify-content: center;
 		&-item {
 			width: 33%;
 			max-width: 380px;
 			margin-right: 40px;
-			:last-child {
+			&:last-child {
 				margin-right: 0;
 			}
 		}
 	}
 	&__item {
 		margin-bottom: 40px;
+		margin-right: 0;
 	}
 }

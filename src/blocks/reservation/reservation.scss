@@ -21,7 +21,12 @@
     &-name {
 			@include montserrat(14px, 24px, $ds75);
       display: inline-block;
-      width: 214px;
+			width: 214px;
+			&-first {
+				@include montserrat(14px, 24px, $ds75);
+				display: inline-block;
+				width: 320px;
+			}
     }
   }
   &__cost {

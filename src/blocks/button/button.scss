@@ -57,17 +57,17 @@
 		position: relative;
 	}
 	&__calendar {
-		background: none;
-		border-radius: none;
-		padding: none;
 		cursor: pointer;
-		border: none;
+		position: absolute;
+		bottom: 5px;
+		right: 20px;
+		z-index: 2;
 		&:focus {
-		outline: none;
+			outline: none;
 		}       
 		&:hover,
 		&_hovered {
-		opacity: 0.5;
+			opacity: 0.5;
 		}
 	}
 }
@@ -96,4 +96,36 @@ a.button__calendar {
 	@include h3-text(uppercase, $purple);
 }
 
+.button__round {
+  display: flex;
+  &__label {
+    display: flex;
+		@include montserrat(14px, 20px, $ds50);
+		margin-right: 20px;
+	}
+  &__input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-image: url(./img/off.svg);
+    margin-right: 10px;
+    &:checked {
+      background-image: url(./img/on.svg);
+      & + .button__round__text {
+				@include montserrat(14px, 20px, $ds50);
+			}
+		}
+	}
+}
+.button__stars {
+	background: $purple-gradient;
+	width: 120px;
+	height: 20px;
 
+	&__items {
+		@include material-font($black);
+		display: inline-block;
+		mix-blend-mode: screen;
+		background-color: $white;
+	}
+}

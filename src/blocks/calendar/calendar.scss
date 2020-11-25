@@ -18,13 +18,13 @@
 	box-sizing: border-box;
 	box-shadow: 0px 10px 20px $ds5;
 	border-radius: 4px;
-	padding: 20px;
+	padding: 25px;
   &--cell {
     width: 40px;
     height: 40px;
     @include montserrat(12px, 1, $black);
 		&.-focus- {
-			background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+			background: $purple-gradient;
 			border-radius: 22px;
 		}
 		&-day {
@@ -40,15 +40,15 @@
       }
     }
     &.-current- {
-      color: $white;
-      border-radius: 50%;
+			background: $green-gradient;
+			border-radius: 22px;
     }
     &.-selected- {
 			border-radius: 50%;
 			background: $purple-gradient;
 			border-radius: 22px;
 			 &.-focus- {
-				background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+				background: $purple-gradient;
 				border-radius: 22px;
 			}
 
@@ -83,8 +83,11 @@
     padding: 3px 15px 18px 15px;
     border: none;
     &-action {
-      color: $purple;
-      font-size: 24px;
+			width: 23.93px;
+			height: 24px;
+			left: 1255.4px;
+			top: 170px;
+			@include material-font($purple)
 		}
 		&-title {
 			h2 {
@@ -97,7 +100,10 @@
   &--button {
     display: inline-block;
 		@include h3-text(uppercase, $purple);
-    cursor: pointer;
+		cursor: pointer;
+		height: 0;
+		margin-bottom: 15px;
+		margin-top: 20.44px;
     &:hover {
       opacity: 0.5;
       background-color: transparent;

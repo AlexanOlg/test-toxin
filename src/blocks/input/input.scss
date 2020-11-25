@@ -1,6 +1,6 @@
 @import '../../scss/variables.scss';
 
-.text__input {
+.input__text {
 		@include montserrat(14px, 24px, $ds75);
 		height: 44px;
 		width: 100%;
@@ -23,7 +23,7 @@
 	}
 
 
-.input-subscript {
+.input {
 	position: relative;
 	max-width: 267px;
 	background: $white;

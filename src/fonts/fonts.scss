@@ -27,6 +27,16 @@
        url('~fonts/Montserrat/montserrat-v14-latin_cyrillic-ext_cyrillic-700.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+	font-family: "Material Icons";
+	font-style: normal;
+	font-weight: 400;
+	src: url('~fonts/MaterialIcons/MaterialIcons-Regular.eot');
+	src: local('Material Icons'), local('MaterialIcons-Regular'),
+			url('~fonts/MaterialIcons/MaterialIcons-Regular.woff2') format("woff2"),
+			url('~fonts/MaterialIcons/MaterialIcons-Regular.woff') format("woff"),
+			url('~fonts/MaterialIcons/MaterialIcons-Regular.ttf') format("truetype");
+}
 
 //@font-face {
 //  font-family: 'Quicksand';

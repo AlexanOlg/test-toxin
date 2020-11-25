@@ -14,36 +14,24 @@
 		display: flex;
 		justify-content: space-between;
 		margin: 0 20px;
-	}
-	&__separator{
-		margin: 8px 20px;
-		border:none;
-		border-top: 1px solid rgba(31, 32, 65, 0.1);			
-	}
-	&__extra {
-		margin-left: 5px;
+		align-items: flex-end;
 	}
 	&__number {
 		min-width: 230px;
-	}
-	&__price {
-		margin-top: 2px;
-		margin-right: -3px;
-		font-weight: bold;
-	}
-	&__price-subtitle {
-		font-size: 12px;
-		margin-left: 5px;
-		font-weight: normal;
-	}
-	&__rate{
-		margin-top: 1px;
+		&:last-child {
+			&:after {
+				content: '';
+				display: block;
+				width: 230px;
+				height: 1px;
+				background: rgba(31, 32, 65, 0.1);
+				margin: 10px auto 8px;
+			}
+		}
 	}
 	&__reviews {
-		font-weight: bold;
-	}
-	&__reviews-subtitle {
-		font-weight: normal;
-		margin-left: 4px;
+		&-title {
+			@include text-bold(14px, 18px, $ds50);
+		}
 	}
 }

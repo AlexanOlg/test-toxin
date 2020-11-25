@@ -1,10 +1,17 @@
 include ../slider/slider.pug
-include ../photo-room/photo-room.pug
+include ../room-number/room-number.pug
+include ../button/button.pug
 
 mixin room-card
 		.room-card
 				.room-card__slider
-						+slider(image)
+					+slider(image)
 				.room-card__container
-						.room-card__number
-							+photo-room
+					.room-card__number
+						+room-number
+				.room-card__container
+					.room-card__stars
+						+button__stars
+					.room-card__reviews
+						span.room-card__reviews-title Отзывов
+

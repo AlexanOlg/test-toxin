@@ -7,31 +7,27 @@
 }
 
 .type__tag {
-		margin-right: 30px;
-}
-
-.type__tag-h1 {
+	&-h1 {
 		@include montserrat(24px, 29px, $ds25);
     text-align: right;
-}
-
-.type__tag-h2 {
+	}
+	&-h2 {
 	@include montserrat(19px, 23px, $ds25);
     text-align: right;
-}
-
-.type__tag-h3 {
+	}
+	&-h3 {
 	@include h3-text(uppercase, $ds25);
     text-align: right;
-}
-
-.type_tag-body {
+	}
+	&-body {
 		@include montserrat(14px, 24px, $ds25);
     text-align: right;
+	}
 }
 
 .type__text-h1 {
-	@include text-bold(24px, 29px, $ds100);
+	@include text-bold(24px, 31px, $ds100);
+	letter-spacing: -1.2px;
 }
 
 .type__text-h2 {

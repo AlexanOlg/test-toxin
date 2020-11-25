@@ -14,3 +14,20 @@ mixin button__long(text, link)
 
 mixin button__calendar(text, link)
 	a(href= link ).button__calendar= text
+
+mixin button__round
+	.button__round
+		label.button__round__label
+			input(type="radio", name="name" checked="true").button__round__input
+			span.button__round__text Мужчина
+		label.button__round__label
+			input(type="radio", name="name").button__round__input
+			span.button__round__text Женщина
+
+mixin button__stars(rate=0)
+	.button__stars
+		-for (let i=0; i<5;i++)
+			if rate>i
+				span.button__stars__items star 
+			else
+				span.button__stars__items star_border
