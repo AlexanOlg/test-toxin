@@ -5,4 +5,12 @@ mixin account(text)
 		.account__login
 			span.account__text= text
 		.account__login
-				+button__border('Войти')
+				+button__border-long('Войти')
+
+
+mixin account2(text)
+	.account
+		.account__login
+			span.account__text= text
+		.account__login
+				+button__border-long('Создать')

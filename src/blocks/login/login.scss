@@ -13,18 +13,20 @@
 	}
 	&__input-name {
 		@include montserrat(14px, 18px, $ds25);
-		margin-bottom: 10px;
 		background: $white;
 		border: 1px solid $ds25;
 		box-sizing: border-box;
 		border-radius: 4px;
-		padding: 13px 0 13px 15px;
-		margin-bottom: 20px;
+		padding: 13px 0 12px 14px;
+		margin-top: 20px;
+		&:last-child {
+			margin-top: 10px;
+		}
 		:hover {
 			border: none;
 		}
 	}
 	&__button {
-		margin-bottom: 30px;
+		margin-bottom: 40px;
 	}
 }

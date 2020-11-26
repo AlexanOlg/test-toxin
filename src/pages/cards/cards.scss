@@ -2,22 +2,27 @@
 	&__container {
 		width: 100%;
 		max-width: 1240px;
+		margin: 0 auto;
+		padding: 0 20px 0 60px;
 	}
 	&__wrap {
 	display: flex;
 	margin: 72px auto 0;
 	justify-content: space-between;
 		&-item {
-			width: 33%;
+			flex: 1 1 0;
 			max-width: 380px;
-			margin-right: 40px;
 			&:last-child {
 				margin-right: 0;
+				max-width: 320px;
 			}
 		}
 	}
 	&__item {
-		margin-bottom: 40px;
+		margin-bottom: 35px;
 		margin-right: 0;
+		&:last-child {
+			padding-top: 5px;
+		}
 	}
 }

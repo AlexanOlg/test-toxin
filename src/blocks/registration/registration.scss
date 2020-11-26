@@ -6,7 +6,7 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 40px 30px 30px 30px;
+  padding: 38px 30px 30px 30px;
   &__header {
 		@include text-bold(24px, 29px, $ds100);
 		padding-bottom: 20px;
@@ -22,29 +22,32 @@
 		border: 1px solid $ds25;
 		box-sizing: border-box;
 		border-radius: 4px;
-		padding: 13px 0 13px 15px;
+		padding: 13px 0 11px 15px;
 		:hover {
 			border: none;
 		}
 	}
   &__round-buttons {
-		margin-bottom: 20px;
+		margin-bottom: 24px;
 	}
 
   &__input-header {
 		@include h3-text(uppercase, $ds100);
+		line-height: 20px;
 	}
   &__input-header1 {
 		margin-bottom: 10px;
+		margin-top: 20px;
 		@include h3-text(uppercase, $ds100);
+		line-height: 20px;
 	}
 	
   &__special-offer {
-		margin-bottom: 24px;
+		margin-bottom: 20px;
 	}
 
   &__button {
-		margin-bottom: 30px;
+		margin-bottom: 41px;
 	}
 
 }

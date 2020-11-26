@@ -12,7 +12,7 @@
   &__details {
     list-style: none;
     padding: 0;
-    margin-top: 21px;
+    margin-top: 18px;
   }
   &__item {
     line-height: 18px;
@@ -51,7 +51,7 @@
   &__total-label {
 		@include text-bold(19px, 23px, $ds100);
     margin-left: 1px;
-    margin-top: 31px;
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
   }
