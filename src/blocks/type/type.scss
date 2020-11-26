@@ -27,7 +27,6 @@
 
 .type__text-h1 {
 	@include text-bold(24px, 31px, $ds100);
-	letter-spacing: -1.2px;
 }
 
 .type__text-h2 {

@@ -38,10 +38,10 @@
 		@include text-bold(19px, 28px, $ds100);
     margin: 0;
 		padding-top: 8px;
-		letter-spacing: -0.8px;
+
 	}
   &__color-value {
 		@include montserrat(19px, 31px, $ds100);
-		letter-spacing: -0.8px;
+
 	}
 }

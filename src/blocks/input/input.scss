@@ -2,11 +2,11 @@
 
 .input__text {
 		@include montserrat(14px, 24px, $ds75);
-		height: 44px;
+		height: 42px;
 		width: 100%;
 		border: 1px solid $ds25;
 		border-radius: 4px;
-		padding: 10px 0 8px 15px;
+		padding: 7px 0 8px 14px;
 		&::placeholder {
 			color: $ds25;
 		}
@@ -44,7 +44,7 @@
 
 			&-wrap {
 					position: absolute;
-					right: 2px;
+					right: 9px;
 					top: 10px;
 					border-radius: 50%;
 					background: $purple-gradient;
