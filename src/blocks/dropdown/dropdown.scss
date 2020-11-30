@@ -3,13 +3,7 @@
 
 .dropdown {
   position: relative;
-  &__item {
-    &-label {
-			position: relative;
-			cursor: pointer;
-			@include h3-text(uppercase, $ds100);
-		}
-	}
+
   &__input {
 		@include montserrat(14px, 18px, $ds75);
     border: 1px solid $ds25;
@@ -22,5 +16,10 @@
     
     outline: none;
     cursor: pointer;
-  }
+	}
+  &__label {
+			position: relative;
+			cursor: pointer;
+			@include h3-text(uppercase, $ds100);
+		}
 }

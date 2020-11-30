@@ -1,23 +1,27 @@
 @import '../../scss/variables.scss';
 
-.data-picker {
-  &__input-header {
-		margin-bottom: 5px;
-	}
+.text-field {
   &__input {
 		@include montserrat(14px, 14px, $ds100);
 		padding: 13px 15px;
-    border: 1px solid $ds100;
-    border-radius: 4px;
-    width: 100%;
+		width: 100%;
 		opacity: 0.25;
+		&-header {
+			@include h3-text(uppercase, $ds100);
+		}
 	}
     &:focus,
     &:hover,
     &_hovered {
       opacity: 1;
-      border: 1px solid $ds50;
       color: $ds75;
 			outline: none;
 		}
+	&__wrap {
+		background: $white;
+		border-radius: 4px;
+		border: 1px solid $ds25;
+		width: 100%;
+		outline: none;
+	}
 	}

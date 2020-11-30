@@ -1,10 +1,10 @@
 include ../calendar/calendar.pug
 
 
-mixin date-dropdown(isOpen, text='ДД.ММ.ГГГГ')
+mixin date-dropdown(text, text2, placeholder, placeholder2)
 	.date-dropdown
 		.date-dropdown__item
-			label.date-dropdown__item-label Прибытие
-				input.date-dropdown__input.in(type="text" readonly placeholder=text)
-			label.date-dropdown__item-label Выезд
-				input.date-dropdown__input.out(type="text" readonly placeholder=text)
+			label.date-dropdown__item-label= text
+				input.date-dropdown__input.in(type='text' readonly placeholder= placeholder)
+			label.date-dropdown__item-label= text2
+				input.date-dropdown__input.out(type='text' readonly placeholder= placeholder2)

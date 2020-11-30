@@ -1,4 +1,4 @@
-include ../../blocks/data-picker/data-picker.pug
+include ../../blocks/text-field/text-field.pug
 include ../../blocks/special-offer/special-offer.pug
 include ../../blocks/button/button.pug
 include ../../blocks/account/account.pug
@@ -8,19 +8,19 @@ mixin registration
 		h3.registration__header Регистрация аккаунта
 		.registration__input-fullname
 			.registration__input-name
-				+data-picker({value: 'Имя'})
+				+text-field('', 'Имя')
 			.registration__input-name
-				+data-picker({value: 'Фамилия'})
+				+text-field('', 'Фамилия')
 			.registration__round-buttons
 				+button__round
 			.registration__input-header Дата рождения
 				.registration__input-name
-					+data-picker({value: 'ДД.ММ.ГГГГ'})
+					+text-field('', 'ДД.ММ.ГГГГ')
 			.registration__input-header1 Данные для входа в сервис
 				.registration__input-name
-					+data-picker({value: 'Email'})
+					+text-field('', 'Email')
 				.registration__input-name
-					+data-picker({value: 'Пароль'})
+					+text-field('', 'Пароль')
 			.registration__special-offer
 				+special-offer
 			.registration__button

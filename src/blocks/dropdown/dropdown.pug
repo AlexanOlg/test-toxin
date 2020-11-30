@@ -1,6 +1,6 @@
 
-mixin dropdown(text='Сколько гостей')
+mixin dropdown(text, placeholder)
 	.dropdown
-		.dropdown__item
-			label.dropdown__item-label Гости
-				input.dropdown__input(type="text" readonly placeholder=text)
+		label.dropdown__label= text
+			.dropdown__item
+				input.dropdown__input(type='text' readonly placeholder= placeholder)

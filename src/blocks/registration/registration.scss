@@ -19,13 +19,10 @@
 		@include montserrat(14px, 18px, $ds25);
 		margin-bottom: 10px;
 		background: $white;
-		border: 1px solid $ds25;
-		box-sizing: border-box;
 		border-radius: 4px;
-		padding: 13px 0 11px 15px;
-		:hover {
-			border: none;
-		}
+		//:hover {
+		//	border: none;
+		//}
 	}
   &__round-buttons {
 		margin-bottom: 24px;

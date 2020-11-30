@@ -1,1 +1,0 @@
-import './data-picker.scss';

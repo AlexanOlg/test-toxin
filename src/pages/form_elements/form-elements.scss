@@ -1,0 +1,19 @@
+.form-elements {
+	&__container {
+		width: 100%;
+		max-width: 1240px;
+		margin: 0 auto;
+		padding: 0 20px 0 60px;
+	}
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__wrap {
+		width: 33%;
+		max-width: 320px;
+	}
+	&__width {
+		max-width: 266px;
+	}
+}

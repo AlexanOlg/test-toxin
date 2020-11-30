@@ -7,8 +7,8 @@ mixin search-room(isShow)
 				.search-room__container
 						h1.search-room__title Найдём номера под ваши пожелания
 						.search-room__date
-								+date-dropdown(isShow)
+								+date-dropdown('Прибытие', 'Выезд', 'ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ')
 						.search-room__guest
-								+dropdown
+								+dropdown('Гости', 'Сколько гостей')
 						.search-room__button
 								+button__long('подобрать номер')

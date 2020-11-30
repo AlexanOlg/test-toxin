@@ -1,4 +1,4 @@
-include ../data-picker/data-picker.pug
+include ../text-field/text-field.pug
 include ../button/button.pug
 include ../account/account.pug
 
@@ -6,9 +6,9 @@ mixin login
 	.login
 		h3.login__header Войти
 			.login__input-name
-				+data-picker({value: 'Email'})
+				+text-field('', 'Email')
 			.login__input-name
-				+data-picker({value: 'Пароль'})
+				+text-field('', 'Пароль')
 		.login__button
 			+button__long('Войти')
 		.login__account

@@ -1,0 +1,11 @@
+mixin text-field(text, placeholder)
+	.text-field
+		.text-field__input-header= text
+	.text-field__wrap
+		input.text-field__input(type='text' readonly placeholder= placeholder)
+
+mixin subscription-text-field(text, placeholder)
+	.text-field
+		.text-field__input-header= text
+	.text-field__wrap
+		input.text-field__input(type='text' readonly placeholder= placeholder)
