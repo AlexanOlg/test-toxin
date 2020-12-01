@@ -34,3 +34,24 @@ mixin button__stars(rate=0)
 				span.button__stars__items star 
 			else
 				span.button__stars__items star_border
+
+
+mixin button__checkbox(title, text1, text2, text3, checked=false)
+	.button__checkbox
+		.button__checkbox-title= title
+	.button__checkbox-wrap
+		label.button__checkbox-label
+			input.button__checkbox-label-input(type="checkbox" checked= checked)
+			span.button__checkbox-label-box
+			span.button__checkbox-label-text= text1
+	.button__checkbox-wrap
+		label.button__checkbox-label
+			input.button__checkbox-label-input(type="checkbox" checked=true)
+			span.button__checkbox-label-box
+			span.button__checkbox-label-text= text2
+	.button__checkbox-wrap
+		label.button__checkbox-label
+			input.button__checkbox-label-input(type="checkbox" checked=true)
+			span.button__checkbox-label-box
+			span.button__checkbox-label-text= text3
+

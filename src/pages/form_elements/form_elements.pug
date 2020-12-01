@@ -3,6 +3,7 @@ include ../../blocks/container/container.pug
 include ../../blocks/text-field/text-field.pug
 include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/date-dropdown/date-dropdown.pug
+include ../../blocks/button/button.pug
 
 block title
 	title Form Elements
@@ -25,3 +26,6 @@ block content
 						+dropdown('filter date dropdown', '19авг - 23авг')
 					.form-elements__width
 						+subscription-text-field('subscription text field', 'Email')
+			.form-elements__wrap-centr
+				.form-elements__wrap-item
+					+button__checkbox('checkbox buttons', 'Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)')

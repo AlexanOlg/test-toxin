@@ -12,6 +12,9 @@
 	&__wrap {
 		width: 33%;
 		max-width: 320px;
+		&-centr {
+			max-width: 260px;
+		}
 	}
 	&__width {
 		max-width: 266px;
