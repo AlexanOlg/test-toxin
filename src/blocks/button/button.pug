@@ -43,12 +43,13 @@ mixin button__checkbox(text, checked)
 			span.button__checkbox-label-box
 			span.button__checkbox-label-text= text
 	
-//-mixin button-like(num, checked)
-//-	.button-like
-//-		span.button-like__img(type='checkbox', checked) heart
-//-			.button-like__num= num
+mixin button-like(likesCount, checked)
+	button.button-like
+		i.button-like__icon.material-icons(type='checkbox', checked= checked) favorite_border
+		span.button-like__count= likesCount
 
-mixin button-like(num, checked)
-	.button-like(type='checkbox', checked)
-		i.material-icons.button-like__icon favorite_border
-		span.button-like__value=num
+//-mixin button-like(likesCount, isClicked)
+//-	button(class=`button-like ${(isClicked) ? 'button-like--clicked' : ''}`	type='button')
+//-		i.button-like__icon.material-icons= (isClicked) ? 'favorite' : 'favorite_border'
+//-		span.button-like__count= likesCount
+

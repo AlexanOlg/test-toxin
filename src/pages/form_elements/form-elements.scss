@@ -22,6 +22,9 @@
 			&_header {
 				@include h3-text(uppercase, $ds100);
 			}
+			&_button {
+				display: flex;
+			}
 		}
 	}
 	&__width {

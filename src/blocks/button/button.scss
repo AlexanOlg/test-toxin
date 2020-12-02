@@ -146,42 +146,42 @@
 	}
 	&-like {
 		display: flex;
-		flex-direction: row;
-		width: 40px;
-		height: 20px;
-		border-radius: 10px;
-		font-size: 10px;
-		border: 1px solid $ds25;
-		color:$white;
-		cursor:pointer;
-		&:checked + .button-like__icon {
+    width: 40px;
+    height: 20px;
+		@include material-font(10px, 9px, $ds25);	
+    background: $white;
+    border: 1px solid $ds25;
+    border-radius: 10px;
+    cursor: pointer;
+		transition: all .1s;
+		&:checked {
 			@include material-font(10px, 9px, $purple);
+			border: 1px solid $purple;
+			background: $gradient__primary;
 		}
-		&:checked + .button-like__value {
-			@include montserrat(10px, 12px, $purple);
-		}
-		&__true{
-			border: double 1px transparent;
-			background-origin: border-box;
-			background-clip: content-box, border-box;
-			color: $purple;
-		}
-			&__icon {
-				margin-top: 5px;
-				margin-left: 6px;
-				margin-right: 4px;
-				@include material-font(10px, 9px, $ds25);
-			}
-	
-			&__value {
-				border: none;
-				background-color: transparent;
-				margin-top:4px;
-				@include montserrat(10px, 12px, $ds25);
-			}
-			&__value-color{
+		&__icon {
+			margin-top: 5px;
+
+			margin-left: 6px;
+			margin-right: 4px;
+
+			border-color: $ds25;
+			&:checked {
 				color: $purple;
+				border-color: $purple;
+				background-origin: border-box;
+				background-clip: content-box, border-box;
 			}
+		}
+		&__count {
+			border: none;
+			background-color: transparent;
+			margin-top: 4px;
+			@include montserrat(10px, 12px, $ds25);
+			&:checked {
+				
+			}
+		}
 	}
 }
 a.button {

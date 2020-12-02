@@ -11,6 +11,7 @@ $blue: #8BA4F9;
 $light-blue: #66d2ea;
 $purple-gradient: linear-gradient(180deg, $purple 0%, $blue 100%);
 $green-gradient: linear-gradient(180deg, $green 0%, $light-blue 100%);
+$gradient__primary: linear-gradient(180deg, $purple 0%, $light-blue 100%);
 
 @mixin h3-text($tt, $color) {
 	font-family: Montserrat;
