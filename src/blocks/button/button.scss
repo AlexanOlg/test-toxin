@@ -86,14 +86,14 @@
 		}
 	}
 	
-	&__round {
+	&__radio {
 		display: flex;
-		&__label {
+		&-label {
 			display: flex;
 			@include montserrat(14px, 20px, $ds50);
 			margin-right: 20px;
 		}
-		&__input {
+		&-input {
 			appearance: none;
 			width: 20px;
 			height: 20px;
@@ -122,11 +122,11 @@
 			align-items: center;
 			&-input {
 				display: none;
-				&:checked + .button__checkbox-box {
+				&:checked + .button__checkbox-label-box {
 					border: 1px solid $purple;
 					background-position: center top 3px;
 					background-repeat: no-repeat;
-					background-image: url('./img/vector.svg');
+					background-image: url(./img/vector.svg);
 				}
 			}
 			&-box {

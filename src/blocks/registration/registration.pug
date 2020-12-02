@@ -1,5 +1,5 @@
 include ../../blocks/text-field/text-field.pug
-include ../../blocks/special-offer/special-offer.pug
+include ../../blocks/toogle/toogle.pug
 include ../../blocks/button/button.pug
 include ../../blocks/account/account.pug
 
@@ -11,8 +11,8 @@ mixin registration
 				+text-field('', 'Имя')
 			.registration__input-name
 				+text-field('', 'Фамилия')
-			.registration__round-buttons
-				+button__round
+			.registration__radio-buttons
+				+button__radio
 			.registration__input-header Дата рождения
 				.registration__input-name
 					+text-field('', 'ДД.ММ.ГГГГ')
@@ -21,8 +21,8 @@ mixin registration
 					+text-field('', 'Email')
 				.registration__input-name
 					+text-field('', 'Пароль')
-			.registration__special-offer
-				+special-offer
+			.registration__toogle
+				+toogle(false)
 			.registration__button
 				+button__long('Перейти к оплате')
 			.registration__login

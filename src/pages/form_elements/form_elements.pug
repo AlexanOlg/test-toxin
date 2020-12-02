@@ -4,6 +4,7 @@ include ../../blocks/text-field/text-field.pug
 include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/date-dropdown/date-dropdown.pug
 include ../../blocks/button/button.pug
+include ../../blocks/toogle/toogle.pug
 
 block title
 	title Form Elements
@@ -28,4 +29,14 @@ block content
 						+subscription-text-field('subscription text field', 'Email')
 			.form-elements__wrap-centr
 				.form-elements__wrap-item
-					+button__checkbox('checkbox buttons', 'Можно курить', 'Можно с питомцами', 'Можно пригласить гостей (до 10 человек)')
+					.form-elements__wrap-item_header checkbox button 
+					+button__checkbox('Можно курить', false)
+					+button__checkbox('Можно с питомцами', true)
+					+button__checkbox('Можно пригласить гостей (до 10 человек)', true)
+				.form-elements__wrap-item
+					.form-elements__wrap-item_header radio buttons
+					+button__radio
+				.form-elements__wrap-item
+					.form-elements__wrap-item_header toogle
+					+toogle(true)
+					+toogle

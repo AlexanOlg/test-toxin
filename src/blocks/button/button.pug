@@ -18,14 +18,14 @@ mixin button__long(text, link)
 mixin button__calendar(text, link)
 	a(href= link ).button__calendar= text
 
-mixin button__round
-	.button__round
-		label.button__round__label
-			input(type="radio", name="name" checked="true").button__round__input
-			span.button__round__text Мужчина
-		label.button__round__label
-			input(type="radio", name="name").button__round__input
-			span.button__round__text Женщина
+mixin button__radio
+	.button__radio
+		label.button__radio-label
+			input(type="radio", name="name" checked=true).button__radio-input
+			span.button__radio-text Мужчина
+		label.button__radio-label
+			input(type="radio", name="name").button__radio-input
+			span.button__radio-text Женщина
 
 mixin button__stars(rate=0)
 	.button__stars
@@ -36,22 +36,15 @@ mixin button__stars(rate=0)
 				span.button__stars__items star_border
 
 
-mixin button__checkbox(title, text1, text2, text3, checked=false)
-	.button__checkbox
-		.button__checkbox-title= title
+mixin button__checkbox(text, checked)
 	.button__checkbox-wrap
 		label.button__checkbox-label
 			input.button__checkbox-label-input(type="checkbox" checked= checked)
 			span.button__checkbox-label-box
-			span.button__checkbox-label-text= text1
-	.button__checkbox-wrap
-		label.button__checkbox-label
-			input.button__checkbox-label-input(type="checkbox" checked=true)
-			span.button__checkbox-label-box
-			span.button__checkbox-label-text= text2
-	.button__checkbox-wrap
-		label.button__checkbox-label
-			input.button__checkbox-label-input(type="checkbox" checked=true)
-			span.button__checkbox-label-box
-			span.button__checkbox-label-text= text3
+			span.button__checkbox-label-text= text
+	
+mixin button-like(num, checked)
+	.button-like
+		.button-like__img(type='checkbox', checked) heart
+		.button-like__num= num
 

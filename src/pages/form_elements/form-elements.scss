@@ -1,3 +1,6 @@
+@import '../../scss/responsive.scss';
+@import '../../scss/variables.scss';
+
 .form-elements {
 	&__container {
 		width: 100%;
@@ -14,6 +17,11 @@
 		max-width: 320px;
 		&-centr {
 			max-width: 260px;
+		}
+		&-item {
+			&_header {
+				@include h3-text(uppercase, $ds100);
+			}
 		}
 	}
 	&__width {
