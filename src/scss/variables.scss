@@ -40,11 +40,11 @@ $green-gradient: linear-gradient(180deg, $green 0%, $light-blue 100%);
 	color: $color;
 }
 
-@mixin material-font($color) {
+@mixin material-font($fs, $lh, $color) {
 	font-family: Material Icons;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 24px;
-	line-height: 20px;
+	font-size: $fs;
+	line-height: $lh;
 	color: $color;
 }

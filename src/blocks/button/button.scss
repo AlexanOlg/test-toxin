@@ -78,8 +78,8 @@
 		width: 120px;
 		height: 20px;
 
-		&__items {
-			@include material-font($black);
+		&-items {
+			@include material-font(24px, 20px, $black);
 			display: inline-block;
 			mix-blend-mode: screen;
 			background-color: $white;
@@ -144,7 +144,46 @@
 			}
 		}
 	}
-
+	&-like {
+		display: flex;
+		flex-direction: row;
+		width: 40px;
+		height: 20px;
+		border-radius: 10px;
+		font-size: 10px;
+		border: 1px solid $ds25;
+		color:$white;
+		cursor:pointer;
+		&:checked + .button-like__icon {
+			@include material-font(10px, 9px, $purple);
+		}
+		&:checked + .button-like__value {
+			@include montserrat(10px, 12px, $purple);
+		}
+		&__true{
+			border: double 1px transparent;
+			background-origin: border-box;
+			background-clip: content-box, border-box;
+			color: $purple;
+		}
+			&__icon {
+				margin-top: 5px;
+				margin-left: 6px;
+				margin-right: 4px;
+				@include material-font(10px, 9px, $ds25);
+			}
+	
+			&__value {
+				border: none;
+				background-color: transparent;
+				margin-top:4px;
+				@include montserrat(10px, 12px, $ds25);
+			}
+			&__value-color{
+				color: $purple;
+			}
+	}
+}
 a.button {
 	&__border {
 		@include h3-text(uppercase, $purple);
@@ -170,5 +209,5 @@ a.button {
 		@include h3-text(uppercase, $purple);
 	}
 }
-}
+
 

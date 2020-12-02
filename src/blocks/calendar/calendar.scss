@@ -87,7 +87,7 @@
 			height: 24px;
 			left: 1255.4px;
 			top: 170px;
-			@include material-font($purple)
+			@include material-font(24px, 20px, $purple);
 		}
 		&-title {
 			margin: -10px;
