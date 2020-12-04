@@ -1,0 +1,7 @@
+mixin range-slider(name, description=false, descriptionText='Стоимость за сутки пребывания в номере')
+		.range-slider__description
+			p.range-slider__description-name= name
+			p.range-slider__description-output
+		.js-range-slider(type='text', name='my_range', value='')
+if description === true
+		p.range-slider__text= descriptionText

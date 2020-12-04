@@ -5,6 +5,8 @@ include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/date-dropdown/date-dropdown.pug
 include ../../blocks/button/button.pug
 include ../../blocks/toogle/toogle.pug
+include ../../blocks/range-slider/range-slider.pug
+
 
 block title
 	title Form Elements
@@ -17,14 +19,31 @@ block content
 				.form-elements__wrap-item
 					+text-field('text field', 'This is pretty awesome')
 				.form-elements__wrap-item
-					+dropdown('dropdown', 'Сколько гостей')
+					+dropdown({
+						type: 'test',
+						opened: 'True',
+						items: [
+							{menuItem: 'взрослые', number: '0'},
+							{menuItem: 'дети', number: '2'},
+							{menuItem: 'младенцы', number: '5'}
+						],
+					})
 				.form-elements__wrap-item
 					+text-field('masked text field', 'ДД.ММ.ГГГГ')
 				.form-elements__wrap-item
 					+date-dropdown('date dropdown', 'date dropdown', 'ДД.ММ.ГГГГ', '19.08.2019')
 				.form-elements__wrap-item
 					.form-elements__width
-						+dropdown('filter date dropdown', '19авг - 23авг')
+						.form-elements__wrap-item_header dropdown
+							+dropdown({
+								type: 'test',
+								opened: 'False',
+								items: [
+									{menuItem: 'взрослые', number: '0'},
+									{menuItem: 'дети', number: '2'},
+									{menuItem: 'младенцы', number: '5'}
+								],
+							})
 					.form-elements__width
 						+subscription-text-field('subscription text field', 'Email')
 			.form-elements__wrap-centr
@@ -45,3 +64,11 @@ block content
 					.form-elements__wrap-item_button
 						+button-like(2, false)
 						+button-like(12, true)
+				.form-elements__wrap-item
+					.form-elements__wrap-item_header rate buttons
+					.form-elements__wrap-item_inner
+						+button__stars('4', '5')
+						+button__stars('5', '5')
+			.form-elements__wrap
+				.form-elements__wrap-item
+					+range-slider('range slider')

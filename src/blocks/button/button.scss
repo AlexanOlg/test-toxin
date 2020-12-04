@@ -178,9 +178,7 @@
 			background-color: transparent;
 			margin-top: 4px;
 			@include montserrat(10px, 12px, $ds25);
-			&:checked {
-				
-			}
+
 		}
 	}
 }

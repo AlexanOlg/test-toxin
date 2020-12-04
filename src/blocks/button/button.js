@@ -1,16 +1,18 @@
-// const $likeButtons = $('.button-like');
+const rateButtons = document.querySelectorAll('.button__stars');
 
-// const handleClick = function currentTarget() {
-//	const $clickedBtn = $(currentTarget);
-//	const $likesCounter = $('.button-like__count', currentTarget);
-//	const likesCount = $likesCounter.text();
-
-//	$(currentTarget).toggleClass('button-like--clicked');
-
-//	const isClicked = $clickedBtn.hasClass('button-like--clicked');
-//	$likesCounter.text((isClicked) ? +likesCount + 1 : +likesCount - 1); // Increment or decrement likes
-
-//	$('.button-like__icon', currentTarget).text((isClicked) ? 'favorite' : 'favorite_border'); // Change icon
-// };
-
-// $likeButtons.click(handleClick);
+for (let i = 0; i <= rateButtons.length - 1; i++) {
+	const maxRating = rateButtons[i].dataset.maxRating;
+	const rating = rateButtons[i].dataset.rating;
+	for (let k = 0; k <= rating - 1; k++) {
+		const createButtons = document.createElement('i');
+		createButtons.classList.add('material-font');
+		createButtons.innerHTML = 'star';
+		rateButtons[i].appendChild(createButtons);
+	}
+	for (let j = 0; j <= maxRating - rating - 1; j++) {
+		const createButtons = document.createElement('i');
+		createButtons.classList.add('material-font');
+		createButtons.innerHTML = 'star_border';
+		rateButtons[i].appendChild(createButtons);
+	}
+}

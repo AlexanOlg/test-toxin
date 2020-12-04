@@ -1,6 +1,39 @@
 
-mixin dropdown(text, placeholder)
-	.dropdown
-		label.dropdown__label= text
-			.dropdown__item
-				input.dropdown__input(type='text' readonly placeholder= placeholder)
+//-mixin dropdown(text, placeholder)
+//-	.dropdown
+//-		label.dropdown__label= text
+//-			.dropdown__item
+//-				input.dropdown__item-input(type='text' readonly placeholder= placeholder)
+//-				span.dropdown__item-icon expand_more
+include ../button/button.pug
+
+mixin dropdown(dropdown)
+
+  - if (dropdown.type == 'test') {
+  -   var inputValue = 'Сколько гостей'
+  -   var ControlButton = 'True'
+  - }
+  - if (dropdown.opened) {
+  -   var open = 'dropdown__menu_opened'
+  - }
+
+  .dropdown
+    .dropdown__info
+      input(type="text" value=inputValue readonly).dropdown__input
+      button.dropdown__switch-display-button \/
+    div(class=open).dropdown__menu
+      ul.dropdown__list
+        each item in dropdown.items     
+          li.dropdown__item
+            .dropdown__menu-item= item.menuItem
+            .dropdown__button-list
+              button.dropdown__button.dropdown__button-minus -
+              span.dropdown__number= item.number
+              button.dropdown__button.dropdown__button-plus +  
+      if ControlButton
+        .dropdown__control-button 
+          .dropdown__reset
+            +button('очистить')
+          .dropdown__gap
+          .dropdown__apply
+            +button('применить')
