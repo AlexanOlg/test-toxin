@@ -34,7 +34,7 @@ $gradient__primary: linear-gradient(180deg, $purple 0%, $light-blue 100%);
 
 @mixin text-bold($fs, $lh, $color) {
 	font-family: Montserrat;
-  font-style: normal;
+	font-style: normal;
 	font-weight: bold;
 	font-size: $fs;
 	line-height: $lh;

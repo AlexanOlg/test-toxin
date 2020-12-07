@@ -8,9 +8,11 @@
 	padding: 10px 20px 9px 19px;
 	cursor: pointer;
 	border: none;
+	@include h3-text(uppercase, $white);
+	text-align: center;
 	&:focus {
 	outline: none;
-	}       
+	}    
 	&:hover,
 	&_hovered {
 	opacity: 0.5;
@@ -21,6 +23,7 @@
 		border: 2px solid $purple;
 		padding: 11px 16px 12px 18px;
 		cursor: pointer;
+		@include h3-text(uppercase, $purple);
 		&-long {
 			padding: 11px 16px 12px 18px;	
 		}
@@ -32,45 +35,18 @@
 			opacity: 0.5;
 		}
 	}
-	&__long {
-		width: 100%;
-		background: $purple-gradient;
-		border-radius: 22px;
+	
+	&-empty {
 		border: none;
-		padding: 14px 20px 15px 20px;
-		color: $white;
-		text-transform: uppercase;
-		display: block;
-		&:focus {
-			outline: none;
-		}   
+		@include h3-text(uppercase, $purple);
+		background: transparent;
+		cursor: pointer;
 		&:hover {
 			opacity: 0.5;
 		}
-	}
-	&__icon {
-		position: absolute;
-		top: -30px;
-		right: -305px;
-		z-index: 1;
-		color: $white;
-		background-color: transparent;
-	}
-	&__icon-wrap {
-		position: relative;
-	}
-	&__calendar {
-		cursor: pointer;
-		position: absolute;
-		z-index: 2;
-		bottom: 26px;
-		right: 20px;
-		&:focus {
-			outline: none;
-		}       
-		&:hover,
-		&_hovered {
-			opacity: 0.5;
+		&_gray {
+			color: $ds50;
+
 		}
 	}
 	&__stars {
@@ -183,17 +159,8 @@
 	}
 }
 a.button {
-	&__border {
-		@include h3-text(uppercase, $purple);
-		&:focus {
-			outline: none;
-			}  
-			&:hover,
-			&_hovered {
-			color: $ds50;
-			}
-	}
-	&, &__long {
+
+	&, &-long {
 		@include h3-text(uppercase, $white);
 		text-align: center;
 		&:focus {
@@ -203,9 +170,30 @@ a.button {
 		opacity: 0.5;
 		}
 	}
-	&__calendar {
-		@include h3-text(uppercase, $purple);
-	}
+	
 }
 
+.button-long {
+    @include h3-text(uppercase, $white);
+    padding-left: 1px;
+    position: relative;
+    
+    width: 100%;
+    height: 44px;
+    background: $purple-gradient;
+    border-radius: 22px;
+    color: $white;
+    border: none;
+    &:hover{
+        opacity: 0.5;
+    }
+    &::after {
+        position: absolute;
+        content: "arrow_forward";
+        text-transform: none;
+        @include material-font(24px, 14px, $white);
+		right: 10px;
+
+    }
+}
 

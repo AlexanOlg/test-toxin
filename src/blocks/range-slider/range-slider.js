@@ -13,7 +13,7 @@ $(() => {
 		hide_min_max: true,
 		hide_from_to: true,
 		onChange(data) {
-			$('.range-slider__output').text(`${data.from.toLocaleString('ru')}₽ - ${data.to.toLocaleString('ru')}₽`);
+			$('.range-slider__description-output').text(`${data.from.toLocaleString('ru')}₽ - ${data.to.toLocaleString('ru')}₽`);
 		},
 	});
 });

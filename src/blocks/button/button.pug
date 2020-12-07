@@ -1,22 +1,21 @@
-mixin button(text, link)
-	a(href= link ).button= text
+mixin button(text='', mod='')
+	button(class='button'+mod)= text
 
 
-mixin button__border(text, link)
-	a(href= link ).button__border= text
+mixin button__border(text='', mod='')
+	button(class='button__border'+mod)= text
 
 mixin button__border-long(text, link)
 	a(href= link ).button__border= text
 
-mixin button__long(text, link)
-	a(href= link ).button__long= text
-	block
-	span.button__icon-wrap
-		button.button__icon
-			img(src=require('blocks/button/img/button.svg').default)
+mixin button-long(text)
+	button.button-long(type="submit")= text
 
-mixin button__calendar(text, link)
-	a(href= link ).button__calendar= text
+mixin button-empty(text='', isgray=false)
+	if isgray
+		button(class="button-empty button-empty_gray")= text  
+	else
+		button(class="button-empty")= text
 
 mixin button__radio
 	.button__radio
@@ -47,8 +46,4 @@ mixin button-like(likesCount, checked)
 		i.button-like__icon.material-icons(type='checkbox', checked= checked) favorite_border
 		span.button-like__count= likesCount
 
-//-mixin button-like(likesCount, isClicked)
-//-	button(class=`button-like ${(isClicked) ? 'button-like--clicked' : ''}`	type='button')
-//-		i.button-like__icon.material-icons= (isClicked) ? 'favorite' : 'favorite_border'
-//-		span.button-like__count= likesCount
 

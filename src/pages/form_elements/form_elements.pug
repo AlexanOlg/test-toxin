@@ -6,6 +6,7 @@ include ../../blocks/date-dropdown/date-dropdown.pug
 include ../../blocks/button/button.pug
 include ../../blocks/toogle/toogle.pug
 include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/pagination/pagination.pug
 
 
 block title
@@ -72,3 +73,20 @@ block content
 			.form-elements__wrap
 				.form-elements__wrap-item
 					+range-slider('range slider')
+				.form-elements__wrap-item
+					.form-elements__wrap-item_header buttons
+					.form-elements__wrap-item_buttons
+						+button('click me')
+						+button('click me', ' button_hovered')
+					.form-elements__wrap-item_buttons
+						+button__border('click me')
+						+button__border('click me', ' button_hovered')
+					.form-elements__wrap-item_buttons
+						+button-empty('click me')
+						+button-empty('click me', ' button_hovered')
+					.form-elements__wrap-item_buttons
+						+button-long('click me')
+				.form-elements__wrap-item
+					.form-elements__wrap-item_header pagination
+					+pagination
+						

@@ -3,7 +3,7 @@ include ../button/button.pug
 mixin calendar(isOpen)
 	if isOpen
 		.calendar.calendar_showed
-			+button__calendar('Применить')
+			+button-empty('Применить')
 	else
 		.calendar
-			+button__calendar('Применить')
+			+button-empty('Применить')
