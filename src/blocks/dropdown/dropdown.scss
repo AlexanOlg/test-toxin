@@ -1,119 +1,105 @@
 @import '../../scss/variables.scss';
 
-
-//.dropdown {
-//  position: relative;
-//	&__item {
-//		&-input {
-//			@include montserrat(14px, 18px, $ds75);
-//			border: 1px solid $ds25;
-//			box-sizing: border-box;
-//			border-radius: 4px;
-//			width: 100%;
-//			padding-left: 14px;
-//			height: 44px;
-//			margin-top: 6px;
-			
-//			outline: none;
-//			cursor: pointer;
-//		}
-//		&-icon {
-//			@include material-font(24px, 24px, $ds75);
-//			display: inline-block;
-//			mix-blend-mode: screen;
-//			background-color: $white;
-//		}
-//	}
-//  &__label {
-//			padding: 8px 44px 0 14px;
-//			color: $ds75;
-//			text-overflow: ellipsis;
-//			white-space: nowrap;
-//			overflow: hidden;
-//			cursor: pointer;
-//			@include h3-text(uppercase, $ds100);
-//	}
-//}
-
-
 .dropdown {
-	position: relative;
-	&__info {
-  display: flex;
-  justify-content: space-between;
-  background: $white;
-  border: 1px solid $ds50;
-  border-radius: 2px;
+	max-width: 320px;
 	height: 44px;
+	position: relative;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background: $white;
+	box-shadow: 0px 10px 20px $ds5;
+	&_expanded {
+		border-color: $ds50;
+		border-radius: 2px 2px 0 0;
 	}
-	&__input {
-		@include montserrat(14px, 18px, $ds75);
-		width: 100%;
-		border: none;
-		padding-left: 15px;
+	&__text {
+		padding: 8px 44px 0 14px;
+		color: $ds75;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		cursor: pointer;
+		&:after {
+			content: 'expand_more';
+			position: absolute;
+			top: 8px;
+			right: 9px;
+			@include material-font(24px, 24px, $ds75);
+			text-align: center;
+			}
 	}
-	&__switch-display-button {
-		background: $white;
-		border: none;
-		width: 44px;
-		&:focus {
-			outline: none;
-		}
-	}
+
 	&__menu {
-		background: $white;
-		border: 1px solid $ds50;
-		border-top: none;
-		border-radius: 2px;
 		position: absolute;
+		transition: max-height 0.3s, opacity 0.3s;
+		top: 43px;
+		left: -1px;
 		width: 100%;
-		z-index: 10;
-		padding: 13px 7px 0 15px;
-		&_opened {
-		display: block;
-		}
-		&-item {
-			@include text-bold(12px, 30px, $ds100);
-			text-transform: uppercase;
+		background-color: $white;
+		z-index: 2;
+		border-radius: 0 0 2px 2px;
+		max-height: 0;
+		overflow: hidden;
+		opacity: 0;
+		&_showed {
+			opacity: 1;
+			max-height: 500px;
+			padding-bottom: 6px;
+			border: 1px solid $ds50;
+			border-top: none;
+			box-shadow: 0px 10px 20px $ds5;
 		}
 	}
-	&__list {
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
-	}
+
 	&__item {
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 7px;
+		align-items: center;
+		padding: 6px 6px 1px 14px;
+	}
+
+	&__name {
+		@include h3-text(uppercase, $ds100);
+		padding-bottom: 5px;
 	}
 
 	&__button {
 		width: 30px;
 		height: 30px;
+		border-radius: 15px;
+		box-sizing: border-box;
 		border: 1px solid $ds25;
-		border-radius: 22px;
-		@include montserrat(18px, 30px, $ds50);
-		background: $white;
-		&-list {
-		display: flex;
-		justify-content: space-between;
-		align-self: center;
+		color: $ds50;
+		background-color: $white;
+		outline: none;
+		&:disabled {
+			opacity: 0.5;
+		}
+		&s {
+		height: 20px;
+		margin: 14px 1px 6px 7px;
+		
 		}
 	}
-	&__number {
-		@include text-bold(12px, 30px, $ds100);
-  	text-transform: uppercase;
-		width: 32px;
-		height: 30px;
+
+	&__quantity {
+		@include h3-text(uppercase, $ds100);
+		padding-bottom: 4px;
 	}
-	&__control-button {
+
+	&__controls {
 		display: flex;
 		justify-content: space-between;
-		margin-top: 19px;
-		margin-bottom: 13px;
+		align-items: center;
+		width: 92px;
 	}
-}
-.hide {
-	display: none;
+	&__apply{
+		float: right;
+	}
+	&__clear{
+		float: left;
+		&_disabled{
+			display: none;
+		}
+	}
 }

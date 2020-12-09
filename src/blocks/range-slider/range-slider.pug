@@ -3,6 +3,6 @@ mixin range-slider(name, description=false, descriptionText='Стоимость 
 		.range-slider__description
 			p.range-slider__description-name= name
 			p.range-slider__description-output 5000 - 10000
-		.js-range-slider(type='text', name='my_range', value='')
+		input.js-range-slider(type='text', name='my_range', value='')
 if description === true
 		p.range-slider__text= descriptionText
