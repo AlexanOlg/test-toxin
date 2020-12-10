@@ -43,6 +43,11 @@ module.exports = (_, options) => {
           exclude: /node_modules/,
         },
         {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: ['eslint-loader'],
+        },
+        {
           test: /\.pug$/,
           loader: 'pug-loader',
           options: {
@@ -113,7 +118,7 @@ module.exports = (_, options) => {
 				$: 'jquery',
 				jQuery: 'jquery',
 				'window.jQuery': 'jquery'
-		}),
+      })
     ],
     devServer: {
       contentBase: path.join(__dirname, 'dist'),

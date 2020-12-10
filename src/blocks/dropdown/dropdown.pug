@@ -6,7 +6,17 @@
 //-				input.dropdown__item-input(type='text' readonly placeholder= placeholder)
 //-				span.dropdown__item-icon expand_more
 include ../button/button.pug
+//- Миксины 
+    dropdown
+    Пример вызова dropdown
 
+    +dropdown('room', false, false, [1, 2, 5])
+
+    Где 'room' модификатор type, 
+        возможные значения 'room' 'guest'
+        false - открыт ли dropdown по умолчанию
+        false - наличие кнопок "применить", "очистить"
+        [1, 2, 5] - массив значений по умолчанию для параметров dropdown
 
 mixin dropdown(type='room', isExpanded=false, isControls=false, vals=[0,0,0])
     -let maxNum=7; //-максимальное значение параметра
@@ -58,6 +68,6 @@ mixin dropdown(type='room', isExpanded=false, isControls=false, vals=[0,0,0])
             if isControls
                 .dropdown__buttons
                     .dropdown__clear
-                        +button-empty('очистить')
+                        +button-empty('очистить', '1')
                     .dropdown__apply
                         +button-empty('применить')
