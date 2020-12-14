@@ -12,7 +12,15 @@ mixin booking-card
 			.booking-card__date-dropdown
 				+date-dropdown('Прибытие', 'Выезд', '19.08.2019', '23.08.2019')
 			.booking-card__dropdown
-				+dropdown('guest', 0,1, humans)
+				+dropdown({
+					type: 'test',
+					opened: 'True',
+					items: [
+						{menuItem: 'взрослые', number: '0'},
+						{menuItem: 'дети', number: '2'},
+						{menuItem: 'младенцы', number: '5'}
+					],
+					})
 			.booking-card__reservation
 				+reservation
 			.booking-card__button

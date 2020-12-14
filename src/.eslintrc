@@ -7,7 +7,7 @@
 		"jquery": true
 	},
 	"rules": {
-    "no-console": 0,
+    	"no-console": 0,
 		"indent": [2, "tab"],
 		"max-len": ["error", 150, {"ignoreUrls": true}],
 		"prefer-destructuring": "off",
@@ -15,5 +15,5 @@
 		"no-tabs": "off",
 		"no-plusplus": "off",
 		"no-param-reassign": "off"
-  }
+	}
 }

@@ -6,68 +6,35 @@
 //-				input.dropdown__item-input(type='text' readonly placeholder= placeholder)
 //-				span.dropdown__item-icon expand_more
 include ../button/button.pug
-//- Миксины 
-    dropdown
-    Пример вызова dropdown
 
-    +dropdown('room', false, false, [1, 2, 5])
 
-    Где 'room' модификатор type, 
-        возможные значения 'room' 'guest'
-        false - открыт ли dropdown по умолчанию
-        false - наличие кнопок "применить", "очистить"
-        [1, 2, 5] - массив значений по умолчанию для параметров dropdown
+mixin dropdown(dropdown)
 
-mixin dropdown(type='room', isExpanded=false, isControls=false, vals=[0,0,0])
-    -let maxNum=7; //-максимальное значение параметра
-    -let minNum=0; //-минимальное значение параметра
-    -let names, ids; //- дата-атрибуты
-    -isExist
-    -ddClass
-    -ddMenuClass
-    //-Добавляет класс, если dropdown должен быть раскрыт по умолчанию
-    if isExpanded
-        -ddMenuClass='dropdown__menu dropdown__menu_showed'
-        -ddClass='dropdown dropdown_expanded'
-    else
-        -ddMenuClass='dropdown__menu'
-        -ddClass='dropdown'
-    //-Определение модификатора type, параметров внутри dropdown
-    if type=='room'
-        - names=['спальни', 'кровати', 'ванные комнаты']
-        - ids = ['bedroom', 'bed', 'bathroom']
-        -isExist=true
-    else if type=='guest'
-        - names=['взрослые', 'дети', 'младенцы']
-        - ids = ['notbaby', 'notbaby', 'baby']
-        -isExist=true
+  - if (dropdown.type == 'test') {
+  -   var inputValue = 'Сколько гостей'
+  -   var ControlButton = 'True'
+  - }
+  - if (dropdown.opened) {
+  -   var open = 'dropdown__menu_opened'
+  - }
 
-    div(class=ddClass)
-        .dropdown__text Сколько гостей
-        div(class=ddMenuClass)
-            if isExist
-            -let i=0
-            each name in names
-                if vals[i]==underfined||vals[i]<0
-                    -vals[i]=minNum
-                else if vals[i]>maxNum
-                    -vals[i]=maxNum
-                .dropdown__item(data-item=ids[i] data-type=type)
-                    span.dropdown__name=name
-                    span.dropdown__controls
-                        if vals[i]==minVal
-                            button.dropdown__button#button-minus(disabled) -
-                        else
-                            button.dropdown__button#button-minus - 
-                        span.dropdown__quantity=vals[i]
-                        if vals[i]==maxVal
-                            button.dropdown__button#button-plus(disabled) +
-                        else
-                            button.dropdown__button#button-plus +
-                -i++
-            if isControls
-                .dropdown__buttons
-                    .dropdown__clear
-                        +button-empty('очистить', '1')
-                    .dropdown__apply
-                        +button-empty('применить')
+  .dropdown
+    .dropdown__all
+      input(type="text" value=inputValue readonly).dropdown__input
+      button.dropdown__display-button \/
+    div(class=open).dropdown__menu
+      ul.dropdown__list
+        each item in dropdown.items     
+          li.dropdown__item
+            .dropdown__menu-item= item.menuItem
+            .dropdown__button-list
+              button.dropdown__button.dropdown__button-minus -
+              span.dropdown__number= item.number
+              button.dropdown__button.dropdown__button-plus +  
+      if ControlButton
+        .dropdown__control-button 
+          .dropdown__reset
+            +button-empty('очистить')
+          .dropdown__gap
+          .dropdown__apply
+            +button-empty('применить')

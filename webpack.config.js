@@ -28,7 +28,7 @@ module.exports = (_, options) => {
       ],
     },
     entry: {
-      index: './src/index.js',
+      index: './src/index.js'
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -43,10 +43,15 @@ module.exports = (_, options) => {
           exclude: /node_modules/,
         },
         {
-          test: /\.js$/,
+          test: /\.m?js$/,
           exclude: /node_modules/,
-          use: ['eslint-loader'],
-        },
+          use: {
+            loader: "babel-loader",
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          }
+        },       
         {
           test: /\.pug$/,
           loader: 'pug-loader',

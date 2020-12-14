@@ -21,7 +21,15 @@ block content
 					+text-field('text field', 'This is pretty awesome')
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-					+dropdown('guest')
+					+dropdown({
+						type: 'test',
+						opened: 'True',
+						items: [
+							{menuItem: 'взрослые', number: '0'},
+							{menuItem: 'дети', number: '2'},
+							{menuItem: 'младенцы', number: '5'}
+						],
+						})
 				.form-elements__wrap-item
 					+text-field('masked text field', 'ДД.ММ.ГГГГ')
 				.form-elements__wrap-item
@@ -29,7 +37,15 @@ block content
 				.form-elements__wrap-item
 					.form-elements__width
 						.form-elements__wrap-item_header filter date dropdown
-						+dropdown('guest')
+						+dropdown({
+							type: 'test',
+							opened: 'True',
+							items: [
+								{menuItem: 'взрослые', number: '0'},
+								{menuItem: 'дети', number: '2'},
+								{menuItem: 'младенцы', number: '5'}
+							],
+							})
 					.form-elements__width
 						+subscription-text-field('subscription text field', 'Email')
 			.form-elements__wrap-centr
@@ -73,20 +89,52 @@ block content
 						+button-long('click me')
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header pagination
-					+pagination
+					+pagination('1')
 		.form-elements__inner
 			.form-elements__wrap
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-				+dropdown()
+				+dropdown({
+					type: 'test',
+					opened: 'True',
+					items: [
+						{menuItem: 'взрослые', number: '0'},
+						{menuItem: 'дети', number: '2'},
+						{menuItem: 'младенцы', number: '5'}
+					],
+					})
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-					+dropdown('room',0,0, [2, 2, 0])
+					+dropdown({
+						type: 'test',
+						opened: 'True',
+						items: [
+							{menuItem: 'взрослые', number: '0'},
+							{menuItem: 'дети', number: '2'},
+							{menuItem: 'младенцы', number: '5'}
+						],
+						})
 			.form-elements__wrap
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-					+dropdown('guest', 1, 1)
+					+dropdown({
+						type: 'test',
+						opened: 'True',
+						items: [
+							{menuItem: 'взрослые', number: '0'},
+							{menuItem: 'дети', number: '2'},
+							{menuItem: 'младенцы', number: '5'}
+						],
+						})
 			.form-elements__wrap
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-					+dropdown('guest', 1, 1, [2, 1, 0])
+					+dropdown({
+						type: 'test',
+						opened: 'True',
+						items: [
+							{menuItem: 'взрослые', number: '0'},
+							{menuItem: 'дети', number: '2'},
+							{menuItem: 'младенцы', number: '5'}
+						],
+						})
