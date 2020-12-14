@@ -100,7 +100,7 @@ for (let i = 0; i < dropdownBtns.length; i++) {
 		hideReset(dropdownMenu[i]);
 	};
 }
-// // Проверка на реакцию на клик
-// $('body').on('click', '.dropdown__button-minus', () => {
-// 	console.log('SomeText');
-// });
+// Проверка на реакцию на клик
+$('body').on('click', '.dropdown__button-minus', () => {
+	console.log('SomeText');
+});
