@@ -1,0 +1,63 @@
+@import '../../scss/responsive.scss';
+@import '../../scss/variables.scss';
+
+.checkbox-button {
+	background: $purple-gradient;
+	border-radius: 22px;
+	padding: 10px 20px 9px 19px;
+	cursor: pointer;
+	border: none;
+	@include h3-text(uppercase, $white);
+	text-align: center;
+	&:focus {
+		outline: none;
+	}    
+	&:hover,
+		&_hovered {
+		opacity: 0.5;
+    }
+    &__wrap {
+        display: flex;
+        width: 100%;
+        max-width: 240px;
+    }
+	&__label {
+		display: flex;
+		align-items: center;
+		&-input {
+			display: none;
+			&:checked + .checkbox-button__label-box {
+				border: 1px solid $purple;
+				background-position: center top 3px;
+				background-repeat: no-repeat;
+				background-image: url(./img/vector.svg);
+			}
+		}
+		&-box {
+			display: inline-block;
+			width: 20px;
+			min-width: 20px;
+			height: 20px;
+			border: 1px solid $ds25;
+			border-radius: 3px;
+		}
+		&-text {
+			@include montserrat(14px, 18px, $ds50);
+			margin-left: 5px;
+			user-select: none;
+		}
+	}
+	&__container {
+		padding: 17px 0 -12.5px 10px;
+		max-width: 230px;
+	}
+	&__bold {
+		@include text-bold(14px, 18px, $ds75);
+		text-transform: none;
+		margin-top: 17.5px;
+	}
+	&__thin {
+		@include montserrat(12px, 14px, $ds50);
+		text-transform: none;
+	}
+}

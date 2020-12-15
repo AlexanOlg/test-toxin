@@ -3,10 +3,13 @@ include ../../blocks/container/container.pug
 include ../../blocks/text-field/text-field.pug
 include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/date-dropdown/date-dropdown.pug
+include ../../blocks/checkbox-button/checkbox-button.pug
 include ../../blocks/button/button.pug
 include ../../blocks/toogle/toogle.pug
 include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/pagination/pagination.pug
+include ../../blocks/checkbox-list/checkbox-list.pug
+include ../../blocks/bullet-list/bullet-list.pug
 
 
 block title
@@ -21,15 +24,10 @@ block content
 					+text-field('text field', 'This is pretty awesome')
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-					+dropdown({
-						type: 'test',
-						opened: 'True',
-						items: [
-							{menuItem: 'взрослые', number: '0'},
-							{menuItem: 'дети', number: '2'},
-							{menuItem: 'младенцы', number: '5'}
-						],
-						})
+				+dropdown({buttonClass:"dropdown__dropbtn dropdown-guests",name:"Сколько гостей"})
+					+dropdown-btn({ buttonName:"Взрослые",inputClass:"adult",inputValue:"0"})
+					+dropdown-btn({ buttonName:"Дети",inputClass:"child",inputValue:"0"})
+					+dropdown-btn({ buttonName:"Младенцы",inputClass:"baby",inputValue:"0"})
 				.form-elements__wrap-item
 					+text-field('masked text field', 'ДД.ММ.ГГГГ')
 				.form-elements__wrap-item
@@ -37,23 +35,18 @@ block content
 				.form-elements__wrap-item
 					.form-elements__width
 						.form-elements__wrap-item_header filter date dropdown
-						+dropdown({
-							type: 'test',
-							opened: 'True',
-							items: [
-								{menuItem: 'взрослые', number: '0'},
-								{menuItem: 'дети', number: '2'},
-								{menuItem: 'младенцы', number: '5'}
-							],
-							})
+				+dropdown({buttonClass:"dropdown__dropbtn dropdown-guests", name:"Сколько гостей"})
+					+dropdown-btn({ buttonName:"Взрослые",inputClass:"adult",inputValue:"0"})
+					+dropdown-btn({ buttonName:"Дети",inputClass:"child",inputValue:"0"})
+					+dropdown-btn({ buttonName:"Младенцы",inputClass:"baby",inputValue:"0"})
 					.form-elements__width
 						+subscription-text-field('subscription text field', 'Email')
 			.form-elements__wrap-centr
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header checkbox button 
-					+button__checkbox('Можно курить', false)
-					+button__checkbox('Можно с питомцами', true)
-					+button__checkbox('Можно пригласить гостей (до 10 человек)', true)
+					+checkbox-button('Можно курить', false)
+					+checkbox-button('Можно с питомцами', true)
+					+checkbox-button('Можно пригласить гостей (до 10 человек)', true)
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header radio buttons
 					+button__radio
@@ -94,47 +87,44 @@ block content
 			.form-elements__wrap
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-				+dropdown({
-					type: 'test',
-					opened: 'True',
-					items: [
-						{menuItem: 'взрослые', number: '0'},
-						{menuItem: 'дети', number: '2'},
-						{menuItem: 'младенцы', number: '5'}
-					],
-					})
+				+dropdown({buttonClass:"dropdown__dropbtn dropdown-guests",name:"Сколько гостей"})
+					+dropdown-btn({ buttonName:"Взрослые",inputClass:"adult",inputValue:"0"})
+					+dropdown-btn({ buttonName:"Дети",inputClass:"child",inputValue:"0"})
+					+dropdown-btn({ buttonName:"Младенцы",inputClass:"baby",inputValue:"0"})
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-					+dropdown({
-						type: 'test',
-						opened: 'True',
-						items: [
-							{menuItem: 'взрослые', number: '0'},
-							{menuItem: 'дети', number: '2'},
-							{menuItem: 'младенцы', number: '5'}
-						],
-						})
+				+dropdown({buttonClass:"dropdown__dropbtn dropdown-guests",name:"Сколько гостей"})
+					+dropdown-btn({ buttonName:"Взрослые",inputClass:"adult",inputValue:"0"})
+					+dropdown-btn({ buttonName:"Дети",inputClass:"child",inputValue:"0"})
+					+dropdown-btn({ buttonName:"Младенцы",inputClass:"baby",inputValue:"0"})
 			.form-elements__wrap
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-					+dropdown({
-						type: 'test',
-						opened: 'True',
-						items: [
-							{menuItem: 'взрослые', number: '0'},
-							{menuItem: 'дети', number: '2'},
-							{menuItem: 'младенцы', number: '5'}
-						],
-						})
+				+dropdown({buttonClass:"dropdown__dropbtn dropdown-guests",name:"Сколько гостей"})
+					+dropdown-btn({ buttonName:"Взрослые",inputClass:"adult",inputValue:"0"})
+					+dropdown-btn({ buttonName:"Дети",inputClass:"child",inputValue:"0"})
+					+dropdown-btn({ buttonName:"Младенцы",inputClass:"baby",inputValue:"0"})
 			.form-elements__wrap
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-					+dropdown({
-						type: 'test',
-						opened: 'True',
-						items: [
-							{menuItem: 'взрослые', number: '0'},
-							{menuItem: 'дети', number: '2'},
-							{menuItem: 'младенцы', number: '5'}
-						],
-						})
+				+dropdown({buttonClass:"dropdown__dropbtn dropdown-guests",name:"Сколько гостей"})
+					+dropdown-btn({ buttonName:"Взрослые",inputClass:"adult",inputValue:"0"})
+					+dropdown-btn({ buttonName:"Дети",inputClass:"child",inputValue:"0"})
+					+dropdown-btn({ buttonName:"Младенцы",inputClass:"baby",inputValue:"0"})
+		.form-elements__inner
+			.form-elements__wrap
+				.form-elements__wrap-item
+					.form-elements__wrap-item_header
+					+checkbox-list('true')
+					+checkbox-list()
+			.form-elements__wrap
+				.form-elements__wrap-item
+					.form-elements__wrap-item_header rich Checkbox Buttons
+					+checkbox-button('Широкий коридор', false, 'true', 'Ширина коридоров в номере не менее 91 см.')
+					+checkbox-button('Помощник для инвалидов', false, 'true', 'На 1 этаже вас встретит специалист  и проводит до номера.')
+			.form-elements__wrap
+				.form-elements__wrap-item
+					.form-elements__wrap-item_header bullet list
+					+bullet-list('Нельзя с питомцами')
+					+bullet-list('Без вечеринок и мероприятий')
+					+bullet-list('Время прибытия — после 13:00, а выезд до 12:00')

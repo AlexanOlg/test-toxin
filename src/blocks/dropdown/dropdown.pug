@@ -7,34 +7,20 @@
 //-				span.dropdown__item-icon expand_more
 include ../button/button.pug
 
+mixin dropdown(dropdowns = {})
+    -let {name, buttonClass, dropdownClass, show} = dropdowns
+    .dropdown(class=dropdownClass)
+        button(class=buttonClass)
+            p.dropdown__text= name
+            i.material-icons expand_more
+        .dropdown-content(class=show)
+            block
 
-mixin dropdown(dropdown)
-
-  - if (dropdown.type == 'test') {
-  -   var inputValue = 'Сколько гостей'
-  -   var ControlButton = 'True'
-  - }
-  - if (dropdown.opened) {
-  -   var open = 'dropdown__menu_opened'
-  - }
-
-  .dropdown
-    .dropdown__all
-      input(type="text" value=inputValue readonly).dropdown__input
-      button.dropdown__display-button \/
-    div(class=open).dropdown__menu
-      ul.dropdown__list
-        each item in dropdown.items     
-          li.dropdown__item
-            .dropdown__menu-item= item.menuItem
-            .dropdown__button-list
-              button.dropdown__button.dropdown__button-minus -
-              span.dropdown__number= item.number
-              button.dropdown__button.dropdown__button-plus +  
-      if ControlButton
-        .dropdown__control-button 
-          .dropdown__reset
-            +button-empty('очистить')
-          .dropdown__gap
-          .dropdown__apply
-            +button-empty('применить')
+mixin dropdown-btn(parametres={})
+    -let {buttonName, inputClass, inputValue='0'} = parametres;
+    .dropdown-content__box
+        p= buttonName
+        .dropdown-content__boxbtn
+            button.minus -
+            input(type='text' value=inputValue class=inputClass disabled)
+            button.plus +

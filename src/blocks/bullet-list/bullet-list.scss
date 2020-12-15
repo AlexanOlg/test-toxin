@@ -1,0 +1,21 @@
+@import '../../scss/responsive.scss';
+@import '../../scss/variables.scss';
+
+.bullet-list{
+    display: flex;
+    flex-direction:row;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    &__point {
+        min-width: 10px;
+        min-height: 10px;
+        margin-right: 10.86px;
+        margin-top: 5px;
+        background: $ds25;
+        border-radius: 50%;
+    }
+    &__text {
+        @include montserrat(14px, 24px, $ds75);
+        text-transform: none;
+    }
+}

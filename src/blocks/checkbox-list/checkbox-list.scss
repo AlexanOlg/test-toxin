@@ -1,0 +1,32 @@
+@import '../../scss/responsive.scss';
+@import '../../scss/variables.scss';
+
+.checkbox-list{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    &__span{
+        padding: 15px 0px;
+        @include h3-text(uppercase, $ds100);
+    }
+    &__icon {
+        @include material-font(24px, 24px, $ds50);
+    }
+
+    &__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+        i{
+            padding: 10px 6px 0px 0px;
+            color:$ds50;
+            transition: 200ms;
+        }
+    }
+}
+
+
+
+

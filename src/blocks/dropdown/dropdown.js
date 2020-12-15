@@ -1,106 +1,123 @@
-import '../../index';
+/* eslint-disable func-names */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable consistent-return */
+/* eslint-disable no-undef */
+/* eslint-disable radix */
+// document.addEventListener('DOMContentLoaded', () => {
 
-const dropdownBtns = document.querySelectorAll(
-	'.dropdown__display-button',
-);
-const dropdownMenu = document.querySelectorAll('.dropdown__menu');
-const dropdownInput = document.querySelectorAll('.dropdown__input');
-const dropdownReset = document.querySelectorAll('.dropdown__reset');
-const dropdownApply = document.querySelectorAll('.dropdown__apply');
+// });
 
-function setArray(list) {
-	const fullArr = [];
-	for (let i = 0; i < list.length; i += 1) {
-		const tripleArr = [];
-		for (let j = 0; j < list.length; j++) {
-			tripleArr.push(list[i + j]);
-		}
-		fullArr.push(tripleArr);
+$(document).ready(() => {
+	$('.minus').click(function () {
+		const $input = $(this).parent().find('input');
+		let count = parseInt($input.val()) - 1;
+		count = count < 0 ? 0 : count;
+		$input.val(count);
+		$input.change();
+		return false;
+	});
+	$('.plus').click(function () {
+		const $input = $(this).parent().find('input');
+		$input.val(parseInt($input.val()) + 1);
+		$input.change();
+		return false;
+	});
+
+	function declOfNum(number, titles) {
+		cases = [2, 0, 1, 1, 1, 2];
+		return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
 	}
-	return fullArr;
-}
-const dropdownMinus = setArray(
-	document.querySelectorAll('.dropdown__button-minus'),
-);
-const dropdownPlus = setArray(
-	document.querySelectorAll('.dropdown__button-plus'),
-);
-const dropdownNumbers = setArray(
-	document.querySelectorAll('.dropdown__number'),
-);
-
-function hideReset(el) {
-	el.classList.toggle('hide');
-}
-
-function sumValues(i) {
-	let value = 0;
-	for (let j = 0; j < 3; j++) {
-		value += Number(dropdownNumbers[i][j].innerText);
-	}
-	return value;
-}
-if (dropdownInput.length > 0) {
-	window.onload = function ending() {
-		for (let i = 0; i < dropdownInput.length; i++) {
-			const value = sumValues(i);
-			if (value === 0) {
-				dropdownInput[i].value = 'Сколько гостей';
-
-				hideReset(dropdownReset[i]);
-			} else {
-				dropdownInput[i].value = `${value} гостя`;
-			}
+	function numberOfInputs() {
+		const $inputs = $(this).closest('.dropdown').find('input');
+		const $content = $(this).closest('.dropdown').find('.dropdown-content__box');
+		let text = '';
+		const valArr = [];
+		const textArr = [];
+		let summ = parseInt('0');
+		const $numberInputs = $inputs.map((indx, element) => parseInt($(element).val()));
+		for (let i = 0; i < $numberInputs.length; i++) {
+			summ += $numberInputs[i];
 		}
-	};
-}
-
-for (let i = 0; i < dropdownBtns.length; i++) {
-	dropdownBtns[i].onclick = function showMenu() {
-		hideReset(dropdownMenu[i]);
-	};
-
-	dropdownReset[i].onclick = function clearMenu() {
-		dropdownInput[i].value = 'Сколько гостей';
-		for (let j = 0; j < 3; j++) {
-			dropdownNumbers[i][j].innerText = '0';
+		if (summ === 0 && $(this).closest('.dropdown').find('.dropdown__dropdownBtn').hasClass('dropdown-guests')) {
+			$(this).closest('.dropdown').find('.btnText').text('Сколько гостей');
+			return true;
 		}
-		hideReset(dropdownReset[i]);
-	};
 
-	for (let j = 0; j < 3; j++) {
-		dropdownMinus[i][j].onclick = function setOfMinus() {
-			let value = dropdownNumbers[i][j].innerText;
-			if (value > 0) {
-				dropdownNumbers[i][j].innerText = value - 1;
-				value = sumValues(i);
-				if (value === 0) {
-					dropdownInput[i].value = 'Сколько гостей';
-					hideReset(dropdownReset[i]);
-				} else {
-					dropdownInput[i].value = `${value} гостя`;
+		if ($(this).closest('.dropdown').find('.dropdown__dropbtn').hasClass('dropdown-guests')) {
+			$(this).closest('.dropdown').find('.btnText').text(`${summ} ${declOfNum(summ, ['гость', 'гостя', 'гостей'])}`);
+		} else if ($(this).closest('.dropdown').hasClass('dropdown-services')) {
+			for (let i = 0; i < $content.length; i++) {
+				valArr.push($($content[i]).closest('.dropdown-content__line').find('input').val());
+				textArr.push($($content[i]).closest('.dropdown-content__line').find('p').html());
+				text += `${valArr[i]} ${textArr[i]}`;
+				if (i !== $content.length - 1) {
+					text += ',';
 				}
 			}
-		};
+			$(this).closest('.dropdown').find('.btnText').text(text);
+		}
 	}
+	$('.dropdown-content__box-button').find('button').click(numberOfInputs);
+	window.addEventListener('load', () => {
+		const dropdownContent = document.querySelectorAll('.dropdown-guests');
+		for (const content of dropdownContent) {
+			const inputs = content.parentElement.getElementsByTagName('input');
+			const btnText = content.querySelector('.btnText');
+			let i = 0;
 
-	for (let j = 0; j < 3; j++) {
-		dropdownPlus[i][j].onclick = function setOfPus() {
-			let value = dropdownNumbers[i][j].innerText;
-			dropdownNumbers[i][j].innerText = Number(value) + 1;
-			value = sumValues(i);
-			if (value === 1) {
-				hideReset(dropdownReset[i]);
+			for (const input of inputs) {
+				i += Number(input.value);
 			}
-			dropdownInput[i].value = `${value} гостя`;
-		};
-	}
+			if (i > 0) {
+				btnText.innerHTML = (`${i} ${declOfNum(i, ['гость', 'гостя', 'гостей'])}`);
+			}
+		}
+	});
+	// default val for input for services
+	const $content = $('.dropdown-services');
+	$content.each((indx, element) => {
+		let text = '';
+		const valArr = [];
+		const textArr = [];
+		const $lines = $(element).find('.dropdown-content__line');
+		for (let i = 0; i < $lines.length; i++) {
+			valArr.push($($lines[i]).find('input').val());
+			textArr.push($($lines[i]).find('p').html());
+			text += `${valArr[i]} ${textArr[i]}`;
+			if (i !== $lines.length - 1) {
+				text += ',';
+			}
+		}
+		$(element).find('.btnText').text(text);
+	});
+	// resize input
 
-	dropdownApply[i].onclick = function applyClick() {
-		hideReset(dropdownMenu[i]);
-	};
-}
-// Проверка на реакцию на клик
-$('body').on('click', '.dropdown__button-minus', () => {
-	console.log('SomeText');
+	function resizeInput() {
+		$(this).attr('size', $(this).val().length);
+	}
+	$('input[type="text"]')
+	// event handler
+		.keyup(resizeInput)
+	// resize on page load
+		.each(resizeInput);
+
+	// show-hide
+	$('.dropdown__dropbtn').click(function () {
+		if ($(this).next('.dropdown-content').hasClass('dropdown-content__show')) {
+			$(this).next('.dropdown-content').removeClass('dropdown-content__show');
+		} else $(this).next('.dropdown-content').addClass('dropdown-content__show');
+	});
+	// buttons
+	$('.form-elements__btn-container .clear').click(function () {
+		$(this).closest('.dropdown').find('.btnText').text('Сколько гостей');
+		const $inputs = $(this).closest('.dropdown').find('input');
+		const $numberInputs = $inputs.map((indx, element) => parseInt($(element).val()));
+		for (let i = 0; i < $numberInputs.length; i++) {
+			$numberInputs[i] = 0;
+			$inputs.val('0');
+		}
+	});
+	$('.form-elements__btn-container .submit').click(() => {
+		$('.dropdown-content').removeClass('dropdown-content__show');
+	});
 });
