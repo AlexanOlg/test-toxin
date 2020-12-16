@@ -10,6 +10,7 @@ include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/pagination/pagination.pug
 include ../../blocks/checkbox-list/checkbox-list.pug
 include ../../blocks/bullet-list/bullet-list.pug
+include ../../blocks/facilities-room/facilities-room.pug
 
 
 block title
@@ -24,10 +25,13 @@ block content
 					+text-field('text field', 'This is pretty awesome')
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-				+dropdown({buttonClass:"dropdown__dropbtn dropdown-guests",name:"Сколько гостей"})
-					+dropdown-btn({ buttonName:"Взрослые",inputClass:"adult",inputValue:"0"})
-					+dropdown-btn({ buttonName:"Дети",inputClass:"child",inputValue:"0"})
-					+dropdown-btn({ buttonName:"Младенцы",inputClass:"baby",inputValue:"0"})
+					+dropdown({
+						items: [
+							{menuItem: 'взрослые', number: '0'},
+							{menuItem: 'дети', number: '2'},
+							{menuItem: 'младенцы', number: '5'}
+						],
+					})
 				.form-elements__wrap-item
 					+text-field('masked text field', 'ДД.ММ.ГГГГ')
 				.form-elements__wrap-item
@@ -35,10 +39,13 @@ block content
 				.form-elements__wrap-item
 					.form-elements__width
 						.form-elements__wrap-item_header filter date dropdown
-				+dropdown({buttonClass:"dropdown__dropbtn dropdown-guests", name:"Сколько гостей"})
-					+dropdown-btn({ buttonName:"Взрослые",inputClass:"adult",inputValue:"0"})
-					+dropdown-btn({ buttonName:"Дети",inputClass:"child",inputValue:"0"})
-					+dropdown-btn({ buttonName:"Младенцы",inputClass:"baby",inputValue:"0"})
+						+dropdown({
+							items: [
+								{menuItem: 'взрослые', number: '0'},
+								{menuItem: 'дети', number: '2'},
+								{menuItem: 'младенцы', number: '5'}
+							],
+						})
 					.form-elements__width
 						+subscription-text-field('subscription text field', 'Email')
 			.form-elements__wrap-centr
@@ -87,30 +94,42 @@ block content
 			.form-elements__wrap
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-				+dropdown({buttonClass:"dropdown__dropbtn dropdown-guests",name:"Сколько гостей"})
-					+dropdown-btn({ buttonName:"Взрослые",inputClass:"adult",inputValue:"0"})
-					+dropdown-btn({ buttonName:"Дети",inputClass:"child",inputValue:"0"})
-					+dropdown-btn({ buttonName:"Младенцы",inputClass:"baby",inputValue:"0"})
+					+dropdown({
+						items: [
+							{menuItem: 'взрослые', number: '0'},
+							{menuItem: 'дети', number: '2'},
+							{menuItem: 'младенцы', number: '5'}
+						],
+					})
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-				+dropdown({buttonClass:"dropdown__dropbtn dropdown-guests",name:"Сколько гостей"})
-					+dropdown-btn({ buttonName:"Взрослые",inputClass:"adult",inputValue:"0"})
-					+dropdown-btn({ buttonName:"Дети",inputClass:"child",inputValue:"0"})
-					+dropdown-btn({ buttonName:"Младенцы",inputClass:"baby",inputValue:"0"})
+					+dropdown({
+						items: [
+							{menuItem: 'взрослые', number: '0'},
+							{menuItem: 'дети', number: '2'},
+							{menuItem: 'младенцы', number: '5'}
+						],
+					})
+			.form-elements__wrap
+					.form-elements__wrap-item
+						.form-elements__wrap-item_header dropdown
+						+dropdown({
+							items: [
+								{menuItem: 'взрослые', number: '0'},
+								{menuItem: 'дети', number: '2'},
+								{menuItem: 'младенцы', number: '5'}
+							],
+						})
 			.form-elements__wrap
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
-				+dropdown({buttonClass:"dropdown__dropbtn dropdown-guests",name:"Сколько гостей"})
-					+dropdown-btn({ buttonName:"Взрослые",inputClass:"adult",inputValue:"0"})
-					+dropdown-btn({ buttonName:"Дети",inputClass:"child",inputValue:"0"})
-					+dropdown-btn({ buttonName:"Младенцы",inputClass:"baby",inputValue:"0"})
-			.form-elements__wrap
-				.form-elements__wrap-item
-					.form-elements__wrap-item_header dropdown
-				+dropdown({buttonClass:"dropdown__dropbtn dropdown-guests",name:"Сколько гостей"})
-					+dropdown-btn({ buttonName:"Взрослые",inputClass:"adult",inputValue:"0"})
-					+dropdown-btn({ buttonName:"Дети",inputClass:"child",inputValue:"0"})
-					+dropdown-btn({ buttonName:"Младенцы",inputClass:"baby",inputValue:"0"})
+					+dropdown({
+						items: [
+							{menuItem: 'взрослые', number: '0'},
+							{menuItem: 'дети', number: '2'},
+							{menuItem: 'младенцы', number: '5'}
+							],
+						})
 		.form-elements__inner
 			.form-elements__wrap
 				.form-elements__wrap-item
@@ -118,13 +137,17 @@ block content
 					+checkbox-list('true')
 					+checkbox-list()
 			.form-elements__wrap
-				.form-elements__wrap-item
-					.form-elements__wrap-item_header rich Checkbox Buttons
-					+checkbox-button('Широкий коридор', false, 'true', 'Ширина коридоров в номере не менее 91 см.')
-					+checkbox-button('Помощник для инвалидов', false, 'true', 'На 1 этаже вас встретит специалист  и проводит до номера.')
+				.form-elements__wrap-gap
+					.form-elements__wrap-item
+						.form-elements__wrap-item_header rich Checkbox Buttons
+						+checkbox-button('Широкий коридор', false, 'true', 'Ширина коридоров в номере не менее 91 см.')
+						+checkbox-button('Помощник для инвалидов', false, 'true', 'На 1 этаже вас встретит специалист  и проводит до номера.')
 			.form-elements__wrap
-				.form-elements__wrap-item
-					.form-elements__wrap-item_header bullet list
-					+bullet-list('Нельзя с питомцами')
-					+bullet-list('Без вечеринок и мероприятий')
-					+bullet-list('Время прибытия — после 13:00, а выезд до 12:00')
+				.form-elements__wrap-gap
+					.form-elements__wrap-item
+						.form-elements__wrap-item_header bullet list
+						+bullet-list('Нельзя с питомцами')
+						+bullet-list('Без вечеринок и мероприятий')
+						+bullet-list('Время прибытия — после 13:00, а выезд до 12:00')
+		.form-elements__inner
+			+facilities-room(parametres: [{'Комфорт', 'Шумопоглощающие стены', 'insert_emoticon'}])

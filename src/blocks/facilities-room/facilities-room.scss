@@ -1,0 +1,9 @@
+@import '../../scss/variables.scss';
+
+.facilities-room {
+    &__item {
+        &-icon {
+            @include material-font(48px, 41px, $purple-gradient);
+        }
+    }
+}
