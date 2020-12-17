@@ -5,12 +5,14 @@ include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/date-dropdown/date-dropdown.pug
 include ../../blocks/checkbox-button/checkbox-button.pug
 include ../../blocks/button/button.pug
+include ../../blocks/button-like/button-like.pug
 include ../../blocks/toogle/toogle.pug
 include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/pagination/pagination.pug
 include ../../blocks/checkbox-list/checkbox-list.pug
 include ../../blocks/bullet-list/bullet-list.pug
 include ../../blocks/facilities-room/facilities-room.pug
+include ../../blocks/reviews/reviews.pug
 
 
 block title
@@ -150,4 +152,9 @@ block content
 						+bullet-list('Без вечеринок и мероприятий')
 						+bullet-list('Время прибытия — после 13:00, а выезд до 12:00')
 		.form-elements__inner
-			+facilities-room(parametres: [{'Комфорт', 'Шумопоглощающие стены', 'insert_emoticon'}])
+			.form-elements__wrap
+				.form-elements__wrap-item
+					+facilities-room('Комфорт', 'Шумопоглощающие стены', 'insert_emoticon')
+					+facilities-room('Удобство', 'Окно в каждой из спален', 'location_city')
+			.form-elements__wrap-footer
+				+reviews('Мурад сарафанов', '5 дней назад', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')

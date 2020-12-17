@@ -1,0 +1,25 @@
+@import '../../scss/responsive.scss';
+@import '../../scss/variables.scss';
+
+.reviews {
+    display: flex;
+    &__img {
+        margin-top: 12px;
+        width: 47px;
+        height: 47px;
+    }
+    &__like {
+
+    }
+    &__name {
+        @include text-bold(14px, 24px, $ds75);
+        margin-top: 15px;
+    }
+    &__date {
+        @include montserrat(14px, 24px, $ds75);
+        margin-bottom: 10px;
+    }
+    &__text {
+        @include montserrat(14px, 24px, $ds75);
+    }
+}

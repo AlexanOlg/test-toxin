@@ -1,9 +1,9 @@
-mixin facilities-room(parametres={})
-	ul.facilities-room
-		- const {title, subtitle, icon}= parametres
-		li.facilities-room__item
-			.facilities-room__item-icon= icon
-		.facilities-room__item
-			.facilities-room__item-text
-				.facilities-room__title= title
-				.facilities-room__subtitle= subtitle
+mixin facilities-room(title, subtitle, icon)
+	.facilities-room
+		.facilities-room__inner
+			.facilities-room__item
+				.facilities-room__item-icon= icon
+			.facilities-room__item
+				.facilities-room__item-text
+					.facilities-room__title= title
+					.facilities-room__subtitle= subtitle

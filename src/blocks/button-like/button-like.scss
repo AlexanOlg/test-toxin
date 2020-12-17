@@ -1,0 +1,56 @@
+@import '../../scss/responsive.scss';
+@import '../../scss/variables.scss';
+
+.button {
+	background: $purple-gradient;
+	border-radius: 22px;
+	padding: 10px 20px 9px 19px;
+	cursor: pointer;
+	border: none;
+	@include h3-text(uppercase, $white);
+	text-align: center;
+	&:focus {
+	outline: none;
+	}    
+	&:hover,
+	&_hovered {
+	opacity: 0.5;
+    }
+    &-like {
+		display: flex;
+    width: 40px;
+    height: 20px;
+		@include material-font(10px, 9px, $ds25);	
+    background: $white;
+    border: 1px solid $ds25;
+    border-radius: 10px;
+    cursor: pointer;
+		transition: all .1s;
+		&:checked {
+			@include material-font(10px, 9px, $purple);
+			border: 1px solid $purple;
+			background: $gradient__primary;
+		}
+		&__icon {
+			margin-top: 5px;
+
+			margin-left: 6px;
+			margin-right: 4px;
+
+			border-color: $ds25;
+			&:checked {
+				color: $purple;
+				border-color: $purple;
+				background-origin: border-box;
+				background-clip: content-box, border-box;
+			}
+		}
+		&__count {
+			border: none;
+			background-color: transparent;
+			margin-top: 4px;
+			@include montserrat(10px, 12px, $ds25);
+
+		}
+    }
+}

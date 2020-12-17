@@ -1,0 +1,13 @@
+include ../button-like/button-like.pug
+
+mixin reviews(fio, date, text)
+	.reviews
+		.reviews__header
+			img(class='reviews__img' src=require(`../../../src/blocks/reviews/img/ava.png`).default alt='Фото аватарки')
+			.reviews__like
+				+button-like('12', true)
+		.reviews__section
+			.reviews__container
+				h3.reviews__name= fio
+				span.reviews__date= date
+			p.reviews__text= text

@@ -10,7 +10,8 @@
 	}
 	&__inner {
 		display: flex;
-		justify-content: space-between;
+        justify-content: space-between;
+        margin-bottom: 100px;
 	}
 	&__wrap {
 		width: 33%;
@@ -26,7 +27,7 @@
 				display: flex;
 			}
 			&_inner {
-				display: flex;
+                display: flex;
 			}
 			&_buttons {
 				margin-top: 40px;
@@ -35,9 +36,12 @@
         &-gap {
             margin-top: 20px;
         }
+        &-footer {
+            width: 66%;
+            max-width: 710px;
+        }
 	}
 	&__width {
 		max-width: 266px;
-		margin-bottom: 100px;
 	}
 }
