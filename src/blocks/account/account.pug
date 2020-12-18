@@ -1,16 +1,12 @@
-include ../button/button.pug
+include ../buttons/buttons.pug
 
-mixin account(text)
+mixin account(text, isOpen)
 	.account
 		.account__login
 			span.account__text= text
-		.account__login
-				+button__border-long('Войти')
-
-
-mixin account2(text)
-	.account
-		.account__login
-			span.account__text= text
-		.account__login
-				+button__border-long('Создать')
+		if isOpen
+			.account__login
+				+buttons({type: 'button-long', text: 'Войти'})
+		else
+			.account__login
+				+buttons({type: 'button-long', text: 'Создать'})

@@ -1,4 +1,4 @@
-include ../button/button.pug
+include ../button-simple/button-simple.pug
 
 mixin dropdown(dropdown)
 	.dropdown
@@ -16,8 +16,8 @@ mixin dropdown(dropdown)
 						button.dropdown__button.dropdown__button-plus +  
 			.dropdown__control-button
 				.dropdown__reset
-					+button-empty('очистить')
+					+button-simple('очистить')
 				.dropdown__clear
 				.dropdown__used
-					+button-empty('применить')
+					+button-simple('применить')
 

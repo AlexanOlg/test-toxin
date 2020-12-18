@@ -31,8 +31,12 @@
 		}
 	}
 	&__reviews {
-		&-title {
+		&-num {
 			@include text-bold(14px, 18px, $ds50);
+			margin-right: 10px;
+		}
+		&-text {
+			@include montserrat(14px, 18px, $ds50);
 		}
 	}
 }

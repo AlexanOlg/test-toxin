@@ -1,9 +1,17 @@
-include ../button/button.pug
+include ../button-simple/button-simple.pug
 
 mixin calendar(isOpen)
 	if isOpen
-		.calendar.calendar_showed
-			+button-empty('Применить')
+		.calendar__showed
+			.calendar__buttons
+				.calendar__buttons-item
+					+button-simple('Очистить')
+				.calendar__buttons-item
+					+button-simple('Применить')
 	else
 		.calendar
-			+button-empty('Применить')
+			.calendar__buttons
+				.calendar__buttons-item
+					+button-simple('Очистить')
+				.calendar__buttons-item
+					+button-simple('Применить')

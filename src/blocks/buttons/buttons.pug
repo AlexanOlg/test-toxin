@@ -1,0 +1,19 @@
+//- Вызов миксина
+//- +buttons({type: 'button', text: 'Click me'})
+//- +buttons({type: 'button-border', text: 'Click me'})
+
+mixin buttons(parametres)
+	if parametres.type == 'button'
+		button.button= parametres.text
+	else if parametres.type == 'button-border'
+		button.button-border= parametres.text
+	else if parametres.type == 'button-long'
+		button.button-long(type='submit')= parametres.text
+	else if parametres.type == 'button-hovered'
+		button.button-hovered= parametres.text
+	else if parametres.type == 'button-border__hovered'
+		button.button-border__hovered= parametres.text
+
+
+
+

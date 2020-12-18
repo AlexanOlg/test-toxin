@@ -1,6 +1,6 @@
 include ../dropdown/dropdown
 include ../date-dropdown/date-dropdown
-include ../button/button
+include ../buttons/buttons
 
 mixin search-room(isShow)
 		.search-room
@@ -17,4 +17,4 @@ mixin search-room(isShow)
 								],
 							})
 						.search-room__button
-								+button-long('подобрать номер')
+								+buttons({type: 'button-long', text: 'подобрать номер'})

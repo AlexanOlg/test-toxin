@@ -1,18 +1,18 @@
 include ../logo/logo.pug
 include ../menu/menu.pug
-include ../button/button.pug
+include ../buttons/buttons.pug
 
-mixin header(login, name)
+mixin header(isOpen, name)
 	.header__body
 		.header 
 			+logo('true')
 			.header__nav
 				+menu
-			if login
+			if isOpen
 				.header__nameuser= name
 			else
 				.header__buttons
 					.header__button
-						+button__border('Войти')
+						+buttons({type: 'button-border', text: 'Войти'})
 					.header__button
-						+button('Зарегистрироваться')
+						+buttons({type: 'button', text: 'Зарегистрироваться'})

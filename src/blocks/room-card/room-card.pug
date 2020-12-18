@@ -1,17 +1,18 @@
 include ../slider/slider.pug
 include ../room-number/room-number.pug
-include ../button/button.pug
+include ../rate-button/rate-button.pug
 
-mixin room-card
-		.room-card
-				.room-card__slider
-					+slider(image)
-				.room-card__container
-					.room-card__number
-						+room-number('5', '5')
-				.room-card__container
-					.room-card__stars
-						+button__stars('5', '5')
-					.room-card__reviews
-						span.room-card__reviews-title Отзывов
+mixin room-card(num, number, price, stars)
+	.room-card
+		.room-card__slider
+			+slider
+		.room-card__container
+			.room-card__number
+				+room-number(number, price)
+		.room-card__container
+			.room-card__stars
+				+rate-button(stars)
+			.room-card__reviews
+				span.room-card__reviews-num= num
+				span.room-card__reviews-text Отзывов
 

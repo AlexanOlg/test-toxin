@@ -4,8 +4,11 @@ include ../../blocks/text-field/text-field.pug
 include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/date-dropdown/date-dropdown.pug
 include ../../blocks/checkbox-button/checkbox-button.pug
-include ../../blocks/button/button.pug
+include ../../blocks/buttons/buttons.pug
 include ../../blocks/button-like/button-like.pug
+include ../../blocks/rate-button/rate-button.pug
+include ../../blocks/radio-buttons/radio-buttons.pug
+include ../../blocks/button-simple/button-simple.pug
 include ../../blocks/toogle/toogle.pug
 include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/pagination/pagination.pug
@@ -58,7 +61,7 @@ block content
 					+checkbox-button('Можно пригласить гостей (до 10 человек)', true)
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header radio buttons
-					+button__radio
+					+radio-buttons
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header toogle
 					+toogle(true)
@@ -71,24 +74,24 @@ block content
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header rate buttons
 					.form-elements__wrap-item_inner
-						+button__stars('4', '5')
-						+button__stars('5', '5')
+						+rate-button('4', '5')
+						+rate-button('5', '5')
 			.form-elements__wrap
 				.form-elements__wrap-item
 					+range-slider('range slider')
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header buttons
 					.form-elements__wrap-item_buttons
-						+button('click me')
-						+button('click me', ' button_hovered')
+						+buttons({type: 'button', text: 'click me'})
+						+buttons({type: 'button-hovered', text: 'click me'})
 					.form-elements__wrap-item_buttons
-						+button__border('click me')
-						+button__border('click me', ' button_hovered')
+						+buttons({type: 'button-border', text: 'click me'})
+						+buttons({type: 'button-border__hovered', text: 'click me'})
 					.form-elements__wrap-item_buttons
-						+button-empty('click me')
-						+button-empty('click me', ' button_hovered')
+						+button-simple('click me')
+						+button-simple('click me', ' button_hovered')
 					.form-elements__wrap-item_buttons
-						+button-long('click me')
+						+buttons({type: 'button-long', text: 'click me'})
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header pagination
 					+pagination('1')

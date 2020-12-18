@@ -1,0 +1,5 @@
+mixin button-simple(text, isGray=false)
+	if isGray
+		button(class='button-gray')= text
+	else
+		button(class='button-simple')= text

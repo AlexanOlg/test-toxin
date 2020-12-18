@@ -3,7 +3,6 @@ import 'air-datepicker';
 
 $(() => {
 	$('.calendar').datepicker({
-		clearButton: true,
 		multipleDates: '2',
 		multipleDatesSeparator: ' ',
 		position: 'bottom left',
@@ -16,6 +15,7 @@ $(() => {
 		onSelect(formattedDate) {
 			$.dates = formattedDate;
 		},
+		showButtonPanel: false,
 	});
 });
 $.fn.datepicker.language.ru = {

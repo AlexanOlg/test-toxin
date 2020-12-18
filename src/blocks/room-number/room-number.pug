@@ -1,9 +1,9 @@
-mixin room-number
+mixin room-number(number, price)
 	.room__number
 		.room__number_wrapper
 			span.room__number-tag №
-			span.room__number-number 888
+			span.room__number-number= number
 			span.room__number-type люкс
 		.room__number_wrapper
-			span.room__number-price 9 990₽ 
+			span.room__number-price= price
 			span.room__number-text в сутки

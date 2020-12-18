@@ -1,5 +1,5 @@
 include ../text-field/text-field.pug
-include ../button/button.pug
+include ../buttons/buttons.pug
 include ../account/account.pug
 
 mixin login
@@ -10,6 +10,6 @@ mixin login
 			.login__input-name
 				+text-field('', 'Пароль')
 		.login__button
-			+button-long('Войти')
+			+buttons({type: 'button-border', text: 'Войти'})
 		.login__account
-			+account2('Нет аккаунта на Toxin?')
+			+account('Нет аккаунта на Toxin?')

@@ -1,6 +1,7 @@
 include ../../blocks/text-field/text-field.pug
 include ../../blocks/toogle/toogle.pug
-include ../../blocks/button/button.pug
+include ../../blocks/buttons/buttons.pug
+include ../../blocks/radio-buttons/radio-buttons.pug
 include ../../blocks/account/account.pug
 
 mixin registration
@@ -12,7 +13,7 @@ mixin registration
 			.registration__input-name
 				+text-field('', 'Фамилия')
 			.registration__radio-buttons
-				+button__radio
+				+radio-buttons
 			.registration__input-header Дата рождения
 				.registration__input-name
 					+text-field('', 'ДД.ММ.ГГГГ')
@@ -24,6 +25,6 @@ mixin registration
 			.registration__toogle
 				+toogle(false)
 			.registration__button
-				+button-long('Перейти к оплате')
+				+buttons({type: 'button-long', text: 'перейти к оплате'})
 			.registration__login
-				+account('Уже есть аккаунт на Toxin?')
+				+account('Уже есть аккаунт на Toxin?', 'false')

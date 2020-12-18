@@ -1,15 +1,25 @@
 @import '../../scss/variables.scss';
 
 .calendar {
-  max-width: 380px;
-  position: relative;
-  z-index: 3;
-  transition: max-height 0.3s;
-  overflow: hidden;
-  &_showed {
-    max-height: 410px;
-  }
+	max-width: 380px;
+	position: relative;
+	z-index: 3;
+	transition: max-height 0.3s;
+	overflow: hidden;
+	&__showed {
+		max-height: 410px;
+	}
+	&__buttons {
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+		z-index: 1;
+		width: 265px;
+		display: flex;
+		justify-content: space-between;
+	}
 }
+
 .datepicker {
 	width: 100%;
 	position: relative;
@@ -19,70 +29,68 @@
 	box-shadow: 0px 10px 20px $ds5;
 	border-radius: 4px;
 	padding: 25px;
-  &--cell {
-    width: 40px;
-    height: 40px;
-    @include montserrat(12px, 1, $black);
+	&--cell {
+    	width: 40px;
+    	height: 40px;
+    	@include montserrat(12px, 1, $black);
 		&.-focus- {
 			background: $purple-gradient;
 			border-radius: 22px;
 		}
 		&-day {
 			@include h3-text(none, $ds50);
-			}
+		}
 		&.-in-range- {
 			background: $purple-gradient;
 			opacity: 0.25;
-      &.-current- {
-        background: $purple-gradient;
+			&.-current- {
+				background: $purple-gradient;
 				opacity: 0.25;
-        border-radius: 0;
-      }
-    }
-    &.-current- {
+				border-radius: 0;
+			}
+    	}
+    	&.-current- {
 			background: $green-gradient;
 			border-radius: 22px;
-    }
-    &.-selected- {
+    	}
+    	&.-selected- {
 			border-radius: 50%;
 			background: $purple-gradient;
 			border-radius: 22px;
-			 &.-focus- {
+			&.-focus- {
 				background: $purple-gradient;
 				border-radius: 22px;
 			}
-
-      &.-range-to-::before {
-        content: "";
-        position: absolute;
-        width: 50%;
-        height: 100%;
-        left: 0;
-        
-      }
-      &.-range-from-::after {
-        content: "";
-        position: absolute;
-        width: 50%;
-        height: 100%;
-        right: 0;
-        
-      }
-    }
-  }
-  &--day-name {
+			&.-range-to-::before {
+				content: "";
+				position: absolute;
+				width: 50%;
+				height: 100%;
+				left: 0;
+        	}
+			&.-range-from-::after {
+				content: "";
+				position: absolute;
+				width: 50%;
+				height: 100%;
+				right: 0;
+			}
+		}
+	}
+	&--day-name {
 		@include h3-text(none, $purple);
-    margin-bottom: 10px;
-  }
-  &--content {
-    padding: 0;
+		margin-bottom: 10px;
+	}
+	&--content {
+    	padding: 0;
 		width: 280px;
 		margin-top: 28px;
-  }
-  &--nav {
+	}
+	&--nav {
 		border: none;
 		padding: 0;
-    &-action {
+		justify-content: space-between;
+    	&-action {
 			width: 23.93px;
 			height: 24px;
 			left: 1255.4px;
@@ -92,37 +100,11 @@
 		&-title {
 			margin: -10px;
 			h2 {
-			@include text-bold(19px, 23px, $ds100);
-			text-align: center;
-			max-width: 114px;
-
+				@include text-bold(19px, 23px, $ds100);
+				text-align: center;
+				max-width: 114px;
 			}
 		}
-  }
-  &--button {
-    display: inline-block;
-		@include h3-text(uppercase, $purple);
-		cursor: pointer;
-		height: 0;
-		margin-bottom: 15px;
-		margin-top: 20.44px;
-    &:hover {
-      opacity: 0.5;
-      background-color: transparent;
-    }
-    &s {
-      width: 40%;
-      border: none;
-    }
-	}
-	&--buttons {
-		padding: 0;
-		margin: 0;
 	}
 }
-.button__calendar {
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
-	z-index: 1;
-}
+
