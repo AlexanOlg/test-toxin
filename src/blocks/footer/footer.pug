@@ -2,68 +2,54 @@ include ../logo/logo.pug
 include ../input/input.pug
 
 
-mixin footer()
-	<script src="https://kit.fontawesome.com/ed00200816.js" crossorigin="anonymous"></script>
-	.footer__body
-		.footer
-			.footer__inner
-				.footer__item
-					+logo('true')
-					p.footer__logo-title Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-				.footer__item
-					h3.footer__nav Навигация
-					ul.footer__nav-ref
-						li.footer__nav-item
-							a(href='#').footer__link О нас
-						li.footer__nav-item
-							a(href='#').footer__link Новости
-						li.footer__nav-item
-							a(href='#').footer__link Служба поддержки
-						li.footer__nav-item
-							a(href='#').footer__link Услуги
-				.footer__item
-					h3.footer__nav О нас
-					ul.footer__nav-ref
-						li.footer__nav-item
-							a(href='#').footer__link О сервесе
-						li.footer__nav-item
-							a(href='#').footer__link Наша команда
-						li.footer__nav-item
-							a(href='#').footer__link Вакансии
-						li.footer__nav-item
-							a(href='#').footer__link Инвесторы
-				.footer__item
-					h3.footer__nav Служба поддержки
-					ul.footer__nav-ref
-						li.footer__nav-item
-							a(href='#').footer__link Соглашения
-						li.footer__nav-item
-							a(href='#').footer__link Сообщества
-						li.footer__nav-item
-							a(href='#').footer__link Связь с нами
-				.footer__item
-					h3.footer__nav Подписка
-					p.footer__logo-title Получайте специальные предложения и новости сервиса
-					.footer__input
-						+input
-			.footer__copyright
-				span.footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
-				ul.footer__socials-list
-					li.footer__socials-item
-						a.footer__socials-link(href="empty")
-							span.footer__socials-ico.fab.fa-twitter
-					li.footer__socials-item
-						a.footer__socials-link(href="empty")
-							span.footer__socials-ico.fab.fa-facebook-square
-					li.footer__socials-item
-						a.footer__socials-link(href="empty")
-							span.footer__socials-ico.fab.fa-instagram
-			.footer__mobile
-				.footer__mobile-inner
-					.footer__mobile-logo
-						+logo('true')
-					.footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
-					ul.footer__mobile-list
+mixin footer(dekstop)
+	script(src="https://kit.fontawesome.com/ed00200816.js" crossorigin="anonymous")
+	if dekstop
+		.footer__body
+			.footer
+				.footer__inner
+					.footer__item
+						+logo
+						p.footer__logo-title Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+					.footer__item
+						h3.footer__nav Навигация
+						ul.footer__nav-ref
+							li.footer__nav-item
+								a(href='#').footer__link О нас
+							li.footer__nav-item
+								a(href='#').footer__link Новости
+							li.footer__nav-item
+								a(href='#').footer__link Служба поддержки
+							li.footer__nav-item
+								a(href='#').footer__link Услуги
+					.footer__item
+						h3.footer__nav О нас
+						ul.footer__nav-ref
+							li.footer__nav-item
+								a(href='#').footer__link О сервесе
+							li.footer__nav-item
+								a(href='#').footer__link Наша команда
+							li.footer__nav-item
+								a(href='#').footer__link Вакансии
+							li.footer__nav-item
+								a(href='#').footer__link Инвесторы
+					.footer__item
+						h3.footer__nav Служба поддержки
+						ul.footer__nav-ref
+							li.footer__nav-item
+								a(href='#').footer__link Соглашения
+							li.footer__nav-item
+								a(href='#').footer__link Сообщества
+							li.footer__nav-item
+								a(href='#').footer__link Связь с нами
+					.footer__item
+						h3.footer__nav Подписка
+						p.footer__logo-title Получайте специальные предложения и новости сервиса
+						.footer__input
+							+input
+				.footer__copyright
+					span.footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
+					ul.footer__socials-list
 						li.footer__socials-item
 							a.footer__socials-link(href="empty")
 								span.footer__socials-ico.fab.fa-twitter
@@ -73,3 +59,19 @@ mixin footer()
 						li.footer__socials-item
 							a.footer__socials-link(href="empty")
 								span.footer__socials-ico.fab.fa-instagram
+	else
+		.footer__mobile
+			.footer__mobile-inner
+				.footer__mobile-logo
+					+logo
+				.footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
+				ul.footer__mobile-list
+					li.footer__socials-item
+						a.footer__socials-link(href="empty")
+							span.footer__socials-ico.fab.fa-twitter
+					li.footer__socials-item
+						a.footer__socials-link(href="empty")
+							span.footer__socials-ico.fab.fa-facebook-square
+					li.footer__socials-item
+						a.footer__socials-link(href="empty")
+							span.footer__socials-ico.fab.fa-instagram

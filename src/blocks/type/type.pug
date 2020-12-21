@@ -1,11 +1,5 @@
 mixin type
-    - var types = [
-    -     { tag: 'H1', classTag: 'type__tag-h1', text: 'This one is the sub-section or widget title', classText: 'type__text-h1' },
-    -     { tag: 'H2', classTag: 'type__tag-h2', text: 'Next one is the item title inside widgets', classText: 'type__text-h2' },
-    -     { tag: 'H3', classTag: 'type__tag-h3', text: 'This is a label or CTA text', classText: 'type__text-h3' },
-    -     { tag: 'Body', classTag: 'type_tag-body', text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', classText: 'type__text-body' },
-    - ]
-
+    - var types = [{ tag: 'H1', classTag: 'type__tag-h1', text: 'This one is the sub-section or widget title', classText: 'type__text-h1' }, { tag: 'H2', classTag: 'type__tag-h2', text: 'Next one is the item title inside widgets', classText: 'type__text-h2' }, { tag: 'H3', classTag: 'type__tag-h3', text: 'This is a label or CTA text', classText: 'type__text-h3' }, { tag: 'Body', classTag: 'type_tag-body', text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', classText: 'type__text-body' }, ]
     each select in types
         .type
             div(class= select.classTag).type__tag= select.tag

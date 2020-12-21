@@ -1,27 +1,56 @@
 @import '../../scss/variables.scss';
 
 .text-field {
-  &__input {
+	&__input {
 		@include montserrat(14px, 14px, $ds100);
 		padding: 13px 15px;
 		width: 100%;
 		opacity: 0.25;
+		&:focus,
+		&:hover {
+			opacity: 1;
+			color: $ds75;
+			outline: none;
+			border: 1px solid $ds50;
+		}
 		&-header {
 			@include h3-text(uppercase, $ds100);
 		}
 	}
-    &:focus,
-    &:hover,
     &_hovered {
-      opacity: 1;
-      color: $ds75;
-			outline: none;
-		}
+		opacity: 1;
+		color: $ds75;
+		outline: none;
+		border: 1px solid $ds50;
+	}
 	&__wrap {
 		background: $white;
 		border-radius: 4px;
 		border: 1px solid $ds25;
 		width: 100%;
 		outline: none;
+		&_inner {
+			display: flex;
+			justify-content: space-between;
+			background: $white;
+			border-radius: 2px;
+			height: 44px;
+			&:focus,
+			&:hover {
+				opacity: 1;
+				color: $ds75;
+				outline: none;
+				border: 1px solid $ds50;
+			}
+		}
 	}
+	&__button {
+		@include material-font(24px, 24px, $purple-gradient);
+		background: $white;
+		border: none;
+		width: 44px;
+		&:focus {
+			outline: none;
+		}
 	}
+}

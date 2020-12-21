@@ -1,8 +1,6 @@
-mixin logo(options)
-  -
-    var image = options && options.image && options.image
-    var logo = image ? image: "logo.svg"
-    var mod = options && options.mod && options.mod
-
-  .logo(class = mod && `logo_${mod}`)
-    img.logo__image(src=require(`blocks/logo/images/${logo}`).default)
+mixin logo(gray)
+	.logo
+	if gray
+		img.logo__image(src=require(`blocks/logo/img/logo-gray.svg`).default)
+	else
+		img.logo__image(src=require(`blocks/logo/img/logo.svg`).default)

@@ -1,7 +1,8 @@
 @import '../../scss/variables.scss';
 
 .dropdown {
-    position: relative;
+	position: relative;
+	margin-top: 40px;
 	&__inner {
 		display: flex;
 		justify-content: space-between;

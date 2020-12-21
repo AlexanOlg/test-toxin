@@ -5,12 +5,14 @@ include ../buttons/buttons.pug
 mixin header(isOpen, name)
 	.header__body
 		.header 
-			+logo('true')
-			.header__nav
-				+menu
+			+logo
 			if isOpen
+				.header__nav
+					+menu
 				.header__nameuser= name
 			else
+				.header__nav-close
+					+menu
 				.header__buttons
 					.header__button
 						+buttons({type: 'button-border', text: 'Войти'})

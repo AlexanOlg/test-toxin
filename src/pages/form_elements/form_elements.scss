@@ -8,6 +8,10 @@
 		margin: 0 auto;
 		padding: 0 20px 0 60px;
 	}
+	&__flex {
+		display: flex;
+		justify-content: space-between;
+	}
 	&__inner {
 		display: flex;
         justify-content: space-between;
@@ -22,6 +26,10 @@
 		&-item {
 			&_header {
 				@include h3-text(uppercase, $ds100);
+			}
+			&_flex {
+				@include montserrat(12px, 15px, $ds50);
+				text-transform: uppercase;
 			}
 			&_button {
 				display: flex;

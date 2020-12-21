@@ -1,6 +1,7 @@
 .logo {
-  &_ui-kit {
     padding-top: 30px;
-    padding-left: 30px;
-  }
+	padding-left: 30px;
+	&__image {
+		padding-left: 30px;
+	}
 }
