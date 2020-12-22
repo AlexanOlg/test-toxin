@@ -1,6 +1,7 @@
 mixin logo(gray)
 	.logo
-	if gray
-		img.logo__image(src=require(`blocks/logo/img/logo-gray.svg`).default)
-	else
-		img.logo__image(src=require(`blocks/logo/img/logo.svg`).default)
+		if gray
+			.logo-gray
+				img.logo__image(src=require(`blocks/logo/img/logo-gray.svg`).default)
+		else
+			img.logo__image(src=require(`blocks/logo/img/logo.svg`).default)

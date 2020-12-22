@@ -12,9 +12,10 @@ mixin header(isOpen, name)
 				.header__nameuser= name
 			else
 				.header__nav-close
-					+menu
-				.header__buttons
-					.header__button
-						+buttons({type: 'button-border', text: 'Войти'})
-					.header__button
-						+buttons({type: 'button', text: 'Зарегистрироваться'})
+					.header__menu
+						+menu
+					.header__buttons
+						.header__button
+							+buttons({type: 'button-border', text: 'Войти'})
+						.header__button
+							+buttons({type: 'button', text: 'Зарегистрироваться'})

@@ -5,7 +5,7 @@
 	display: flex;
 	&__label {
 		display: flex;
-		@include montserrat(14px, 20px, $ds50);
+		@include montserrat(14px, 19px, $ds50);
 		margin-right: 20px;
 	}
 	&__input {
@@ -17,7 +17,7 @@
 		&:checked {
 			background-image: url(./img/on.svg);
 			& + &__text {
-				@include montserrat(14px, 20px, $ds50);
+				@include montserrat(14px, 21px, $ds50);
 			}
 		}
 	}

@@ -12,19 +12,18 @@
 	&:focus {
 	outline: none;
 	}    
-	&:hover,
-	&_hovered {
+	&:hover {
 	opacity: 0.5;
     }
     &-like {
 		display: flex;
-    width: 40px;
-    height: 20px;
+		width: 40px;
+		height: 20px;
 		@include material-font(10px, 9px, $ds25);	
-    background: $white;
-    border: 1px solid $ds25;
-    border-radius: 10px;
-    cursor: pointer;
+		background: $white;
+		border: 1px solid $ds25;
+		border-radius: 10px;
+		cursor: pointer;
 		transition: all .1s;
 		&:checked {
 			@include material-font(10px, 9px, $purple);

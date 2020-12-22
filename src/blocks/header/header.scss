@@ -6,8 +6,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1240px;
-    padding: 0 20px 0 60px;
+    max-width: 1260px;
+    padding: 0 0 0 70px;
     height: 70px;
 	margin: 0 auto;
 	background: $white;
@@ -22,7 +22,9 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-
+		&-close {
+			display: flex;
+		}
 	}
 	&__buttons {
         display: flex;
@@ -44,5 +46,9 @@
     border-left: 1px solid rgba(31, 32, 65, 0.1);
     margin-left: 20px;
     height: 30px;
+	}
+	&__menu {
+		display: flex;
+		align-items: center;
 	}
 }

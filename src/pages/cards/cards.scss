@@ -13,7 +13,6 @@
 			flex: 1 1 0;
 			max-width: 380px;
 			&:last-child {
-				margin-right: 0;
 				max-width: 320px;
 			}
 		}
@@ -21,8 +20,5 @@
 	&__item {
 		margin-bottom: 40px;
 		margin-right: 0;
-		&:last-child {
-			padding-top: 5px;
-		}
 	}
 }

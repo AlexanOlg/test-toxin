@@ -1,19 +1,16 @@
+@import '../../scss/responsive.scss';
 @import '../../scss/variables.scss';
 
 .registration {
-  max-width: 380px;
-  background: $white;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  padding: 38px 30px 30px 30px;
-  &__header {
+	max-width: 380px;
+	background: $white;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	padding: 39px 28px 30px 30px;
+	&__header {
 		@include text-bold(24px, 29px, $ds100);
 		padding-bottom: 20px;
-		}
-  &__input-fullname  {
-		margin-bottom: 10px;
-
 	}
 	&__input-name {
 		@include montserrat(14px, 18px, $ds25);
@@ -24,27 +21,23 @@
 		//	border: none;
 		//}
 	}
-  &__radio-buttons {
-		margin-bottom: 24px;
+	&__radio-buttons {
+		margin-bottom: 22px;
 	}
-
-  &__input-header {
+	&__input-header {
 		@include h3-text(uppercase, $ds100);
 		line-height: 20px;
 	}
-  &__input-header1 {
+	&__input-header1 {
 		margin-bottom: 10px;
-		margin-top: 20px;
+		margin-top: 19px;
 		@include h3-text(uppercase, $ds100);
 		line-height: 20px;
 	}
-	
-  &__toogle {
-		margin-bottom: 20px;
+	&__toogle {
+		margin-bottom: 18px;
 	}
-
-  &__button {
-		margin-bottom: 41px;
+	&__button {
+		margin-bottom: 29px;
 	}
-
 }
