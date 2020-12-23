@@ -16,39 +16,47 @@
         height: 70px;
         background: $white;
         margin-top: 40px;
-        box-shadow: 0px 10px 20px $ds5;
-	}
-	&__nav {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-		&-close {
-			display: flex;
-		}
-	}
-	&__buttons {
-        display: flex;
-	}
-	&__button {
-		margin-right: 20px;
-        @include media-up($lg) {
-        flex-direction: row;
-        }
-		&:last-child {
-			margin-right: 0;
-		}
-	}
-	&__nameuser {
-	@include montserrat(14px, 17px, $ds50);
-	display: flex;
-	align-items: center;
-	padding-left: 20px;
-    border-left: 1px solid rgba(31, 32, 65, 0.1);
-    margin-left: 20px;
-    height: 30px;
+		box-shadow: 0px 10px 20px $ds5;
 	}
 	&__menu {
 		display: flex;
 		align-items: center;
+	}
+	&__user {
+		@include montserrat(14px, 17px, $ds50);
+		text-align: center;
+		padding-top: 12px;
+		padding-left: 20px;
+		border-left: 1px solid $ds10;
+	}
+	&__button{
+		display: flex;
+		align-items:center;
+		&:last-child{
+			margin-left: 20px;
+		}
+		&-inner {
+			display: flex;
+		}
+	}
+}
+
+.header-menu{
+	display: flex;
+	align-items: flex-end;
+	margin-right: 20px;
+	&__inner {
+		display: flex;
+		align-items: flex-start;
+		padding-top: 2px;
+		position: relative;
+		i {
+			color: $ds50;
+		}
+	}
+	&__list{
+		display: flex;
+		position: absolute;
+		z-index: 2;
 	}
 }

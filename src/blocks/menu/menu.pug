@@ -1,13 +1,11 @@
 mixin menu
 	- var menuItems = [{ text: 'О нас', active: 'true' }, { text: 'Услуги', checkbox: 'true' }, { text: 'Вакансии' }, { text: 'Новости' }, { text: 'Соглашения', checkbox: 'true' }]
-	ul.menu
+	nav.menu
 		each menuItem in menuItems
-			a(href='#').menu__link
-				if menuItem.active
-					li.menu__item_active= menuItem.text
-				else if menuItem.checkbox
-					li.menu__item= menuItem.text
-					i.menu__item_checkbox expand_more
-				else
-					li.menu__item= menuItem.text
+			if menuItem.active
+				a(href='#').menu__link_active= menuItem.text
+			else if menuItem.checkbox
+				a(href='#').menu__link_checkbox= menuItem.text
+			else
+				a(href='#').menu__link= menuItem.text
 

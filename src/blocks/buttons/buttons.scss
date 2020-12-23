@@ -4,7 +4,7 @@
 .button {
 	background: $purple-gradient;
 	border-radius: 22px;
-	padding: 14px 21px 15px 19px;
+	padding: 9px 21px 9px 19px;
 	cursor: pointer;
 	border: none;
 	@include h3-text(uppercase, $white);
@@ -48,6 +48,18 @@
 			padding: 13px 15px 13px 17px;
 			cursor: pointer;
 			@include h3-text(uppercase, $purple);
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+		&__small {
+			background-color: $white;
+			border-radius: 22px;
+			border: 2px solid $purple;
+			cursor: pointer;
+			@include text-bold(12px, 18px, $purple);
+			text-transform: uppercase;
+			padding: 5px 17px 5px 18px;
 			&:hover {
 				opacity: 0.5;
 			}

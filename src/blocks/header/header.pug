@@ -2,20 +2,50 @@ include ../logo/logo.pug
 include ../menu/menu.pug
 include ../buttons/buttons.pug
 
-mixin header(isOpen, name)
+//- mixin header(isOpen, name)
+//- 	.header__body
+//- 		.header 
+//- 			+logo
+//- 			if isOpen
+//- 				.header__nav
+//- 					+menu
+//- 				.header__nameuser= name
+//- 			else
+//- 				.header__nav-close
+//- 					.header__menu
+//- 						+menu
+//- 					.header__buttons
+//- 						.header__button
+//- 							+buttons({type: 'button-border__small', text: 'Войти'})
+//- 						.header__button
+//- 							+buttons({type: 'button', text: 'Зарегистрироваться'})
+
+mixin header(parametres={})
+	- let {buttons=false, user=false, userText='Юлий Цезарь'}=parametres
 	.header__body
-		.header 
+		.header
 			+logo
-			if isOpen
-				.header__nav
-					+menu
-				.header__nameuser= name
-			else
-				.header__nav-close
-					.header__menu
-						+menu
-					.header__buttons
-						.header__button
-							+buttons({type: 'button-border', text: 'Войти'})
-						.header__button
-							+buttons({type: 'button', text: 'Зарегистрироваться'})
+			ul.header__menu
+				block
+			if(buttons==true)
+				.header__button-inner
+					.header__button
+						+buttons({type: 'button-border__small', text: 'Войти'})
+					.header__button
+						+buttons({type: 'button', text: 'Зарегистрироваться'})
+			if(user==true)
+				span.header__user= userText
+
+mixin header-menu(parametres={})
+	-let {text, isOpen=false}=parametres
+	if(isOpen==true)
+		li.header-menu
+			.header-menu__inner
+				a(href='#' class='header-menu__link')=text
+				i.header-menu__icons expand_more
+			ul.header-menu__list
+				block
+	else
+		li.header-menu
+			.header-menu__inner
+				a(href='#' class='header-menu__link')=text

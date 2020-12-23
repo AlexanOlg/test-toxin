@@ -6,7 +6,12 @@ include ../../blocks/footer/footer.pug
 block title
 	title Headers footers
 	block content
-		+header
-		+header('true', 'Юлий Цезарь')
+		+header({buttons: true, user: false})
+			+header-menu({ text:'О нас' })
+			+header-menu({ text:'Услуги', isOpen: true })
+			+header-menu({ text:'Вакансии' })
+			+header-menu({ text:'Новости' })
+			+header-menu({ text:'Соглашения', isOpen: true })
+		+header({buttons:false, user: true})
 		+footer('true')
 		+footer
