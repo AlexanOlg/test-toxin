@@ -4,8 +4,7 @@ import 'air-datepicker';
 $(() => {
 	$('.calendar').datepicker({
 		multipleDates: '2',
-		multipleDatesSeparator: ' ',
-		position: 'bottom left',
+		multipleDatesSeparator: '',
 		range: true,
 		prevHtml: 'arrow_back',
 		nextHtml: 'arrow_forward',

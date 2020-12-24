@@ -1,9 +1,11 @@
 include ../calendar/calendar.pug
 
-mixin date-dropdown(text, text2, placeholder, placeholder2)
+mixin date-dropdown(textIn, textOut, placeholderIn, placeholderOut)
 	.date-dropdown
 		.date-dropdown__item
-			label.date-dropdown__item-label= text
-				input.date-dropdown__input.in(type='text' readonly placeholder= placeholder)
-			label.date-dropdown__item-label= text2
-				input.date-dropdown__input.out(type='text' readonly placeholder= placeholder2)
+			label.date-dropdown__item-label= textIn
+				input.date-dropdown__input-in(type='text' placeholder= placeholderIn)
+			label.date-dropdown__item-label= textOut
+				input.date-dropdown__input-out(type='text' placeholder= placeholderOut)
+		.date-dropdown__calendar
+			+calendar

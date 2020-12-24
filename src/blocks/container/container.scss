@@ -3,16 +3,7 @@
 
 .container {
 	max-width: 100%;
-	margin: 0 auto 62px;
+	margin: 40px auto 63px;
 	padding: 0 20px;
-	@include media-up($xl) {
-		max-width: $xl;
-	}
-	&_outer {
-		padding: 0;
-		@include media-up($xxl) {
-		max-width: $xxl;
-		padding: 0 20px;
-		}
-	}
+
 }

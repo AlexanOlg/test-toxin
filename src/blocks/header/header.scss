@@ -1,6 +1,7 @@
 @import '../../scss/responsive.scss';
 @import '../../scss/variables.scss';
 
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -18,14 +19,20 @@
         margin-top: 40px;
 		box-shadow: 0px 10px 20px $ds5;
 	}
+	&__container {
+		display: flex;
+		justify-content: flex-end;
+	}
 	&__menu {
 		display: flex;
+		justify-content: flex-end;
 		align-items: center;
+		padding-bottom: 3px;
 	}
 	&__user {
 		@include montserrat(14px, 17px, $ds50);
 		text-align: center;
-		padding-top: 12px;
+		padding-top: 4px;
 		padding-left: 20px;
 		border-left: 1px solid $ds10;
 	}
@@ -43,20 +50,29 @@
 
 .header-menu{
 	display: flex;
-	align-items: flex-end;
 	margin-right: 20px;
 	&__inner {
 		display: flex;
-		align-items: flex-start;
+		align-items: center;
 		padding-top: 2px;
 		position: relative;
 		i {
 			color: $ds50;
 		}
 	}
-	&__list{
-		display: flex;
-		position: absolute;
-		z-index: 2;
+	&__link {
+		display: inline-block;
+		@include montserrat(14px, 17px, $ds50);
+		text-decoration: none;
+		margin-right: 2px;
+		&:hover {
+			text-shadow: 0 0.5px $ds75, 0.5px 0 $ds75, 0.5px 0.5px $ds75;
+		}
+	}
+	&__icons {
+		@include material-font(24px, 20px, $ds50);
+		&:hover {
+			text-shadow: 0 0.5px $ds75, 0.5px 0 $ds75, 0.5px 0.5px $ds75;
+		}
 	}
 }

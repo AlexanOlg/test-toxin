@@ -1,34 +1,41 @@
 @import '../../scss/variables.scss';
 
 .date-dropdown {
-  position: relative;
-  &__item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
+	position: relative;
+	&__item {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 20px;
 		grid-auto-flow: column;
 		&-label {
 			position: relative;
 			cursor: pointer;
 			@include h3-text(uppercase, $ds100);
 		}
-		&-calendar {
-			margin-top: 6px;
-			position: absolute;
+	}
+	&__calendar {
+		display: none;
+		margin-top: 6px;
+		position: absolute;
+		width: 100%;
+	}
+	&__input {
+		&-in,
+		&-out {
+			@include montserrat(14px, 18px, $ds75);
+			border: 1px solid $ds25;
+			box-sizing: border-box;
+			border-radius: 4px;
 			width: 100%;
+			padding-left: 14px;
+			height: 44px;
+			margin-top: 6px;
+			outline: none;
+			cursor: pointer;
 		}
-  }
-  &__input {
-		@include montserrat(14px, 18px, $ds75);
-    border: 1px solid $ds25;
-    box-sizing: border-box;
-    border-radius: 4px;
-    width: 100%;
-    padding-left: 14px;
-    height: 44px;
-    margin-top: 6px;
-    
-    outline: none;
-    cursor: pointer;
-	}    
+	}
 }
+.active {
+	display: block;
+}
+
