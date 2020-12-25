@@ -1,9 +1,15 @@
 
-.colors-and-type__main {
+.colors-and-type {
 	display: flex;
 	justify-content: space-between;
-  max-width: 1140px;
+	max-width: 1140px;
 	margin: 0 auto;
-	padding: 5px 20px 0 20px;
+	padding: 5px 20px 0 50px;
+	&__main {
+		width: 100%;
+		min-width: 400px;
+	}
+	&__item {
+		margin-left: 170px;
+	}
 }
-

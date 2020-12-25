@@ -2,26 +2,26 @@
 
 .type {
     display: grid;
-    grid-template-columns: 37px 30px 336px;
-		margin-bottom: 50px;
+    grid-template-columns: 37px 23px 370px;
+	margin-bottom: 50px;
 }
 
 .type__tag {
 	&-h1 {
 		@include montserrat(24px, 29px, $ds25);
-    text-align: right;
+
 	}
 	&-h2 {
-	@include montserrat(19px, 23px, $ds25);
-    text-align: right;
+		@include montserrat(19px, 23px, $ds25);
+
 	}
 	&-h3 {
-	@include h3-text(uppercase, $ds25);
-    text-align: right;
+		@include h3-text(uppercase, $ds25);
+
 	}
 	&-body {
 		@include montserrat(14px, 24px, $ds25);
-    text-align: right;
+
 	}
 }
 
@@ -34,7 +34,7 @@
 }
 
 .type__text-h3 {
-		@include h3-text(uppercase, $ds100);
+	@include h3-text(uppercase, $ds100);
 }
 
 .type__text-body {

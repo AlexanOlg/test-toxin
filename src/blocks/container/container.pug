@@ -1,8 +1,11 @@
 include ../logo/logo.pug
 
-mixin container
-	.container
-		+logo('true')
+mixin container(logo)
+	if logo
+		.container
+			+logo('true')
+	else
+		.container__outer
 
 
 

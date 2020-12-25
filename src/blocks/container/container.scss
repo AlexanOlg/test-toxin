@@ -5,5 +5,10 @@
 	max-width: 100%;
 	margin: 40px auto 63px;
 	padding: 0 20px;
-
+	&__outer {
+		width: 100%;
+		max-width: 1260px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
 }

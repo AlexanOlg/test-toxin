@@ -2,171 +2,59 @@
 @import '../../scss/variables.scss';
 @import '../../../node_modules/normalize.css/normalize.css';
 
-// .footer {
-// 	max-width: 1240px;
-// 	margin: 0 auto;
-// 	height: 443px;
-// 	background-color: $white;
-// 	&__body {
-// 		background-color: $white;
-// 		margin-top: 40px;
-// 		box-shadow: 0px 1px 0px $ds10;
-// 	}
-// 	&__inner {
-// 		padding: 100px 20px 100px 60px;
-// 		display: flex;
-// 		justify-content: space-between;
-// 	}
-// 	&__item {
-// 		max-width: 260px;
-// 		margin-right: 20px;
-// 		margin-left: -25px;
-// 		&:first-child {
-// 			margin-left: 0;
-// 			max-width: 299px;
-// 		}
-// 		&:last-child {
-// 			margin-right: -40px;
-// 			max-width: 299px;
-// 		}
-// 	}
-// 	&__copyright {
-// 		display: flex;
-// 		justify-content: space-between;
-// 		max-width: 1240px;
-// 		margin: 0 auto;
-// 		width: 100%;
-// 		padding: 30px 0 13px 60px;
-// 		&-text {
-// 			@include montserrat(14px, 17px, $ds50);
-// 			margin-top: 2px;
-// 		}
-// 	}
-// 	&__socials {
-// 		&-list {
-// 		display: flex;
-// 		align-items: center;
-// 		text-align: center;
-// 		margin-top: -3px;
-// 		}
-// 		&-ico {
-// 			@include montserrat(24px, 23px, $black);
-// 		}
-// 		&-item {
-// 			a {
-// 				span {
-// 					color: $purple;
-// 				}
-// 			}
-// 			margin-right: 21px;
-// 			&:last-child {
-// 				margin-right: 0;
-// 			}
-// 		}
-// 	}
-	
-// 	&__mobile {
-// 		width: 100%;
-// 		max-width: 768px;
-// 		background: $white;
-// 		margin: 50px 29.5% 140px 20.5%;
-// 		padding: 120px 0;
-// 		box-shadow: 0px 10px 20px $ds5;
-// 		&-logo {
-// 			padding-bottom: 20px;
-// 		}
-// 		&-list {
-// 			padding-top: 25px;
-// 			display: flex;
-// 			justify-content: center;
-// 		}
-// 		&-inner {
-// 			text-align: center;
-// 		}
-// 	}
-// 	&__logo {
-// 		&-title {
-// 			@include montserrat(14px, 24px, $ds75);
-// 			margin-top: 17px;
-// 			margin-left: 29px;
-// 		}
-// 	}
-// 	&__nav {
-// 		@include h3-text(uppercase, $ds100);
-// 		margin: 4px 0 21px 0;
-// 			&:last-child {
-// 				padding-bottom: 0;
-// 				margin-right: -40px;
-// 			}
-// 		}
-// 	&__link {
-// 		@include montserrat(14px, 17px, $ds50);
-// 	}
-// }
-
-
 .footer {
 	background: $white;
 	box-shadow: 0px 10px 20px $ds5;
-	background-color: $white;
 	margin-top: 40px;
 	&__container {
+		max-width: 1200px;
+		padding: 104px 20px;
+		margin: 0 auto;
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		grid-column-gap: 40px;
-		max-width: 1160px;
-		width: 80%;
-		margin: 0 auto 101px auto;
-		padding-top: 100px;
 	}
 	&__logo {
+		margin: -3px 0 17px -29px;
+		&-image {
+			margin-left: -30px;
+		}
+	}
+	&__info {
 		grid-column: span 3;
 	}
 	&__title {
 		max-width: 260px;
 		margin-top: 10px;
-	}
-	&__nav {
-		grid-column: span 2;
-		&-about {
-			grid-column: span 2;
-		}
-		&-support {
-			grid-column: span 2;
-		}
-		&-subscribe {
-			grid-column: span 3;
-			&_input{
-				margin-top: 23px;
-			}
-		}
+		@include montserrat(14px, 24px, $ds75);
 	}
 	&__list {
-		margin-top: 4px;
+		grid-column: span 2;
 		@include h3-text(uppercase, $ds100);
-		list-style: none;
-		padding: 0;
-		margin-bottom: 0;
 	}
 	&__link {
-		line-height: 17px;
-		text-decoration: none;
-		color: $ds50;
+		@include montserrat(14px, 17px, $ds50);
+		text-transform: none;
 	}
 	&__item {
-		font-size: 14px;
 		margin-top: 21px;
-		text-transform: none;
-		font-weight: normal;
-		color: $ds75;
-		&-subscribe {
-			margin-top: 18px;
-			line-height: 24px;
+	}
+	&__form {
+		grid-column: span 3;
+		@include h3-text(uppercase, $ds100);
+		&-item {
+			@include montserrat(14px, 24px, $ds75);
+			text-transform: none;
+			margin-top: 19px;
+		}
+		&-input {
+			margin-top: 23px;
 		}
 	}
 	&__dashed {
 		box-shadow: 0px 1px 0px $ds10;
 		margin: 0;
+		height: 1px;
 	}
 	&__copyright {
 		display: flex;
@@ -175,14 +63,18 @@
 		margin: auto;
 		width: 80%;
 		padding-top: 23px;
-		padding-bottom: 13px;
+		padding-bottom: 26px;
+		&-text {
+			margin-top: 6px;
+		}
 	}
 	&__social {
 		list-style: none;
 		font-size: 0;
 		&-item {
 			display: inline-block;
-			margin-left: 20px;
+			margin-left: 24px;
+			margin-right: -5px;
 		}
 		&-icon {
 			@include montserrat(24px, 23px, $purple);
@@ -203,12 +95,27 @@
 			padding-bottom: 20px;
 		}
 		&-list {
-			padding-top: 25px;
+			padding-top: 28px;
 			display: flex;
 			justify-content: center;
 		}
 		&-inner {
 			text-align: center;
+		}
+		&-text {
+			margin-top: 0;
+		}
+		&-icon {
+			@include montserrat(24px, 23px, $purple);
+			text-align: center;
+			width: 24px;
+			background: transparent;
+			background-clip: text;
+		}
+		&-item {
+			display: inline-block;
+			margin-left: 10px;
+			margin-right: 10px;
 		}
 	}
 }
