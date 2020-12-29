@@ -16,7 +16,13 @@
 	&__inner {
 		display: flex;
         justify-content: space-between;
-        margin-bottom: 100px;
+        margin-bottom: 57px;
+	}
+	&__rate {
+		margin-right: 18px;
+	}
+	&__button-container {
+		margin-right: 20px;
 	}
 	&__wrap {
 		width: 33%;
@@ -24,7 +30,7 @@
 		&-field {
 			margin-top: 7px;
 		}
-		&-dropdown {
+		&-datedropdown {
 			margin-top: 39px;
 			margin-bottom: 40px;
 		}
@@ -32,9 +38,29 @@
 			width: 100%;
 			max-width: 265px;
 		}
+		&-centrdrop {
+			width: 100%;
+			max-width: 320px;
+			margin-left: 52px;
+		}
 		&-button {
 			display: flex;
 			margin-top: 15px;
+			margin-bottom: 41px;
+		}
+		&-dropdown {
+			max-width: 265px;
+			margin-bottom: 20px;
+		}
+		&-checkbox {
+			margin-top: 81px;
+			max-width: 262px;
+			&:last-child {
+				margin-top: 20px;
+			}
+		}
+		&-box {
+			margin-top: 8px;
 		}
 		&-item {
 			margin-bottom: 21px;
@@ -45,12 +71,22 @@
 				@include montserrat(12px, 15px, $ds50);
 				text-transform: uppercase;
 			}
-			&_inner {
-                display: flex;
-			}
 			&_buttons {
-				margin-top: 40px;
+				margin-top: 15px;
+				margin-bottom: 30px;
+				display: flex;
 			}
+		}
+		&-pagination {
+			margin-top: 43px;
+		}
+		&-range {
+			margin-bottom: 13px;
+		}
+		&-rate {
+			display: flex;
+			margin-top: 18px;
+			min-width: 280px;
 		}
 		&-radio {
 			margin-bottom: 41px;
@@ -60,9 +96,7 @@
 			margin-top: 15px;
 			margin-bottom: 41px;
 		}
-        &-gap {
-            margin-top: 20px;
-        }
+
         &-footer {
             width: 66%;
             max-width: 710px;

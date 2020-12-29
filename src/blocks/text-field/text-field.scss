@@ -45,8 +45,10 @@
 		}
 	}
 	&__button {
-		@include material-font(24px, 24px, $purple-gradient);
-		background: $white;
+		@include material-font(24px, 24px, transparent);
+		-webkit-background-clip: text;
+		background-clip: text;
+		background-image: $purple-gradient;
 		border: none;
 		width: 44px;
 		// &:focus {

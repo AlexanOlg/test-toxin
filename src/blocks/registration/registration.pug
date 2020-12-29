@@ -9,19 +9,19 @@ mixin registration
 		h3.registration__header Регистрация аккаунта
 		.registration__input-fullname
 			.registration__input-name
-				+text-field('', 'Имя')
+				+text-field('Имя')
 			.registration__input-name
-				+text-field('', 'Фамилия')
+				+text-field('Фамилия')
 			.registration__radio-buttons
 				+radio-buttons
 			.registration__input-header Дата рождения
 				.registration__input-name
-					+text-field('', 'ДД.ММ.ГГГГ')
+					+text-field('ДД.ММ.ГГГГ')
 			.registration__input-header1 Данные для входа в сервис
 				.registration__input-name
-					+text-field('', 'Email')
+					+text-field('Email')
 				.registration__input-name
-					+text-field('', 'Пароль')
+					+text-field('Пароль')
 			.registration__toogle
 				+toogle(false)
 			.registration__button

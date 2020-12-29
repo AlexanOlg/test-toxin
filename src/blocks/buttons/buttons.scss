@@ -4,7 +4,7 @@
 .button {
 	background: $purple-gradient;
 	border-radius: 22px;
-	padding: 9px 21px 9px 19px;
+	padding: 14px 21px 15px 19px;
 	cursor: pointer;
 	border: none;
 	@include h3-text(uppercase, $white);
@@ -27,7 +27,7 @@
 		background-color: $white;
 		border-radius: 22px;
 		border: 2px solid $purple;
-		padding: 13px 24px 13px 25px;
+		padding: 13px 15px 13px 17px;
 		cursor: pointer;
 		@include h3-text(uppercase, $purple);
 		&:focus {
@@ -42,6 +42,7 @@
 			@include h3-text(uppercase, $purple);
 		}
 		&__hovered {
+			opacity: 0.5;
 			background-color: $white;
 			border-radius: 22px;
 			border: 2px solid $purple;

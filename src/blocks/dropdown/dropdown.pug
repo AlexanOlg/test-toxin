@@ -2,7 +2,7 @@ include ../button-simple/button-simple.pug
 
 mixin dropdown(dropdown)
 	.dropdown
-		div(class='dropdown__inner')
+		div(class='dropdown__inner' wordforms="гость гостя гостей" default="Сколько гостей?")
 			input(type="text" value='Сколько гостей' readonly).dropdown__input
 			button(class='dropdown__button-tick') expand_more
 		.dropdown__menu
@@ -11,9 +11,9 @@ mixin dropdown(dropdown)
 					li.dropdown__item
 						.dropdown__menu-item= item.menuItem
 						.dropdown__button-list
-						button.dropdown__button.dropdown__button-minus -
-						span.dropdown__number= item.number
-						button.dropdown__button.dropdown__button-plus +  
+							button.dropdown__button.dropdown__button-minus -
+							span.dropdown__number= item.number
+							button.dropdown__button.dropdown__button-plus +  
 			.dropdown__control-button
 				.dropdown__reset
 					+button-simple('очистить')

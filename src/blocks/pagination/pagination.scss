@@ -5,7 +5,14 @@
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
+	justify-content: space-between;
+	margin-top: 16px;
+	max-width: 240px;
+	&__description {
+		margin-top: 12px;
+		margin-left: 5px;
+		color: $ds75;
+	}
     &-item {
         min-width: 40px;
         min-height: 40px;

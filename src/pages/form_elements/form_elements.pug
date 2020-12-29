@@ -48,7 +48,7 @@ block content
 					.form-elements__wrap-field
 						+text-field('ДД.ММ.ГГГГ')
 				.form-elements__wrap-item
-					.form-elements__wrap-dropdown
+					.form-elements__wrap-datedropdown
 						+date-dropdown('date dropdown', 'date dropdown', 'ДД.ММ.ГГГГ', '19.08.2019')
 				.form-elements__wrap-item
 					.form-elements__width
@@ -85,31 +85,58 @@ block content
 						+button-like(2, false)
 						+button-like(12, true)
 				.form-elements__wrap-item
-					.form-elements__wrap-item_header rate buttons
-					.form-elements__wrap-item_inner
-						+rate-button('4', '5')
-						+rate-button('5', '5')
+					.form-elements__wrap-item_header rate button
+					.form-elements__wrap-rate
+						.form-elements__rate
+							+rate-button('4', '5')
+						.form-elements__rate
+							+rate-button('5', '5')
 			.form-elements__wrap
-				.form-elements__wrap-item
+				.form-elements__wrap-range
 					+range-slider('range slider')
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header buttons
 					.form-elements__wrap-item_buttons
-						+buttons({type: 'button', text: 'click me'})
-						+buttons({type: 'button-hovered', text: 'click me'})
+						.form-elements__button-container
+							+buttons({type: 'button', text: 'click me'})
+						.form-elements__button-container
+							+buttons({type: 'button-hovered', text: 'click me'})
 					.form-elements__wrap-item_buttons
-						+buttons({type: 'button-border', text: 'click me'})
-						+buttons({type: 'button-border__hovered', text: 'click me'})
+						.form-elements__button-container
+							+buttons({type: 'button-border', text: 'click me'})
+						.form-elements__button-container
+							+buttons({type: 'button-border__hovered', text: 'click me'})
 					.form-elements__wrap-item_buttons
-						+button-simple('click me')
-						+button-simple('click me', ' button_hovered')
+						.form-elements__button-container
+							+button-simple('click me')
+						.form-elements__button-container
+							+button-simple('click me', ' button_hovered')
 					.form-elements__wrap-item_buttons
-						+buttons({type: 'button-long', text: 'click me'})
-				.form-elements__wrap-item
+						+buttons({type: 'button-long', text: 'Перейти к оплате'})
+				.form-elements__wrap-pagination
 					.form-elements__wrap-item_header pagination
 					+pagination('1')
 		.form-elements__inner
 			.form-elements__wrap
+				.form-elements__wrap-dropdown
+					.form-elements__wrap-item_header dropdown
+					+dropdown({
+						items: [
+							{menuItem: 'спальни', number: '2'},
+							{menuItem: 'кровати', number: '2'},
+							{menuItem: 'ванные комнаты', number: '0'}
+						],
+					})
+				.form-elements__wrap-dropdown
+					.form-elements__wrap-item_header dropdown
+					+dropdown({
+						items: [
+							{menuItem: 'спальни', number: '2'},
+							{menuItem: 'кровати', number: '2'},
+							{menuItem: 'ванные комнаты', number: '0'}
+						],
+					})
+			.form-elements__wrap-centrdrop
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
 					+dropdown({
@@ -119,25 +146,6 @@ block content
 							{menuItem: 'младенцы', number: '5'}
 						],
 					})
-				.form-elements__wrap-item
-					.form-elements__wrap-item_header dropdown
-					+dropdown({
-						items: [
-							{menuItem: 'взрослые', number: '0'},
-							{menuItem: 'дети', number: '2'},
-							{menuItem: 'младенцы', number: '5'}
-						],
-					})
-			.form-elements__wrap
-					.form-elements__wrap-item
-						.form-elements__wrap-item_header dropdown
-						+dropdown({
-							items: [
-								{menuItem: 'взрослые', number: '0'},
-								{menuItem: 'дети', number: '2'},
-								{menuItem: 'младенцы', number: '5'}
-							],
-						})
 			.form-elements__wrap
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header dropdown
@@ -150,18 +158,20 @@ block content
 						})
 		.form-elements__inner
 			.form-elements__wrap
-				.form-elements__wrap-item
+				.form-elements__wrap-checkbox
 					.form-elements__wrap-item_header
 					+checkbox-list('true')
-					+checkbox-list()
-			.form-elements__wrap
-				.form-elements__wrap-gap
+				.form-elements__wrap-checkbox
+					.form-elements__wrap-item_header
+					+checkbox-list
+			.form-elements__wrap-centrdrop
+				.form-elements__wrap-box
 					.form-elements__wrap-item
 						.form-elements__wrap-item_header rich Checkbox Buttons
 						+checkbox-button('Широкий коридор', false, 'true', 'Ширина коридоров в номере не менее 91 см.')
 						+checkbox-button('Помощник для инвалидов', false, 'true', 'На 1 этаже вас встретит специалист  и проводит до номера.')
 			.form-elements__wrap
-				.form-elements__wrap-gap
+				.form-elements__wrap-checkbox
 					.form-elements__wrap-item
 						.form-elements__wrap-item_header bullet list
 						+bullet-list('Нельзя с питомцами')

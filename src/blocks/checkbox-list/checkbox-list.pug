@@ -5,7 +5,7 @@ mixin checkbox-list(login, listTitle='expandable checkbox list')
 	if login
 		.checkbox-list__container
 			span(class='checkbox-list__span')= listTitle
-			i.checkbox-list__icon expand_more
+			i.checkbox-list__icon-login expand_more
 	else
 		.checkbox-list__container
 			span(class='checkbox-list__span')= listTitle
@@ -23,5 +23,4 @@ mixin checkbox-list(login, listTitle='expandable checkbox list')
 				+checkbox-button('Телевизор', false)
 			li(class='checkbox-list__button' id='checkbox-list__button')
 				+checkbox-button('Шампунь', false)
-
 

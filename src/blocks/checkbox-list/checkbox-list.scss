@@ -6,13 +6,20 @@
     flex-direction: column;
     height: 100%;
     
-    &__span{
+    &__span {
         padding: 15px 0px;
         @include h3-text(uppercase, $ds100);
     }
     &__icon {
-        @include material-font(24px, 24px, $ds50);
-    }
+		@include material-font(24px, 24px, $ds50);
+		transform: rotate(-180deg);
+	}
+	&__icon {
+		&-login {
+			@include material-font(24px, 24px, $ds50);
+			
+		}
+	}
 
     &__container{
     display: flex;
@@ -24,9 +31,8 @@
             color:$ds50;
             transition: 200ms;
         }
-    }
+	}
+	&__menu {
+		margin-top: -12px;
+	}
 }
-
-
-
-

@@ -36,7 +36,6 @@
 		&-list {
 			display: flex;
 			justify-content: space-between;  
-			align-self: center;
 		}
 	}
 	&__menu {
@@ -48,7 +47,12 @@
 		position: absolute;
 		width: 100%;
 		z-index: 10;
-		padding: 13px 7px 0 15px;
+		padding: 6px 7px 0 15px;
+		&-item {
+			@include text-bold(12px, 30px, $ds100);
+			text-transform: uppercase;
+			margin-bottom: 7px;
+		}
 	}
 	&__list {
 		margin: 0;
@@ -58,17 +62,14 @@
 	&__item {
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 7px;
-	}
-	&__menu-item {
-		@include text-bold(12px, 30px, $ds100);
-		text-transform: uppercase;
+
 	}
 	&__number {
 		@include text-bold(12px, 30px, $ds100);
 		text-transform: uppercase;
 		width: 32px;
 		height: 30px;
+		padding-left: 13px;
 	}
 	&__control-button {
 		display: flex;
