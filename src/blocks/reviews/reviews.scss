@@ -8,9 +8,6 @@
         width: 47px;
         height: 47px;
     }
-    &__like {
-
-    }
     &__name {
         @include text-bold(14px, 24px, $ds75);
         margin-top: 15px;

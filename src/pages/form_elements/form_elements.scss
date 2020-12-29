@@ -11,6 +11,7 @@
 	&__flex {
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: 3px;
 	}
 	&__inner {
 		display: flex;
@@ -20,10 +21,23 @@
 	&__wrap {
 		width: 33%;
 		max-width: 320px;
+		&-field {
+			margin-top: 7px;
+		}
+		&-dropdown {
+			margin-top: 39px;
+			margin-bottom: 40px;
+		}
 		&-centr {
-			max-width: 260px;
+			width: 100%;
+			max-width: 265px;
+		}
+		&-button {
+			display: flex;
+			margin-top: 15px;
 		}
 		&-item {
+			margin-bottom: 21px;
 			&_header {
 				@include h3-text(uppercase, $ds100);
 			}
@@ -31,16 +45,21 @@
 				@include montserrat(12px, 15px, $ds50);
 				text-transform: uppercase;
 			}
-			&_button {
-				display: flex;
-			}
 			&_inner {
                 display: flex;
 			}
 			&_buttons {
 				margin-top: 40px;
 			}
-        }
+		}
+		&-radio {
+			margin-bottom: 41px;
+			margin-top: 47px;
+		}
+		&-toogle {
+			margin-top: 15px;
+			margin-bottom: 41px;
+		}
         &-gap {
             margin-top: 20px;
         }
@@ -51,5 +70,6 @@
 	}
 	&__width {
 		max-width: 266px;
+		margin-bottom: 41px;
 	}
 }

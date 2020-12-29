@@ -45,9 +45,11 @@ block content
 					})
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header masked text field
-					+text-field('ДД.ММ.ГГГГ')
+					.form-elements__wrap-field
+						+text-field('ДД.ММ.ГГГГ')
 				.form-elements__wrap-item
-					+date-dropdown('date dropdown', 'date dropdown', 'ДД.ММ.ГГГГ', '19.08.2019')
+					.form-elements__wrap-dropdown
+						+date-dropdown('date dropdown', 'date dropdown', 'ДД.ММ.ГГГГ', '19.08.2019')
 				.form-elements__wrap-item
 					.form-elements__width
 						.form-elements__wrap-item_header filter date dropdown
@@ -60,23 +62,26 @@ block content
 						})
 					.form-elements__width
 						.form-elements__wrap-item_header subscription text field
-						+text-field('Email', 'true')
+						.form-elements__wrap-field
+							+text-field('Email', 'true')
 			.form-elements__wrap-centr
 				.form-elements__wrap-item
-					.form-elements__wrap-item_header checkbox button 
+					.form-elements__wrap-item_header checkbox buttons 
 					+checkbox-button('Можно курить', false)
 					+checkbox-button('Можно с питомцами', true)
 					+checkbox-button('Можно пригласить гостей (до 10 человек)', true)
 				.form-elements__wrap-item
-					.form-elements__wrap-item_header radio buttons
-					+radio-buttons
+					.form-elements__wrap-radio
+						.form-elements__wrap-item_header radio buttons
+						+radio-buttons
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header toogle
-					+toogle(true)
-					+toogle
+						.form-elements__wrap-toogle
+							+toogle(true)
+							+toogle
 				.form-elements__wrap-item
-					.form-elements__wrap-item_header like buttons
-					.form-elements__wrap-item_button
+					.form-elements__wrap-item_header like button
+					.form-elements__wrap-button
 						+button-like(2, false)
 						+button-like(12, true)
 				.form-elements__wrap-item

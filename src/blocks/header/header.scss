@@ -8,7 +8,7 @@
     align-items: center;
     width: 100%;
     max-width: 1260px;
-    padding: 0 0 0 70px;
+    padding: 0 0 0 50px;
     height: 70px;
 	margin: 0 auto;
 	background: $white;
@@ -22,6 +22,7 @@
 	&__container {
 		display: flex;
 		justify-content: flex-end;
+		padding-right: 50px;
 	}
 	&__menu {
 		display: flex;

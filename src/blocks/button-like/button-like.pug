@@ -1,4 +1,9 @@
 mixin button-like(likesCount, checked)
-	button.button-like
-		i.button-like__icon.material-icons(type='checkbox', checked= checked) favorite_border
-		span.button-like__count= likesCount
+	if checked
+		button.button-like_checked
+			i.button-like__icon_checked(type='checkbox', checked= checked) favorite
+			span.button-like__count_checked= likesCount
+	else
+		button.button-like
+			i.button-like__icon(type='checkbox', checked= checked) favorite_border
+			span.button-like__count= likesCount

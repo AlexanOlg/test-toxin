@@ -3,6 +3,7 @@
 
 .radio-buttons {
 	display: flex;
+	margin-top: 15px;
 	&__label {
 		display: flex;
 		@include montserrat(14px, 19px, $ds50);

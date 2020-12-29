@@ -6,13 +6,13 @@
 		padding: 13px 15px;
 		width: 100%;
 		opacity: 0.25;
-		&:focus,
-		&:hover {
-			opacity: 1;
-			color: $ds75;
-			outline: none;
-			border: 1px solid $ds50;
-		}
+		// &:focus,
+		// &:hover {
+		// 	opacity: 1;
+		// 	color: $ds75;
+		// 	outline: none;
+		// 	border: 1px solid $ds50;
+		// }
 		&-header {
 			@include h3-text(uppercase, $ds100);
 		}
@@ -39,8 +39,8 @@
 			&:hover {
 				opacity: 1;
 				color: $ds75;
-				outline: none;
 				border: 1px solid $ds50;
+				border-radius: 2px;
 			}
 		}
 	}
@@ -49,8 +49,8 @@
 		background: $white;
 		border: none;
 		width: 44px;
-		&:focus {
-			outline: none;
-		}
+		// &:focus {
+		// 	outline: none;
+		// }
 	}
 }

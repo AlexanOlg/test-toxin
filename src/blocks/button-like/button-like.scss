@@ -2,19 +2,6 @@
 @import '../../scss/variables.scss';
 
 .button {
-	background: $purple-gradient;
-	border-radius: 22px;
-	padding: 10px 20px 9px 19px;
-	cursor: pointer;
-	border: none;
-	@include h3-text(uppercase, $white);
-	text-align: center;
-	&:focus {
-	outline: none;
-	}    
-	&:hover {
-	opacity: 0.5;
-    }
     &-like {
 		display: flex;
 		width: 40px;
@@ -25,6 +12,19 @@
 		border-radius: 10px;
 		cursor: pointer;
 		transition: all .1s;
+		margin-right: 8px;
+		&_checked {
+			display: flex;
+			width: 40px;
+			height: 20px;
+			@include material-font(10px, 9px, $purple);	
+			background: $white;
+			border: 1px solid $purple;
+			border-radius: 10px;
+			cursor: pointer;
+			transition: all .1s;
+			margin-right: 8px;
+		}
 		&:checked {
 			@include material-font(10px, 9px, $purple);
 			border: 1px solid $purple;
@@ -32,16 +32,21 @@
 		}
 		&__icon {
 			margin-top: 5px;
-
 			margin-left: 6px;
 			margin-right: 4px;
-
 			border-color: $ds25;
+			font-style: normal;
 			&:checked {
 				color: $purple;
 				border-color: $purple;
 				background-origin: border-box;
 				background-clip: content-box, border-box;
+			}
+			&_checked {
+				margin-top: 5px;
+				margin-left: 6px;
+				margin-right: 4px;
+				@include material-font(10px, 9px, $purple);
 			}
 		}
 		&__count {
@@ -49,7 +54,12 @@
 			background-color: transparent;
 			margin-top: 4px;
 			@include montserrat(10px, 12px, $ds25);
-
+			&_checked {
+				border: none;
+				background-color: transparent;
+				margin-top: 4px;
+				@include montserrat(10px, 12px, $purple);
+			}
 		}
     }
 }

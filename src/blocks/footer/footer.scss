@@ -15,10 +15,7 @@
 		grid-column-gap: 40px;
 	}
 	&__logo {
-		margin: -3px 0 17px -29px;
-		&-image {
-			margin-left: -30px;
-		}
+		margin: -3px 0 17px 0;
 	}
 	&__info {
 		grid-column: span 3;
@@ -73,8 +70,8 @@
 		font-size: 0;
 		&-item {
 			display: inline-block;
-			margin-left: 24px;
-			margin-right: -5px;
+			margin-left: 21px;
+
 		}
 		&-icon {
 			@include montserrat(24px, 23px, $purple);
@@ -85,14 +82,9 @@
 		}
 	}
 	&__mobile {
-		width: 100%;
-		max-width: 768px;
-		background: $white;
-		margin: 50px 29.5% 140px 20.5%;
-		padding: 120px 0;
-		box-shadow: 0px 10px 20px $ds5;
+
 		&-logo {
-			padding-bottom: 20px;
+			padding-bottom: 21px;
 		}
 		&-list {
 			padding-top: 28px;
@@ -100,9 +92,16 @@
 			justify-content: center;
 		}
 		&-inner {
+			width: 100%;
+			max-width: 768px;
+			background: $white;
+			margin: 38px auto 140px auto;
+			padding: 120px 0;
+			box-shadow: 0px 10px 20px $ds5;
 			text-align: center;
 		}
 		&-text {
+
 			margin-top: 0;
 		}
 		&-icon {

@@ -2,10 +2,10 @@ include ../slider/slider.pug
 include ../room-number/room-number.pug
 include ../rate-button/rate-button.pug
 
-mixin room-card(num, number, price, stars)
+mixin room-card(num, number, price, stars=0)
 	.room-card
 		.room-card__slider
-			+slider
+			+slider('room-1', 'room-2', 'room-3', 'room-4')
 		.room-card__container
 			.room-card__number
 				+room-number(number, price)
