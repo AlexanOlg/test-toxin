@@ -41,6 +41,25 @@
 			cursor: pointer;
 			@include h3-text(uppercase, $purple);
 		}
+		&__long {
+			background-color: $white;
+			border-radius: 22px;
+			border: 2px solid $purple;
+			padding: 14px 25px 14px 24px;
+			cursor: pointer;
+			@include h3-text(uppercase, $purple);
+			&:focus {
+				outline: none;
+			}     
+			&:hover {
+				opacity: 0.5;
+				background-color: $white;
+				border-radius: 22px;
+				border: 2px solid $purple;
+				cursor: pointer;
+				@include h3-text(uppercase, $purple);
+			}
+		}
 		&__hovered {
 			opacity: 0.5;
 			background-color: $white;
@@ -68,7 +87,6 @@
 	}
 	&-long {
 		@include h3-text(uppercase, $white);
-		padding-left: 1px;
 		position: relative;
 		
 		width: 100%;

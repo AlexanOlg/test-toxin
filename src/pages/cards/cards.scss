@@ -3,7 +3,7 @@
 		width: 100%;
 		max-width: 1260px;
 		margin: 0 auto;
-		padding: 0 0 0 99px;
+		padding: 15px 50px 0 50px;
 	}
 	&__wrap {
 	display: flex;
@@ -20,5 +20,12 @@
 	&__item {
 		margin-bottom: 40px;
 		margin-right: 0;
+		&-calendar {
+			margin-bottom: 38px;
+		}
+		&-small {
+			margin-bottom: 40px;
+			width: 80%;
+		}
 	}
 }

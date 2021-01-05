@@ -19,11 +19,12 @@
 		margin-bottom: 11px;
 		min-height: 24px;
 		&-name {
-				@include montserrat(14px, 20px, $ds75);
-		display: inline-block;
+				@include montserrat(14px, 19px, $ds75);
+				display: inline-block;
 				width: 214px;
 				&-first {
-					@include montserrat(14px, 24px, $ds75);
+					@include montserrat(14px, 26px, $ds75);
+					letter-spacing: 0.3px;
 					display: inline-block;
 					width: 320px;
 				}
@@ -50,7 +51,7 @@
 
 	&__total-label {
 		@include text-bold(19px, 23px, $ds100);
-		margin-top: 29px;
+		margin-top: 30px;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -58,9 +59,9 @@
 	&__total-line {
 		flex-grow: 1;
 		content: "";
-		width: 1px;
 		border-bottom: 1px dashed $ds25;
-		margin-bottom: 6px;
+		margin-bottom: 4px;
+		max-width: 182px;
 	}
 
 	&__total-cost {

@@ -6,7 +6,7 @@ mixin account(text, isOpen)
 			span.account__text= text
 		if isOpen
 			.account__login
-				+buttons({type: 'button-border', text: 'Войти'})
+				+buttons({type: 'button-border__long', text: 'Войти'})
 		else
 			.account__login
-				+buttons({type: 'button-border__hovered', text: 'Создать'})
+				+buttons({type: 'button-border', text: 'Создать'})

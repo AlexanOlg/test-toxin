@@ -15,16 +15,16 @@ mixin registration
 			.registration__radio-buttons
 				+radio-buttons
 			.registration__input-header Дата рождения
-				.registration__input-name
-					+text-field('ДД.ММ.ГГГГ')
+			.registration__input-name
+				+text-field('ДД.ММ.ГГГГ')
 			.registration__input-header1 Данные для входа в сервис
-				.registration__input-name
-					+text-field('Email')
-				.registration__input-name
-					+text-field('Пароль')
+			.registration__input-name
+				+text-field('Email')
+			.registration__input-name
+				+text-field('Пароль')
 			.registration__toogle
 				+toogle(false)
 			.registration__button
 				+buttons({type: 'button-long', text: 'перейти к оплате'})
 			.registration__login
-				+account('Уже есть аккаунт на Toxin?', 'false')
+				+account('Уже есть аккаунт на Toxin', 'false')

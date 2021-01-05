@@ -6,10 +6,10 @@
 	border: 1px solid rgba(0, 0, 0, 0.12);
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
-	padding: 38px 30px 30px 30px;
+	padding: 38px 28px 30px 30px;
 	&__header {
 		@include text-bold(24px, 29px, $ds100);
-		margin-bottom: 20px;
+		margin-bottom: 18px;
 	}
 	&__input-name {
 		@include montserrat(14px, 18px, $ds25);

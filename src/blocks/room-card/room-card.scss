@@ -16,6 +16,7 @@
 		margin: 0 20px;
 		align-items: flex-end;
 	}
+	
 	&__number {
 		min-width: 230px;
 		&:last-child {
@@ -29,7 +30,11 @@
 			}
 		}
 	}
+	&__stars {
+		margin-top: 2px;
+	}
 	&__reviews {
+		margin-top: 2px;
 		&-num {
 			@include text-bold(14px, 18px, $ds50);
 		}

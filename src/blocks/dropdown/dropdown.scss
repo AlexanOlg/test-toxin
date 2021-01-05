@@ -3,11 +3,14 @@
 .dropdown {
 	position: relative;
 	margin-top: 5px;
+	&__title {
+		@include h3-text(uppercase, $ds100);
+	}
 	&__inner {
 		display: flex;
 		justify-content: space-between;
 		background: $white;
-		border: 1px solid $ds50;
+		border: 1px solid $ds25;
 		border-radius: 2px;
 		height: 44px;
 	}
@@ -15,7 +18,8 @@
 		@include montserrat(14px, 18px, $ds75);
 		width: 100%;
 		border: none;
-		padding-left: 15px;
+		padding-left: 14px;
+		padding-bottom: 2px;
 	}
 	&__button {
 		width: 30px;
@@ -29,6 +33,7 @@
 			background: $white;
 			border: none;
 			width: 44px;
+			padding-right: 3px;
 			&:focus {
 				outline: none;
 			}

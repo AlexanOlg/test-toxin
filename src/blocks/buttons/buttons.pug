@@ -7,6 +7,8 @@ mixin buttons(parametres)
 		button.button= parametres.text
 	else if parametres.type == 'button-border'
 		button.button-border= parametres.text
+	else if parametres.type == 'button-border__long'
+		button.button-border__long= parametres.text
 	else if parametres.type == 'button-long'
 		button.button-long(type='submit')= parametres.text
 	else if parametres.type == 'button-hovered'

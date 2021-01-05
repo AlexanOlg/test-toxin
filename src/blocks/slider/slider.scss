@@ -1,71 +1,73 @@
 @import '../../scss/variables.scss';
 
 .slick{
-	&-slider{
+	&-slider {
 	position: relative;
 	max-width: 270px;
 	height: 151px;
-		&:hover .slick-arrow{
+		&:hover .slick-arrow {
 			opacity: 1;
 			transition: opacity 0.3s;
 			}
 	}
-	&-track{
-			display: flex;
+	&-track {
+		display: flex;
 	}
-	&-arrow{
-			transition: opacity 5s;
+	&-arrow {
+		transition: opacity 5s;
+		cursor: pointer;
+		opacity: 0;
+		position: absolute;
+		top: 42%;
+		z-index: 1;
+		border: none;
+		background-color: transparent;
+		outline: none;
+		@include material-font(24px, 20px, $white);
+	}
+	&-prev {
+		left: 4px;
+	}
+	&-next {
+		right: 4px;
+	}
+	&-dots {
+		display: flex;
+		justify-content: space-between;
+		position: absolute;
+		bottom: 15px;
+		right: 15px;
+		width: 41px;
+		& button {
 			cursor: pointer;
-			opacity: 0;
-			position: absolute;
-			top: 42%;
-			z-index: 1;
-			border: none;
+			border: 1px solid $white;
 			background-color: transparent;
-			outline: none;
-			@include material-font(24px, 20px, $white);
-	}
-	&-prev{
-			left: 4px;
-	}
-	&-next{
-			right: 4px;
-	}
-	&-dots{
-			display: flex;
-			justify-content: space-between;
-			position: absolute;
-			bottom: 15px;
-			right: 15px;
-			width: 41px;
-			& button{
-				cursor: pointer;
-				border: 1px solid $white;
-				background-color: transparent;
-				border-radius: 50%;
-				width: 7.5px;
-				height: 7.5px;
-				box-sizing: border-box;
-				filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));
-				font-size: 0;
-				line-height: 0;
-				padding: 0;
-				outline:none;
-			}
-			& li{
-				font-size: 0;
-				line-height: 0;
-				padding: 0;
-				list-style: none;
-			}
-			& .slick-active button{
-				background-color: $white;
-			}
+			border-radius: 50%;
+			width: 7.5px;
+			height: 7.5px;
+			box-sizing: border-box;
+			-webkit-filter: drop-shadow(0px 5px 5px rgba(31,32,65,0.3));
+			filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));
+			font-size: 0;
+			line-height: 0;
+			padding: 0;
+			outline:none;
+		}
+		& li{
+			font-size: 0;
+			line-height: 0;
+			padding: 0;
+			list-style: none;
+		}
+		& .slick-active button{
+			background-color: $white;
+		}
 	}
 }
 .slider{
 	overflow: hidden;
 	&__item{
-			height: 151px;
+		height: 151px;
+		opacity: 1;
 	}
 }
