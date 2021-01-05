@@ -6,7 +6,7 @@
 		width: 100%;
 		max-width: 1240px;
 		margin: 0 auto;
-		padding: 0 20px 0 60px;
+		padding: 4px 40px 0 40px;
 	}
 	&__flex {
 		display: flex;
@@ -16,7 +16,12 @@
 	&__inner {
 		display: flex;
         justify-content: space-between;
-        margin-bottom: 57px;
+		margin-bottom: 57px;
+		overflow: hidden;
+	}
+	&__gap {
+		overflow: hidden;
+		height: 80px;
 	}
 	&__rate {
 		margin-right: 18px;
@@ -53,14 +58,13 @@
 			margin-bottom: 20px;
 		}
 		&-checkbox {
-			margin-top: 81px;
 			max-width: 262px;
-			&:last-child {
-				margin-top: 20px;
-			}
 		}
 		&-box {
-			margin-top: 8px;
+			margin-top: 17px;
+		}
+		&-bullet {
+			margin-top: 17px;
 		}
 		&-item {
 			margin-bottom: 21px;
@@ -96,14 +100,22 @@
 			margin-top: 15px;
 			margin-bottom: 41px;
 		}
-
+		&-facilities {
+			margin-top: 35px;
+		}
         &-footer {
-            width: 66%;
-            max-width: 710px;
+			width: 66%;
+			max-width: 712px;
+			margin-top: 35px;
         }
 	}
 	&__width {
 		max-width: 266px;
 		margin-bottom: 41px;
+	}
+	&__checkbox {
+		&-container {
+			margin-top: 21px;
+		}
 	}
 }

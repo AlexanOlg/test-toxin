@@ -4,19 +4,28 @@
 .reviews {
     display: flex;
     &__img {
-        margin-top: 12px;
+        margin-top: 7px;
         width: 47px;
-        height: 47px;
-    }
+		height: 47px;
+		border-radius: 50%;
+	}
+	&__like {
+		margin-top: 12px;
+		margin-left: 2px;
+	}
     &__name {
         @include text-bold(14px, 24px, $ds75);
-        margin-top: 15px;
+		margin-top: 7px;
+		margin-left: 8px;
     }
     &__date {
         @include montserrat(14px, 24px, $ds75);
-        margin-bottom: 10px;
+		margin-bottom: 10px;
+		margin-left: 8px;
     }
     &__text {
-        @include montserrat(14px, 24px, $ds75);
+		@include montserrat(14px, 24px, $ds75);
+		margin-left: 8px;
+		margin-top: 10px;
     }
 }

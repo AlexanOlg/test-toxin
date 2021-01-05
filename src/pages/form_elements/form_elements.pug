@@ -156,14 +156,14 @@ block content
 							{menuItem: 'младенцы', number: '5'}
 							],
 						})
+		.form-elements__gap
 		.form-elements__inner
 			.form-elements__wrap
 				.form-elements__wrap-checkbox
-					.form-elements__wrap-item_header
 					+checkbox-list('true')
 				.form-elements__wrap-checkbox
-					.form-elements__wrap-item_header
-					+checkbox-list
+					.form-elements__checkbox-container
+						+checkbox-list
 			.form-elements__wrap-centrdrop
 				.form-elements__wrap-box
 					.form-elements__wrap-item
@@ -171,14 +171,14 @@ block content
 						+checkbox-button('Широкий коридор', false, 'true', 'Ширина коридоров в номере не менее 91 см.')
 						+checkbox-button('Помощник для инвалидов', false, 'true', 'На 1 этаже вас встретит специалист  и проводит до номера.')
 			.form-elements__wrap
-				.form-elements__wrap-checkbox
+				.form-elements__wrap-bullet
 					.form-elements__wrap-item
 						.form-elements__wrap-item_header bullet list
 						+bullet-list('Нельзя с питомцами')
 						+bullet-list('Без вечеринок и мероприятий')
 						+bullet-list('Время прибытия — после 13:00, а выезд до 12:00')
 		.form-elements__inner
-			.form-elements__wrap
+			.form-elements__wrap-facilities
 				.form-elements__wrap-item
 					+facilities-room('Комфорт', 'Шумопоглощающие стены', 'insert_emoticon')
 					+facilities-room('Удобство', 'Окно в каждой из спален', 'location_city')
