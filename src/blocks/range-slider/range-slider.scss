@@ -52,8 +52,14 @@
 	}
 	&-grid {
 		&-text {
-		display: none;
+			display: none;
 		}
+	}
+	&-with-grid .irs-grid {
+		display: none;
+	}
+	&--flat.irs-with-grid {
+		height: 45px;
 	}
 }
 

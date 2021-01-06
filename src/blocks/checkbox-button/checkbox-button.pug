@@ -1,5 +1,4 @@
-mixin checkbox-button(text, checked, isOpen, text2)
-	.checkbox-button__wrap
+mixin checkbox-button(text, checked, isOpen, text2, text3, text4)
 	if isOpen
 		.checkbox-button__inner
 			label.checkbox-button__label
@@ -8,6 +7,13 @@ mixin checkbox-button(text, checked, isOpen, text2)
 				.checkbox-button__container
 					p.checkbox-button__bold= text
 					span.checkbox-button__thin= text2
+		.checkbox-button__inner
+			label.checkbox-button__label
+				input.checkbox-button__label-input(type="checkbox" checked= checked)
+				span.checkbox-button__label-box
+				.checkbox-button__cont
+					p.checkbox-button__bold= text3
+					span.checkbox-button__thin= text4
 	else
 		.checkbox-button__inner
 			label.checkbox-button__label

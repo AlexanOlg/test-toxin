@@ -16,7 +16,4 @@
 	&__reservation {
 		margin-bottom: 21.5px;
 	}
-	&__text {
-		@include h3-text(uppercase, $ds100);
-	}
 }

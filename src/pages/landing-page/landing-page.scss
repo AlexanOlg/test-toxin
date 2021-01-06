@@ -1,0 +1,22 @@
+@import '../../scss/responsive.scss';
+@import '../../scss/variables.scss';
+
+.section {
+	background: url('./img/bgLandingPage.jpg') 0 0/cover no-repeat;
+	width: 100%;
+	height: 100vh;
+	min-height: 830px;
+	position: relative;
+	&__page {
+		padding: 70px 0 0 140px;
+		&-text {
+			width: 297px;
+			position: absolute;
+			bottom: 21px;
+			right: 134px;
+			z-index: 1;
+			@include montserrat(14px, 24px, $ds75);
+			text-align: right;
+		}
+	}
+}

@@ -1,0 +1,89 @@
+include ../../layout/room.pug
+include ../../blocks/header/header.pug
+include ../../blocks/footer/footer.pug
+include ../../blocks/date-dropdown/date-dropdown.pug
+include ../../blocks/dropdown/dropdown.pug
+include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/checkbox-button/checkbox-button.pug
+include ../../blocks/checkbox-list/checkbox-list.pug
+include ../../blocks/room-card/room-card.pug
+include ../../blocks/pagination/pagination.pug
+include ../../blocks/footer/footer.pug
+
+block title
+	title Search Room
+block content
+	header
+		+header({buttons: true, user: false})
+			+header-menu({ text:'О нас' })
+			+header-menu({ text:'Услуги', isOpen: true })
+			+header-menu({ text:'Вакансии' })
+			+header-menu({ text:'Новости' })
+			+header-menu({ text:'Соглашения', isOpen: true })
+	section
+		.section__filter
+			.section__filter-left
+				.section__filter-left_datedropdown
+					+filter_date-dropdown('даты пребывания в отеле', '19 авг - 23 авг')
+				.section__filter-left_dropdown
+					+dropdown('гости', {
+						items: [
+							{menuItem: 'взрослые', number: '0'},
+							{menuItem: 'дети', number: '2'},
+							{menuItem: 'младенцы', number: '5'}
+						],
+					})
+				.section__filter-left_rangeslider
+					.section__filter-left_datedropdown
+						+range-slider('диапазон цены')
+						.section__filter-left_rangeslider-text Стоимость за сутки пребывания в номере
+				.section__filter-left_checkbox
+					.section__filter-title Правила дома
+					+checkbox-button('Можно курить', false)
+					+checkbox-button('Можно с питомцами', true)
+					+checkbox-button('Можно пригласить гостей (до 10 человек)', true)
+				.section__filter-left_checkbox
+					.section__filter-title_app Доступность
+					+checkbox-button('Широкий коридор', false, 'true', 'Ширина коридоров в номере не менее 91 см.', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.')
+				.section__filter-left_drop
+					+dropdown('Удобства номера', {
+						items: [
+							{menuItem: 'взрослые', number: '0'},
+							{menuItem: 'дети', number: '2'},
+							{menuItem: 'младенцы', number: '5'}
+						],
+					})
+				.section__filter-left_checkbox
+					+checkbox-list('true', 'Дополнительные удобства')
+			.section__filter-right
+				p.section__filter-right_title Номера, которые мы для вас подобрали
+				.section__filter-right_inner
+					.section__filter-right_item
+						+room-card('room-1', 'room-1', 'room-1', 'room-1', '145 ', 888, '9 990₽', 5)
+					.section__filter-right_item
+						+room-card('room-2', 'room-2', 'room-2', 'room-2', '65 ', 840, '9 990₽', 4)
+					.section__filter-right_item
+						+room-card('room-3', 'room-3', 'room-3', 'room-3', '35 ', 980, '8 500₽', 3)
+					.section__filter-right_item
+						+room-card('room-4', 'room-4', 'room-4', 'room-4', '19 ', 856, '7 300₽', 5)
+					.section__filter-right_item
+						+room-card('room-5', 'room-5', 'room-5', 'room-5', '44 ', 740, '6 000₽', 4)
+					.section__filter-right_item
+						+room-card('room-6', 'room-6', 'room-6', 'room-6', '56 ', 982, '5 800₽', 3)
+					.section__filter-right_items
+						+room-card('room-7', 'room-7', 'room-7', 'room-7', '45 ', 678, '5 500₽', 5)
+					.section__filter-right_items
+						+room-card('room-8', 'room-8', 'room-8', 'room-8', '39 ', 450, '5 300₽', 4)
+					.section__filter-right_items
+						+room-card('room-9', 'room-9', 'room-9', 'room-9', '77 ', 350, '5 000₽', 3)
+					.section__filter-right_items
+						+room-card('room-10', 'room-10', 'room-10', 'room-10', '25 ', 666, '5 000₽', 5)
+					.section__filter-right_items
+						+room-card('room-11', 'room-11', 'room-11', 'room-11', '15 ', 444, '5 000₽', 3)
+					.section__filter-right_items
+						+room-card('room-12', 'room-12', 'room-12', 'room-12', '55 ', 352, '5 000₽', 3)
+				.section__filter-right_pagination
+					+pagination('1')
+	hr
+	footer
+		+footer('true')

@@ -5,7 +5,6 @@
 .footer {
 	background: $white;
 	box-shadow: 0px 10px 20px $ds5;
-	margin-top: 40px;
 	&__container {
 		max-width: 1200px;
 		padding: 104px 20px;
@@ -51,7 +50,6 @@
 	&__dashed {
 		box-shadow: 0px 1px 0px $ds10;
 		margin: 0;
-		height: 1px;
 	}
 	&__copyright {
 		display: flex;

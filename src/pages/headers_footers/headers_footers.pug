@@ -5,18 +5,20 @@ include ../../blocks/footer/footer.pug
 
 block title
 	title Headers footers
-	block content
-		+header({buttons: true, user: false})
-			+header-menu({ text:'О нас' })
-			+header-menu({ text:'Услуги', isOpen: true })
-			+header-menu({ text:'Вакансии' })
-			+header-menu({ text:'Новости' })
-			+header-menu({ text:'Соглашения', isOpen: true })
+block content
+	+header({buttons: true, user: false})
+		+header-menu({ text:'О нас' })
+		+header-menu({ text:'Услуги', isOpen: true })
+		+header-menu({ text:'Вакансии' })
+		+header-menu({ text:'Новости' })
+		+header-menu({ text:'Соглашения', isOpen: true })
+	.header_footer-container
 		+header({buttons:false, user: true})
 			+header-menu({ text:'О нас' })
 			+header-menu({ text:'Услуги', isOpen: true })
 			+header-menu({ text:'Вакансии' })
 			+header-menu({ text:'Новости' })
 			+header-menu({ text:'Соглашения', isOpen: true })
+	.header_footer-container
 		+footer('true')
-		+footer
+	+footer

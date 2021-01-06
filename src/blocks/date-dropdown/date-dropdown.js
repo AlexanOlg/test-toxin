@@ -8,4 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		inStart.addEventListener('click', () => open.classList.toggle('active'));
 		outEnd.addEventListener('click', () => open.classList.toggle('active'));
 	});
+	// Обработка клика по filter_date-dropdown
+	const filterCalendars = document.querySelectorAll('.filter_date-dropdown');
+	filterCalendars.forEach((filterCalendar) => {
+		const start = filterCalendar.querySelector('.filter_date-dropdown__input');
+		const open = filterCalendar.querySelector('.filter_date-dropdown__calendar');
+		start.addEventListener('click', () => open.classList.toggle('active'));
+	});
 });

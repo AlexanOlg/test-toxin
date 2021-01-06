@@ -1,0 +1,72 @@
+@import "../../scss/responsive.scss";
+@import "../../scss/variables.scss";
+
+body {
+	background: #ffffff;
+}
+.section__filter {
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 20px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	&-left {
+		width: 266px;
+		&_datedropdown {
+			margin-top: 30px;
+		}
+		&_dropdown {
+			margin-top: 20px;
+		}
+		&_drop {
+			margin-top: 32px;
+		}
+		&_checkbox {
+			margin-top: 15px;
+		}
+		&_rangeslider {
+			&-text {
+				@include montserrat(12px, 14px, $ds50);
+			}
+		}
+	}
+	&-title {
+		@include h3-text(uppercase, $ds100);
+		margin-top: 30px;
+		&_app {
+			@include h3-text(uppercase, $ds100);
+			margin-top: 37px;
+		}
+	}
+	&-right {
+		width: 78%;
+		max-width: 834px;
+		padding-top: 30px;
+		&_title {
+			@include text-bold(24px, 29px, $ds100);
+			padding-bottom: 22px;
+		}
+		&_inner {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		&_item {
+			margin-bottom: 20px;
+		}
+		&_items {
+			margin-bottom: 22px;
+		}
+		&_pagination {
+			width: 78%;
+			max-width: 255px;
+			margin: 0 auto;
+			padding-top: 5px;
+		}
+	}
+}
+hr {
+	border: 0.2px solid $ds25;
+	margin: 77px 0 0 0;
+}

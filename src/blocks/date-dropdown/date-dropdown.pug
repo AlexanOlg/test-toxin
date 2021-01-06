@@ -9,3 +9,11 @@ mixin date-dropdown(textIn, textOut, placeholderIn, placeholderOut)
 				input.date-dropdown__input-out(type='text' placeholder= placeholderOut)
 		.date-dropdown__calendar
 			+calendar
+
+mixin filter_date-dropdown(text, placeholder)
+	.filter_date-dropdown
+		.filter_date-dropdown__item
+			label.filter_date-dropdown__item-label= text
+				input.filter_date-dropdown__input(type='text' placeholder= placeholder)
+		.filter_date-dropdown__calendar
+			+calendar

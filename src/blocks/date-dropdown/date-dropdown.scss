@@ -40,3 +40,40 @@
 	display: block;
 }
 
+.filter_date-dropdown {
+	position: relative;
+	&__item {
+		&-label {
+			@include h3-text(uppercase, $ds100);
+		}
+		&::after {
+			position: absolute;
+			content: 'expand_more';
+			text-transform: none;
+			@include material-font(24px, 24px, $ds50);
+			right: 9px;
+			top: 50%;
+			cursor: pointer;
+		}
+	}
+	&__input {
+		@include montserrat(14px, 18px, $ds75);
+		border: 1px solid $ds25;
+		box-sizing: border-box;
+		border-radius: 4px;
+		width: 100%;
+		padding-left: 14px;
+		height: 44px;
+		margin-top: 6px;
+		outline: none;
+		cursor: pointer;
+		padding-bottom: 5px;
+	}
+	&__calendar {
+		display: none;
+		margin-top: 6px;
+		position: absolute;
+		width: 100%;
+	}
+}
+

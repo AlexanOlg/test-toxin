@@ -1,0 +1,21 @@
+include ../../layout/room.pug
+include ../../blocks/header/header.pug
+include ../../blocks/search-room/search-room.pug
+include ../../blocks/footer/footer.pug
+
+block title
+	title Landing Page
+block content
+	header.header__page
+		+header({buttons: true, user: false})
+			+header-menu({ text:'О нас' })
+			+header-menu({ text:'Услуги', isOpen: true })
+			+header-menu({ text:'Вакансии' })
+			+header-menu({ text:'Новости' })
+			+header-menu({ text:'Соглашения', isOpen: true })
+	section.section
+		.section__page
+			+search-room
+		p.section__page-text Лучшие номера для вашей работы, отдыха и просто вдохновения
+	footer.footer
+		+footer('true')

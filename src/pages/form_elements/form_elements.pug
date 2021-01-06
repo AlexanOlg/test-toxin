@@ -18,6 +18,7 @@ include ../../blocks/facilities-room/facilities-room.pug
 include ../../blocks/reviews/reviews.pug
 
 
+
 block title
 	title Form Elements
 block content
@@ -35,8 +36,7 @@ block content
 						.form-elements__wrap-item_flex hover/focus
 					+text-field('This is pretty awesome')
 				.form-elements__wrap-item
-					.form-elements__wrap-item_header dropdown
-					+dropdown({
+					+dropdown('dropdown', {
 						items: [
 							{menuItem: 'взрослые', number: '0'},
 							{menuItem: 'дети', number: '2'},
@@ -52,14 +52,7 @@ block content
 						+date-dropdown('date dropdown', 'date dropdown', 'ДД.ММ.ГГГГ', '19.08.2019')
 				.form-elements__wrap-item
 					.form-elements__width
-						.form-elements__wrap-item_header filter date dropdown
-						+dropdown({
-							items: [
-								{menuItem: 'взрослые', number: '0'},
-								{menuItem: 'дети', number: '2'},
-								{menuItem: 'младенцы', number: '5'}
-							],
-						})
+						+filter_date-dropdown('filter date dropdown', '19 авг - 23 авг')
 					.form-elements__width
 						.form-elements__wrap-item_header subscription text field
 						.form-elements__wrap-field
@@ -119,8 +112,7 @@ block content
 		.form-elements__inner
 			.form-elements__wrap
 				.form-elements__wrap-dropdown
-					.form-elements__wrap-item_header dropdown
-					+dropdown({
+					+dropdown('dropdown', {
 						items: [
 							{menuItem: 'спальни', number: '2'},
 							{menuItem: 'кровати', number: '2'},
@@ -128,8 +120,7 @@ block content
 						],
 					})
 				.form-elements__wrap-dropdown
-					.form-elements__wrap-item_header dropdown
-					+dropdown({
+					+dropdown('dropdown', {
 						items: [
 							{menuItem: 'спальни', number: '2'},
 							{menuItem: 'кровати', number: '2'},
@@ -138,8 +129,7 @@ block content
 					})
 			.form-elements__wrap-centrdrop
 				.form-elements__wrap-item
-					.form-elements__wrap-item_header dropdown
-					+dropdown({
+					+dropdown('dropdown', {
 						items: [
 							{menuItem: 'взрослые', number: '0'},
 							{menuItem: 'дети', number: '2'},
@@ -148,8 +138,7 @@ block content
 					})
 			.form-elements__wrap
 				.form-elements__wrap-item
-					.form-elements__wrap-item_header dropdown
-					+dropdown({
+					+dropdown('dropdown', {
 						items: [
 							{menuItem: 'взрослые', number: '0'},
 							{menuItem: 'дети', number: '2'},
@@ -168,8 +157,7 @@ block content
 				.form-elements__wrap-box
 					.form-elements__wrap-item
 						.form-elements__wrap-item_header rich Checkbox Buttons
-						+checkbox-button('Широкий коридор', false, 'true', 'Ширина коридоров в номере не менее 91 см.')
-						+checkbox-button('Помощник для инвалидов', false, 'true', 'На 1 этаже вас встретит специалист  и проводит до номера.')
+						+checkbox-button('Широкий коридор', false, 'true', 'Ширина коридоров в номере не менее 91 см.', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.')
 			.form-elements__wrap
 				.form-elements__wrap-bullet
 					.form-elements__wrap-item

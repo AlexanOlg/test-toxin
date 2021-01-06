@@ -1,6 +1,7 @@
 include ../button-simple/button-simple.pug
 
-mixin dropdown(dropdown)
+mixin dropdown(title, dropdown)
+	.dropdown__title= title
 	.dropdown
 		div(class='dropdown__inner' wordforms="гость гостя гостей" default="Сколько гостей?")
 			input(type="text" value='Сколько гостей' readonly).dropdown__input

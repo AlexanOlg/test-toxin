@@ -1,0 +1,22 @@
+include ../../layout/room.pug
+include ../../blocks/header/header.pug
+include ../../blocks/footer/footer.pug
+
+block title
+	title Room Details
+block content
+	header.header__page
+		+header({buttons: true, user: false})
+			+header-menu({ text:'О нас' })
+			+header-menu({ text:'Услуги', isOpen: true })
+			+header-menu({ text:'Вакансии' })
+			+header-menu({ text:'Новости' })
+			+header-menu({ text:'Соглашения', isOpen: true })
+	section.section__room-details
+		.room-details__photos
+			.room-details__photos-right
+			.room-details__photos-left
+				.room-details__photos-left_top
+				.room-details__photos-left_bottom
+	footer.footer
+		+footer('true')
