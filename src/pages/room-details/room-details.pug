@@ -1,22 +1,31 @@
 include ../../layout/room.pug
 include ../../blocks/header/header.pug
 include ../../blocks/footer/footer.pug
+include ../../blocks/facilities-room/facilities-room.pug
+include ../../blocks/booking-card/booking-card.pug
 
 block title
 	title Room Details
 block content
-	header.header__page
+	header
 		+header({buttons: true, user: false})
 			+header-menu({ text:'О нас' })
 			+header-menu({ text:'Услуги', isOpen: true })
 			+header-menu({ text:'Вакансии' })
 			+header-menu({ text:'Новости' })
 			+header-menu({ text:'Соглашения', isOpen: true })
-	section.section__room-details
-		.room-details__photos
-			.room-details__photos-right
-			.room-details__photos-left
-				.room-details__photos-left_top
-				.room-details__photos-left_bottom
-	footer.footer
-		+footer('true')
+	.room-details
+		.room-detail.room-detail__left
+		.room-detail.room-detail__righttop
+		.room-detail.room-detail__rightbottom
+	section.room-details__section
+		.room-details__col
+			.room-details__item
+				p.room-details__title Сведения о номере
+				+facilities-room('Комфорт', 'Шумопоглощающие стены', 'insert_emoticon')
+				+facilities-room('Удобство', 'Окно в каждой из спален', 'location_city')
+				+facilities-room('Уют', 'Номер оснащен камином', 'whatshot')
+			.room-details__item
+		.room-details__colright
+			+booking-card
+	+footer('true')
