@@ -1,0 +1,17 @@
+mixin chart
+	p.canvas__title Впечатления от номера
+	.canvas
+		.canvas__inner
+			.canvas__item
+				.canvas__num 260
+				.canvas__text голосов
+		svg(class="chart" width="120" height="120" viewBox="0 0 33 33")
+			circle(class="unit" r="15.9" cx="50%" cy="50%")
+			circle(class="unit" r="15.9" cx="50%" cy="50%")
+			circle(class="unit" r="15.9" cx="50%" cy="50%")
+		.legend
+			ul.legend-list
+				li.legend-item Великолепно
+				li.legend-item Хорошо
+				li.legend-item Удовлетворительно
+				li.legend-item Разочарован

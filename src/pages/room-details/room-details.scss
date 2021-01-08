@@ -14,11 +14,15 @@
 		padding: 70px 20px 0 20px;
 		max-width: 1200px;
 	}
+	&__colcenter {
+		min-width: 380px;
+	}
 	&__colright {
 		max-width: 380px;
 	}
 	&__title {
 		@include text-bold(19px, 23px, $ds100);
+		margin-bottom: 24.5px;
 	}
 }
 .room-detail {

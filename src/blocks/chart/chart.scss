@@ -1,0 +1,117 @@
+@import '../../scss/responsive.scss';
+@import '../../scss/variables.scss';
+
+.canvas {
+	display: flex;
+	justify-content: center;
+	width: 311px;
+	height: 170px;
+	&__title {
+		@include text-bold(19px, 23px, $ds100);
+		margin: 0 0 22px 21.5px;
+	}
+	&__inner {
+		display: flex;
+		position: relative;
+	}
+	&__item {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		left: 34.5px;
+		top: 35px;
+	}
+	&__num {
+		@include text-bold(24px, 29px, $purple);
+	}
+	&__text {
+		@include h3-text(uppercase, $purple);
+	}
+}
+.unit {
+	fill: none;
+	stroke-width: 1;
+	animation-name: render;
+	animation-duration: 1.5s;
+	transition-property: all; 
+	transition-duration: 1.5s;
+	&:hover {
+		opacity: 0.8;
+		stroke-width: 3;
+	}
+	&:nth-child(1) {
+		background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+	}
+	&:nth-child(2) {
+		stroke: #a2c6e0;
+	}
+	&:nth-child(3) {
+		stroke: #ffc7ec;
+	}
+	&:nth-child(1) {
+		stroke: purple;
+		stroke-dasharray: 24 100;
+		stroke-dashoffset: -75;
+	}
+	&:nth-child(2) {
+		stroke: #333;
+		stroke-dasharray: 24 100;
+	}
+	&:nth-child(3) {
+		stroke: pink;
+		stroke-dasharray: 49 100;
+		stroke-dashoffset: -25;
+	}
+}
+.legend {
+	width: 146px;
+	height: 96px;
+	margin-top: 28px;
+	&-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	&-item {
+		position: relative;
+		padding-left: 15px;
+		@include montserrat(14px, 24px, $ds75);
+		margin-left: 29px;
+		&:hover {
+			opacity: 0.8;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 7px;
+			left: 0;
+			width: 10px;
+			height: 10px;
+			border-radius: 8px;
+		}
+		&:nth-child(1)::before {
+			background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+		}
+		&:nth-child(2)::before {
+			background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+		}
+		&:nth-child(3)::before {
+			background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+		}
+		&:nth-child(4)::before {
+			background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+		}
+	}
+}
+@keyframes render {
+	0% {
+		stroke-dasharray: 0 100;
+	}
+}
+.hovered {
+	opacity: 0.8;
+	stroke-width: 3;
+}
