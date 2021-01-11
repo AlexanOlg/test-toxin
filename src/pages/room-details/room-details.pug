@@ -4,6 +4,8 @@ include ../../blocks/footer/footer.pug
 include ../../blocks/facilities-room/facilities-room.pug
 include ../../blocks/booking-card/booking-card.pug
 include ../../blocks/chart/chart.pug
+include ../../blocks/reviews/reviews.pug
+include ../../blocks/bullet-list/bullet-list.pug
 
 block title
 	title Room Details
@@ -20,15 +22,32 @@ block content
 		.room-detail.room-detail__righttop
 		.room-detail.room-detail__rightbottom
 	section.room-details__section
-		.room-details__col
+		.room-details__colleft
 			.room-details__item
-				p.room-details__title Сведения о номере
-				+facilities-room('Комфорт', 'Шумопоглощающие стены', 'insert_emoticon')
-				+facilities-room('Удобство', 'Окно в каждой из спален', 'location_city')
-				+facilities-room('Уют', 'Номер оснащен камином', 'whatshot')
+				.room-details__col
+					p.room-details__title Сведения о номере
+					+facilities-room('Комфорт', 'Шумопоглощающие стены', 'insert_emoticon')
+					+facilities-room('Удобство', 'Окно в каждой из спален', 'location_city')
+					+facilities-room('Уют', 'Номер оснащен камином', 'whatshot')
+				.room-details__col
+					+chart(['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'])
+			.room-details__item-reviews
+				.room-details__title-inner
+					.room-details__title Отзывы посетителей номера
+					.room-details__text 2 отзыва
+				+reviews('Мурад Сарафанов', '5 дней назад', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', 'ava', '12', true)
+				+reviews('Патрисия Стёклышкова', 'Неделю назад', 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент', 'ava-patr', '2', false, 'last__no-border')
 			.room-details__item
-		.room-details__colcenter
-			+chart
+				.room-details__col
+					.room-details__title Правила
+					+bullet-list('Нельзя с питомцами')
+					+bullet-list('Без вечеринок и мероприятий')
+					+bullet-list('Время прибытия — после 13:00, а выезд до 12:00')
+				.room-details__col
+					.room-details__title Отмена
+					p.room-details__text-p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 		.room-details__colright
 			+booking-card
-	+footer('true')
+	footer
+		.room-details__footer
+		+footer('true')

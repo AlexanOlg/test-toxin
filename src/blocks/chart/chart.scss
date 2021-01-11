@@ -40,28 +40,26 @@
 	transition-duration: 1.5s;
 	&:hover {
 		opacity: 0.8;
-		stroke-width: 3;
+		stroke-width: 2;
 	}
 	&:nth-child(1) {
-		background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 	}
 	&:nth-child(2) {
-		stroke: #a2c6e0;
+		background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 	}
 	&:nth-child(3) {
-		stroke: #ffc7ec;
+		background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+		
 	}
 	&:nth-child(1) {
-		stroke: purple;
-		stroke-dasharray: 24 100;
+	stroke-dasharray: 24 100;
 		stroke-dashoffset: -75;
 	}
 	&:nth-child(2) {
-		stroke: #333;
 		stroke-dasharray: 24 100;
 	}
 	&:nth-child(3) {
-		stroke: pink;
 		stroke-dasharray: 49 100;
 		stroke-dashoffset: -25;
 	}
@@ -113,5 +111,5 @@
 }
 .hovered {
 	opacity: 0.8;
-	stroke-width: 3;
+	stroke-width: 2;
 }

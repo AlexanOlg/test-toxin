@@ -14,7 +14,7 @@
 		padding: 70px 20px 0 20px;
 		max-width: 1200px;
 	}
-	&__colcenter {
+	&__col {
 		min-width: 380px;
 	}
 	&__colright {
@@ -23,8 +23,38 @@
 	&__title {
 		@include text-bold(19px, 23px, $ds100);
 		margin-bottom: 24.5px;
+		&-inner {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	&__text {
+		@include montserrat(14px, 14px, $ds50);
+		&-p {
+			@include montserrat(14px, 24px, $ds75);
+			max-width: 341px;
+		}
+	}
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		max-width: 730px;
+		padding-right: 10px;
+		&-reviews {
+			max-width: 730px;
+			padding-right: 10px;
+		}
+	}
+	&__footer {
+		width: 100%;
+		background: $white;
+		box-shadow: 0px 1px 0px $ds10;
+		margin: 90px 0 104px 0;
+		border: 0.2px solid $ds25;
 	}
 }
+
 .room-detail {
 	background: center, center no-repeat;
 	background-size: cover;
