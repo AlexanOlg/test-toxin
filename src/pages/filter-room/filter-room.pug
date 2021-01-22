@@ -26,13 +26,7 @@ block content
 				.section__filter-left_datedropdown
 					+filter_date-dropdown('даты пребывания в отеле', '19 авг - 23 авг')
 				.section__filter-left_dropdown
-					+dropdown('гости', {
-						items: [
-							{menuItem: 'взрослые', number: '0'},
-							{menuItem: 'дети', number: '2'},
-							{menuItem: 'младенцы', number: '5'}
-						],
-					})
+					+dropdown('гости')
 				.section__filter-left_rangeslider
 					.section__filter-left_datedropdown
 						+range-slider('диапазон цены')
@@ -46,13 +40,7 @@ block content
 					.section__filter-title_app Доступность
 					+checkbox-button('Широкий коридор', false, 'true', 'Ширина коридоров в номере не менее 91 см.', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.')
 				.section__filter-left_drop
-					+dropdown('Удобства номера', {
-						items: [
-							{menuItem: 'взрослые', number: '0'},
-							{menuItem: 'дети', number: '2'},
-							{menuItem: 'младенцы', number: '5'}
-						],
-					})
+					+dropdown('Удобства номера')
 				.section__filter-left_checkbox
 					+checkbox-list('true', 'Дополнительные удобства')
 			.section__filter-right
