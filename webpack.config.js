@@ -124,7 +124,7 @@ module.exports = (_, options) => {
 		devServer: {
 			contentBase: path.join(__dirname, 'dist'),
 			compress: true,
-			port: 8585,
+			port: 8282,
 			overlay: {
 				warnings: true,
 				errors: true,

@@ -1,56 +1,27 @@
 include ../button-simple/button-simple.pug
 
-//- mixin dropdown(title, dropdown)
-//- 	.dropdown__title= title
-//- 	.dropdown
-//- 		.dropdown__inner
-//- 			input(type="text" value='Сколько гостей' readonly).dropdown__input
-//- 			button(class='dropdown__button-tick') expand_more
-//- 		.dropdown__menu
-//- 			ul.dropdown__list
-//- 				each item in dropdown.items
-//- 					li.dropdown__item
-//- 						.dropdown__menu-item= item.menuItem
-//- 						.dropdown__button-list
-//- 							button.dropdown__button.dropdown__button-minus -
-//- 							span.dropdown__number= item.number
-//- 							button.dropdown__button.dropdown__button-plus +  
-//- 			.dropdown__control-button
-//- 				.dropdown__reset
-//- 					+button-simple('очистить')
-//- 				.dropdown__clear
-//- 				.dropdown__used
-//- 					+button-simple('применить')
-
 mixin dropdown(title)
 	.dropdown__title= title
-	div(class='dropdown absolute' wordforms='Гость Гостя Гостей' default='Сколько гостей?')
-		.dropdown__name Сколько гостей?
-		.dropdown-list
-			.dropdown__item
-				div(class='dropdown-list__item' name='adult' default='2') Взрослые
+	.dropdown
+		.dropdown__inner
+			input(type="text" value='Сколько гостей' readonly).dropdown__input
+			button(class='dropdown__button-tick') expand_more
+		.dropdown__menu
+			.dropdown__items Взрослые
 				.dropdown__button-list
 					button.dropdown__button.dropdown__button-minus -
 					.dropdown__number 2
-					button.dropdown__button.dropdown__button-plus +
-			.dropdown__item
-				div(class='dropdown-list__item' name='child' default='1') Дети
+					button.dropdown__button.dropdown__button-plus +  
+			.dropdown__items Дети
 				.dropdown__button-list
 					button.dropdown__button.dropdown__button-minus -
 					.dropdown__number 1
 					button.dropdown__button.dropdown__button-plus +
-			.dropdown__item
-				div(class='dropdown-list__item' name='baby' default='0') Младенцы
+			.dropdown__items Младенцы
 				.dropdown__button-list
 					button.dropdown__button.dropdown__button-minus -
 					.dropdown__number 0
 					button.dropdown__button.dropdown__button-plus +
-
-mixin dropdown-room(title)
-	.dropdown__title= title
-	div(class='dropdown absolute' several-word-forms default='Сколько спален и кроватей?')
-		.dropdown__name Сколько спален и кроватей?
-		.dropdown-list
-			div(class='dropdown-list__item' wordforms='Спальня Спальни Спален' name='rooms' default='2') Спальни
-			div(class='dropdown-list__item' wordforms='Кровать Кровати Кроватей' name='beds' default='2') Дети
-			div(class='dropdown-list__item' name='bath' default='0') Младенцы
+			.dropdown__control-button
+				button.dropdown__button.dropdown__button-reset Очистить
+				button.dropdown__button.dropdown__button-used Применить
