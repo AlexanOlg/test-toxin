@@ -1,25 +1,25 @@
 @import "../../scss/variables.scss";
 
 .dropdown {
+	display: flex;
+	justify-content: space-between;
+	background: $white;
+	border: 1px solid $ds25;
+	border-radius: 2px;
+	height: 44px;
+	&-wrap {
 	position: relative;
 	margin-top: 5px;
+	}
 	&__title {
 		@include h3-text(uppercase, $ds100);
 	}
-	&__inner {
-		display: flex;
-		justify-content: space-between;
-		background: $white;
-		border: 1px solid $ds25;
-		border-radius: 2px;
-		height: 44px;
-	}
 	&__input {
 		@include montserrat(14px, 18px, $ds75);
-		width: 100%;
-		border: none;
-		padding-left: 14px;
-		padding-bottom: 2px;
+		cursor: pointer;
+		border: 1px solid $ds50;
+		border-radius: 2px;
+		position: relative;
 	}
 	&__button {
 		width: 30px;
@@ -28,7 +28,7 @@
 		border-radius: 22px;
 		@include montserrat(18px, 30px, $ds50);
 		background: $white;
-		&-tick {
+		&-arrow {
 			@include material-font(24px, 24px, $ds75);
 			background: $white;
 			border: none;

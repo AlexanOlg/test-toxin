@@ -2,10 +2,10 @@ include ../button-simple/button-simple.pug
 
 mixin dropdown(title)
 	.dropdown__title= title
-	.dropdown
-		.dropdown__inner
-			input(type="text" value='Сколько гостей' readonly).dropdown__input
-			button(class='dropdown__button-tick') expand_more
+	.dropdown-wrap
+		.dropdown(data-default='Сколько гостей')
+			.dropdown__input 3 гостя
+			button(class='dropdown__button-arrow') expand_more
 		.dropdown__menu
 			.dropdown__items Взрослые
 				.dropdown__button-list
@@ -18,6 +18,32 @@ mixin dropdown(title)
 					.dropdown__number 1
 					button.dropdown__button.dropdown__button-plus +
 			.dropdown__items Младенцы
+				.dropdown__button-list
+					button.dropdown__button.dropdown__button-minus -
+					.dropdown__number 0
+					button.dropdown__button.dropdown__button-plus +
+			.dropdown__control-button
+				button.dropdown__button.dropdown__button-reset Очистить
+				button.dropdown__button.dropdown__button-used Применить
+
+mixin dropdown-room(title)
+	.dropdown__title= title
+	.dropdown-wrap
+		.dropdown(data-dropdown data-default="Сколько спален и кроватей?")
+			.dropdown__input 2 спальни 2 кровати
+			button(class='dropdown__button-arrow') expand_more
+		.dropdown__menu
+			.dropdown__items(data-wordForms='спальня спальни спален') Спальни
+				.dropdown__button-list
+					button.dropdown__button.dropdown__button-minus -
+					.dropdown__number 2
+					button.dropdown__button.dropdown__button-plus +  
+			.dropdown__items(data-wordForms='кровать кровати кроватей') Кровати
+				.dropdown__button-list
+					button.dropdown__button.dropdown__button-minus -
+					.dropdown__number 2
+					button.dropdown__button.dropdown__button-plus +
+			.dropdown__items(data-wordForms='ванная ванных ванные') Ванные
 				.dropdown__button-list
 					button.dropdown__button.dropdown__button-minus -
 					.dropdown__number 0
