@@ -1,25 +1,36 @@
 @import "../../scss/variables.scss";
 
 .dropdown {
-	display: flex;
-	justify-content: space-between;
-	background: $white;
-	border: 1px solid $ds25;
-	border-radius: 2px;
-	height: 44px;
-	&-wrap {
 	position: relative;
 	margin-top: 5px;
-	}
 	&__title {
 		@include h3-text(uppercase, $ds100);
 	}
-	&__input {
-		@include montserrat(14px, 18px, $ds75);
-		cursor: pointer;
-		border: 1px solid $ds50;
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		background: $white;
+		border: 1px solid $ds25;
 		border-radius: 2px;
-		position: relative;
+		height: 44px;
+	}
+	&__title {
+		&-item {
+			@include montserrat(14px, 18px, $ds75);
+			cursor: pointer;
+			position: relative;
+			padding: 11.7px 12px 11.7px 13.5px;
+			border: 1px solid $ds25;
+			border-radius: 2px;
+			width: 100%;
+			border: none;
+			padding-left: 14px;
+			padding-bottom: 2px;
+		}
+		&-active {
+			border-radius: 2px 2px 0 0;
+			border: 1px solid $ds50;
+		}
 	}
 	&__button {
 		width: 30px;
@@ -41,6 +52,9 @@
 		&-list {
 			display: flex;
 			justify-content: space-between;
+		}
+		&_hidden {
+			display: none;
 		}
 	}
 	&__menu {

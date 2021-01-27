@@ -36,7 +36,11 @@ block content
 						.form-elements__wrap-item_flex hover/focus
 					+text-field('This is pretty awesome')
 				.form-elements__wrap-item
-					+dropdown('dropdown')
+					+dropdown({name: 'room', items: [
+						{name: 'взрослые', number: 2},
+						{name: 'дети', number: 1},
+						{name: 'младенцы', number: 0},
+					],})
 				.form-elements__wrap-item
 					.form-elements__wrap-item_header masked text field
 					.form-elements__wrap-field
@@ -106,15 +110,31 @@ block content
 		.form-elements__inner
 			.form-elements__wrap
 				.form-elements__wrap-dropdown
-					+dropdown-room('dropdown')
+					+dropdown({name: 'room', items: [
+						{name: 'взрослые', number: 2},
+						{name: 'дети', number: 1},
+						{name: 'младенцы', number: 0},
+					],})
 				.form-elements__wrap-dropdown
-					+dropdown('dropdown')
+					+dropdown({ items: [
+						{name: 'спальни', number: 2},
+						{name: 'кровати', number: 2},
+						{name: 'ванные комнаты', number: 0},
+					],})
 			.form-elements__wrap-centrdrop
 				.form-elements__wrap-item
-					+dropdown('dropdown')
+					+dropdown({name: 'room', items: [
+						{name: 'взрослые', number: 2},
+						{name: 'дети', number: 1},
+						{name: 'младенцы', number: 0},
+					],})
 			.form-elements__wrap
 				.form-elements__wrap-item
-					+dropdown('dropdown')
+					+dropdown({name: 'room', items: [
+						{name: 'взрослые', number: 2},
+						{name: 'дети', number: 1},
+						{name: 'младенцы', number: 0},
+					],})
 		.form-elements__gap
 		.form-elements__inner
 			.form-elements__wrap

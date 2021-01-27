@@ -1,182 +1,215 @@
-document.addEventListener('DOMContentLoaded', () => {
-	function declination(n, texForms) {
-		n = Math.abs(n) % 100; const n1 = n % 10;
-		if (n > 10 && n < 20) { return texForms[2]; }
-		if (n1 > 1 && n1 < 5) { return texForms[1]; }
-		if (n1 === 1) { return texForms[0]; }
-		return texForms[2];
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-underscore-dangle */
+import { DropdownOptions } from './dropdown-options';
+
+class Dropdown {
+	constructor(dropdown) {
+		this._dropdown = dropdown;
+		this._searchElem();
+		this._processElem();
+		// Сюда передаем функцию обновления заголовка дропдауна
+		this._options = [...this._values].map(
+			(item) => new DropdownOptions(item, () => this._newDrop()),
+		);
+		this._newDrop();
 	}
-	const valWord = ['Гость', 'Гостя', 'Гостей'];
-	// Находим все дропдауны на странице
-	const dropdowns = document.querySelectorAll('.dropdown-wrap');
-	dropdowns.forEach((dropdown) => {
-		// в дропдаунах находим элементы
-		const dropInput = dropdown.querySelector('.dropdown__input');
-		const dropMenu = dropdown.querySelector('.dropdown__menu');
-		// при нажатии на inner открываем дропдаун
-		dropInput.addEventListener('click', () => {
-			dropMenu.classList.toggle('active');
+
+	_searchElem() {
+		this._menu = this._dropdown.querySelector('.dropdown__menu');
+		this._inner = this._dropdown.querySelector('.dropdown__inner');
+		this._title = this._dropdown.querySelector('.dropdown__title');
+		// Находим значение data-name у div.dropdown
+		this.name = this._dropdown.dataset.name;
+		this._titleDefault = this._dropdown.dataset.default || '';
+		this._values = this._dropdown.querySelectorAll('.dropdown__items');
+		this._btnReset = this._dropdown.querySelector('.dropdown__button-reset') || undefined;
+		this._btnUsed = this._dropdown.querySelector('.dropdown__button-used') || undefined;
+	}
+
+	_getSumChild() {
+		const { length } = this._options;
+		let sumChild = 0;
+		let array = [];
+		this._options.forEach((item, index) => {
+			sumChild = item._allChildSum(index, length);
+			array = array.concat(sumChild);
 		});
-		// находим элементы управления
-		const btnUsed = dropdown.querySelector('.dropdown__button-used');
-		const btnReset = dropdown.querySelector('.dropdown__button-reset');
-		const items = dropdown.querySelectorAll('.dropdown__items');
-		// перебираем элементы списка
-		items.forEach((item) => {
-			// находим в элементах списка значение number
-			const number = item.querySelectorAll('.dropdown__number');
-			// numberItem - значение .dropdown__number
-			let numberItem = 0;
-			// Перебираем значения элементов списка
-			number.forEach((numberIE) => {
-				// В первое значение number перезаписываем значение
-				// eslint-disable-next-line radix
-				numberItem = parseInt(numberIE.innerText);
-				// Если дропдаун закрыт без выбора параметров
-				btnUsed.addEventListener('click', () => {
-					dropMenu.classList.remove('active');
-				});
-				// Очистить
-				btnReset.addEventListener('click', () => {
-					// Если значение number > 0, устанавливаем его на 0
-					if (numberItem > 0) {
-						numberIE.innerText = 0;
-						btnReset.classList.add('button__off');
-						btnUsed.classList.add('button__off');
-					}
-				});
-				// Находим все минусы и сразу их перебираем
-				const minusAll = item.querySelectorAll('.dropdown__button-minus').forEach((minus) => {
-					// Находим все плюсы и перебираем их
-					const plusAll = item.querySelectorAll('.dropdown__button-plus').forEach((plus) => {
-						// Вешаем + на событие
-						plus.addEventListener('click', () => {
-							// Если значение >= 0
-							if (Number.numberItem >= 0) {
-								// Делаем минус неактивным
-								minus.classList.remove('dropdown__minus_disabled');
-							}
-							// И к текущему значению прибавляем елиницу
-							numberIE.innerText = Number.numberItem + 1;
-							// Обновляем дропдаун
-							newDrop(dropdown);
-						});
-					});
-					// Если все значения по умолчанию в html меньше 1
-					if (numberItem < 1) {
-						// Кнопке минус - неактивный класс
-						minus.classList.remove('dropdown__minus_disabled');
-					} else {
-						return null;
-					}
-					// Событие на Минус
-					minus.addEventListener('click', () => {
-						// Если значение элемента <= 1
-						if (numberItem <= 1) {
-							// Минусу делаем неактивный класс
-							minus.classList.add('dropdown__minus_disabled');
-						}
-						// Отнимает 1 у текушщего значения
-						if (numberItem > 0) {
-							numberIE.innerText = Number.numberItem - 1;
-						}
-						newDrop(dropdown);
-					});
-				});
-			});
+		return array;
+	}
+
+	// Функция сложения всех значений элементов
+	_getSum() {
+		let sum = 0;
+		this._options.forEach((item) => {
+			sum += item._getValue();
 		});
-	});
-	function newDrop(dropdown) {
-		if (dropdown.hasAttribute('data-dropdown')) {
-			const btnUsed = dropdown.querySelector('.dropdown__button-used');
-			const btnReset = dropdown.querySelector('.dropdown__button-reset');
-			const dropMenu = dropdown.querySelector('.dropdown__menu');
-			let result = '';
-			let sum = 0;
-			// Находим значение по умолчанию у дропдауна "Сколько гостей?"
-			const defaultData = dropdown.getAttribute('data-default');
-			const items = dropdown.querySelectorAll('.dropdown__items');
-			items.forEach((item) => {
-				// Если у элемента списка есть атрибут word-forms
-				if (item.hasAttribute('data-wordForms')) {
-					// Ищем все значения number
-					const elNumber = item.querySelectorAll('.dropdown__number');
-					// Объявляем переменную для number
-					let number;
-					elNumber.forEach((numberItem) => {
-						// Записываем в number значение .number
-						number = Number.parseInt(numberItem.innerText);
-						// К sum прибавляем значение .number
-						sum += Number.parseInt(numberItem.innerText);
-					});
-					// Если > 0
-					if (number > 0) {
-						// Объявляем переменную, куда записываем форму склонения у элемента списка
-						const wordForms = item.getAttribute('data-wordForms').split(' ');
-						// Вызываем форму склонения
-						const rightForm = declination(number, wordForms);
-						// Записываем в переменную result текущее значение number и результат функции склонения
-						result += ` ${number} ${rightForm}`;
-					}
-				}
-				// Если sum = 0, то кнопке Применить даем класс display: none/ либо отнимаем его
-				if (sum === 0) {
-					btnUsed.classList.add('button__off');
-					btnReset.classList.add('button__off');
-				} else {
-					btnUsed.classList.remove('button__off');
-					btnReset.classList.remove('button__off');
-				}
-				// Событие для клика по кнопке Применить
-				btnUsed.addEventListener('click', () => {
-					if (sum !== 0) {
-						dropdown.querySelector('.dropdown__input').innerText = `${result}...`;
-						dropMenu.classList.remove('active');
-					} else {
-						// Записываем значение по умолчанию
-						dropdown.querySelector('.dropdown__input').innerText = defaultData;
-					}
-				});
-			});
-			// Событие на кнопке Очистить
-			btnReset.addEventListener('click', () => {
-				// Если сумма > 0, то в заголовок пишем Значение по умолчанию
-				dropdown.querySelector('.dropdown__input').innerText = defaultData;
-			});
-		} else {
-			const btnUsed = dropdown.querySelector('.dropdown__button-used');
-			const btnReset = dropdown.querySelector('.dropdown__button-reset');
-			const dropMenu = dropdown.querySelector('.dropdown__menu');
-			const dropInput = dropdown.querySelector('.dropdown__input');
-			// Получаем значение по умолчанию "Сколько гостей" в поле data-default
-			const defaultNumber = dropdown.getAttribute('data-default');
-			// Получаем значение для функции склонения
-			// Результат получаем из всех .number, которые будут созданны ниже в функции создания элементов управления
-			const sumNumber = dropdown.querySelectorAll('.dropdown__number');
-			let sum = 0; // Чтоб было к чему прибавлять
-			sumNumber.forEach((numberItem) => {
-				sum += (Number.parseInt(numberItem.innerText));
-			});
-			if (sum === 0) {
-				btnUsed.classList.add('button__off');
-				btnReset.classList.add('button__off');
-			} else {
-				btnUsed.classList.remove('button__off');
-				btnReset.classList.remove('button__off');
-			}
-			// Вызываем функцию склонения и передаем ей сумму .number и "гость гостя гостей"
-			const result = declination(sum, valWord);
-			btnUsed.addEventListener('click', () => {
-				if (sum !== 0) {
-					dropMenu.classList.remove(active);
-					dropInput.innerText = `${sum} ${result}`;
-				} else {
-					dropInput.innerText = defaultNumber;
-				}
-			});
-			btnReset.addEventListener('click', () => {
-				dropdown.querySelector('dropdown__input').innerText = ` ${defaultNumber}`;
-			});
+		return sum;
+	}
+
+	_processElem() {
+		this._processMenu = this._processMenu.bind(this);
+		this._inner.addEventListener('click', this._processMenu);
+		this._processDocument = this._processDocument.bind(this);
+		document.addEventListener('click', this._processDocument);
+		if (this._btnUsed) this._processUsed = this._processUsed.bind(this);
+		this._btnUsed.addEventListener('click', this._processUsed);
+		if (this._btnReset) this._processReset = this._processReset.bind(this);
+		this._btnReset.addEventListener('click', this._processReset);
+	}
+
+	_processMenu() {
+		this._inner.classList.toggle('dropdown__toggle_active');
+		this._menu.classList.toggle('active');
+		this._title.classList.toggle('title-active');
+	}
+
+	_processDocument(event) {
+		if (event.target.closest('.dropdown') !== this._dropdown) {
+			this._closeDrop();
 		}
 	}
-});
+
+	_closeDrop() {
+		const isDropClosed = this._inner.classList.contains('dropdown__toggle_active')
+			&& this._menu.classList.contains('active');
+		if (isDropClosed) {
+			this._inner.classList.remove('dropdown__toggle_active'); // Для кнопки Применить
+			this._menu.classList.remove('active');
+		}
+	}
+
+	_processUsed(event) {
+		event.preventDefault();
+		this._closeDrop();
+	}
+
+	_processReset(event) {
+		event.preventDefault();
+		this._options.forEach((element) => {
+			element._upValue(0);
+		});
+	}
+
+	// Функция обновления заголовка дропдауна
+	// Функция запускает upDataTitle - логику для обновления заголовка
+	_newDrop() {
+		this._checkBtnReset();
+		this._checkBtnUsed();
+		this._updateTitle();
+		this._checkAdultUsed();
+	}
+
+	_checkBtnReset() {
+		const allMin = !this._options.map((item) => item.isMin()).includes(false);
+		if (allMin === true) {
+			this._hiddenBtnReset();
+		} else {
+			this._visibleBtnReset();
+		}
+	}
+
+	_checkBtnUsed() {
+		const isAllZerro = !this._options
+			.map((item) => item.isZerro())
+			.includes(false);
+		if (isAllZerro === true) {
+			this._hiddenBtnUsed();
+		} else {
+			this._visibleBtnUsed();
+		}
+	}
+
+	_checkAdultUsed() {
+		if (this.sumAdult === 0 && this.sumBabies > 0) {
+			this._hiddenBtnReset();
+		}
+	}
+
+	_hiddenBtnReset() {
+		this._btnReset.classList.add('dropdown__button_hidden');
+	}
+
+	_visibleBtnReset() {
+		this._btnReset.classList.remove('dropdown__button_hidden');
+	}
+
+	_hiddenBtnUsed() {
+		this._btnUsed.classList.add('dropdown__button_hidden');
+	}
+
+	_visibleBtnUsed() {
+		this._btnUsed.classList.remove('dropdown__button_hidden');
+	}
+
+	_formText(number, form) {
+		number = Math.abs(number) % 100;
+		const n1 = number % 10;
+		if (number > 10 && number < 20) {
+			return form[2];
+		}
+		if (n1 > 1 && n1 < 5) {
+			return form[1];
+		}
+		if (n1 === 1) {
+			return form[0];
+		}
+		return form[2];
+	}
+
+	// логика всех заголовков
+	_updateTitle() {
+		// Проверка, есть ли дата атрибут у div class Dropdown
+		// если есть, то склоняем их как гости
+		// если нет, то ниже включается условие else
+		if (this.name !== undefined) {
+			const arraySum = this._getSumChild();
+
+			for (
+				let index = 0, sumAdult = 0;
+				index < 4;
+				sumAdult += arraySum[index++]
+			) {
+				this.sumAdult = sumAdult;
+			}
+			for (
+				let index = 4, sumBabies = 0;
+				index <= 6;
+				sumBabies += arraySum[index++]
+			) {
+				this.sumBabies = sumBabies;
+			}
+			const formAdult = ['гость', 'гостя', 'гостей'];
+			const formBabies = ['младенец', 'младенца', 'младенцев'];
+			this.sendAdult = this._formText(this.sumAdult, formAdult);
+
+			this.sendBabies = this._formText(this.sumBabies, formBabies);
+			if (this.sumBabies === 0 && this.sumAdult === 0) {
+				this._title.innerHTML = 'Сколько гостей';
+			} else if (this.sumAdult !== 0 && this.sumBabies === 0) {
+				this._title.innerHTML = `${this.sumAdult} ${this.sendAdult}`;
+			} else {
+				this._title.innerHTML = `${this.sumAdult} ${this.sendAdult}, ${this.sumBabies} ${this.sendBabies}`;
+			}
+		} else {
+			const sum = this._getSum();
+
+			let array = this._options.map((item) => item.getString());
+			array = array.filter((element) => element !== null);
+
+			const formBedroom = ['спальня', 'спальни', 'спален'];
+			const formBed = ['кровать', 'кровати', 'кроватей'];
+			const formBathroom = ['ванная', 'ванные', 'ванных'];
+
+			const sendBedroom = this._formText(array[0], formBedroom);
+			const sendBed = this._formText(array[1], formBed);
+			const sendBathroom = this._formText(array[2], formBathroom);
+
+			if (sum > 0 && array[2] > 0) {
+				this._title.innerHTML = `${array[0]} ${sendBedroom}, ${array[1]} ${sendBed},${array[2]} ${sendBathroom}`
+					+ '...';
+			} else this._title.innerHTML = `${array[0]} ${sendBedroom}, ${array[1]} ${sendBed}...`;
+		}
+	}
+}
+
+export { Dropdown };

@@ -9,12 +9,10 @@ mixin search-room(isShow)
 						.search-room__date
 								+date-dropdown('Прибытие', 'Выезд', 'ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ')
 						.search-room__guest
-							+dropdown('гости', {
-								items: [
-									{menuItem: 'взрослые', number: '0'},
-									{menuItem: 'дети', number: '2'},
-									{menuItem: 'младенцы', number: '5'}
-								],
-							})
+							+dropdown({name: 'room', items: [
+								{name: 'взрослые', number: 2},
+								{name: 'дети', number: 1},
+								{name: 'младенцы', number: 0},
+							],})
 						.search-room__button
 								+buttons({type: 'button-long', text: 'подобрать номер'})
