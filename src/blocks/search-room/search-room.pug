@@ -9,7 +9,7 @@ mixin search-room(isShow)
 						.search-room__date
 								+date-dropdown('Прибытие', 'Выезд', 'ДД.ММ.ГГГГ', 'ДД.ММ.ГГГГ')
 						.search-room__guest
-							+dropdown({name: 'room', items: [
+							+dropdown({name: 'room', className: 'guests', items: [
 								{name: 'взрослые', number: 2},
 								{name: 'дети', number: 1},
 								{name: 'младенцы', number: 0},

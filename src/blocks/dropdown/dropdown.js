@@ -18,32 +18,11 @@ class Dropdown {
 		this._menu = this._dropdown.querySelector('.dropdown__menu');
 		this._inner = this._dropdown.querySelector('.dropdown__inner');
 		this._title = this._dropdown.querySelector('.dropdown__title');
-		// Находим значение data-name у div.dropdown
-		this.name = this._dropdown.dataset.name;
-		this._titleDefault = this._dropdown.dataset.default || '';
+		this.isAllGuest = this._dropdown.classList.contains('guests');
+		this._titleDefault = this._title.innerText;
 		this._values = this._dropdown.querySelectorAll('.dropdown__items');
 		this._btnReset = this._dropdown.querySelector('.dropdown__button-reset') || undefined;
 		this._btnUsed = this._dropdown.querySelector('.dropdown__button-used') || undefined;
-	}
-
-	_getSumChild() {
-		const { length } = this._options;
-		let sumChild = 0;
-		let array = [];
-		this._options.forEach((item, index) => {
-			sumChild = item._allChildSum(index, length);
-			array = array.concat(sumChild);
-		});
-		return array;
-	}
-
-	// Функция сложения всех значений элементов
-	_getSum() {
-		let sum = 0;
-		this._options.forEach((item) => {
-			sum += item._getValue();
-		});
-		return sum;
 	}
 
 	_processElem() {
@@ -158,57 +137,50 @@ class Dropdown {
 
 	// логика всех заголовков
 	_updateTitle() {
-		// Проверка, есть ли дата атрибут у div class Dropdown
-		// если есть, то склоняем их как гости
-		// если нет, то ниже включается условие else
-		if (this.name !== undefined) {
-			const arraySum = this._getSumChild();
-
-			for (
-				let index = 0, sumAdult = 0;
-				index < 4;
-				sumAdult += arraySum[index++]
-			) {
-				this.sumAdult = sumAdult;
-			}
-			for (
-				let index = 4, sumBabies = 0;
-				index <= 6;
-				sumBabies += arraySum[index++]
-			) {
-				this.sumBabies = sumBabies;
-			}
-			const formAdult = ['гость', 'гостя', 'гостей'];
-			const formBabies = ['младенец', 'младенца', 'младенцев'];
-			this.sendAdult = this._formText(this.sumAdult, formAdult);
-
-			this.sendBabies = this._formText(this.sumBabies, formBabies);
-			if (this.sumBabies === 0 && this.sumAdult === 0) {
-				this._title.innerHTML = 'Сколько гостей';
-			} else if (this.sumAdult !== 0 && this.sumBabies === 0) {
-				this._title.innerHTML = `${this.sumAdult} ${this.sendAdult}`;
-			} else {
-				this._title.innerHTML = `${this.sumAdult} ${this.sendAdult}, ${this.sumBabies} ${this.sendBabies}`;
-			}
+		if (this.isAllGuest === true) {
+			this._updateDropdownGuests();
 		} else {
-			const sum = this._getSum();
-
-			let array = this._options.map((item) => item.getString());
-			array = array.filter((element) => element !== null);
-
-			const formBedroom = ['спальня', 'спальни', 'спален'];
-			const formBed = ['кровать', 'кровати', 'кроватей'];
-			const formBathroom = ['ванная', 'ванные', 'ванных'];
-
-			const sendBedroom = this._formText(array[0], formBedroom);
-			const sendBed = this._formText(array[1], formBed);
-			const sendBathroom = this._formText(array[2], formBathroom);
-
-			if (sum > 0 && array[2] > 0) {
-				this._title.innerHTML = `${array[0]} ${sendBedroom}, ${array[1]} ${sendBed},${array[2]} ${sendBathroom}`
-					+ '...';
-			} else this._title.innerHTML = `${array[0]} ${sendBedroom}, ${array[1]} ${sendBed}...`;
+			this._updateDropdownRoom();
 		}
+	}
+
+	// Метод для заголовка с гостями
+	_updateDropdownGuests() {
+		const array = this._options.map((item) => item.getValue());
+		// Деструктурируем массив
+		const [adults, children, babies] = [array[0], array[1], array[2]];
+		this.sumAdult = adults + children;
+		this.sumBabies = babies;
+		const formAdult = ['гость', 'гостя', 'гостей'];
+		const formBabies = ['младенец', 'младенца', 'младенцев'];
+		this.sendAdult = this._formText(this.sumAdult, formAdult);
+
+		this.sendBabies = this._formText(this.sumBabies, formBabies);
+		if (this.sumBabies === 0 && this.sumAdult === 0) {
+			this._title.innerHTML = 'Сколько гостей';
+		} else if (this.sumAdult !== 0 && this.sumBabies === 0) {
+			this._title.innerHTML = `${this.sumAdult} ${this.sendAdult}`;
+		} else {
+			this._title.innerHTML = `${this.sumAdult} ${this.sendAdult}, ${this.sumBabies} ${this.sendBabies}`;
+		}
+	}
+
+	// Метод для заголовка с кроватями
+	_updateDropdownRoom() {
+		const array = this._options.map((item) => item.getValue());
+		// Деструктурируем массив
+		const [bedRoom, bed, bathRoom] = [array[0], array[1], array[2]];
+		const formBedroom = ['спальня', 'спальни', 'спален'];
+		const formBed = ['кровать', 'кровати', 'кроватей'];
+		const formBathroom = ['ванная', 'ванные', 'ванных'];
+
+		const sendBedroom = this._formText(bedRoom, formBedroom);
+		const sendBed = this._formText(bed, formBed);
+		const sendBathroom = this._formText(bathRoom, formBathroom);
+
+		if (bathRoom > 0) {
+			this._title.innerHTML = `${bedRoom} ${sendBedroom}, ${bed} ${sendBed},${bathRoom} ${sendBathroom} ...`;
+		} else this._title.innerHTML = `${bedRoom} ${sendBedroom}, ${bed} ${sendBed}...`;
 	}
 }
 

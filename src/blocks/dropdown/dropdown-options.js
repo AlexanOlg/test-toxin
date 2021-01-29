@@ -7,16 +7,18 @@ class DropdownOptions {
 		this._processElem();
 		this._checkValue();
 		this._newDrop = newDrop;
-		// Значение data-name находим у каждого items, а не у dropdown
-		// что бы он видео сколько кроватей, ванных и.т.д
-		this.name = this._items.dataset.name;
 	}
 
+	// Получаем все элементы из dropdown-options
 	_getElement() {
 		this.option = this._items.querySelector('.dropdown__button-list');
 		this._min = this.option.dataset.min ? Number(this.option.dataset.min) : 0;
+		// Находим input
 		this._num = this._items.querySelector('.dropdown__number');
-		this.value = Number(this._num.textContent);
+		this._max = Number(this._num.max);
+		this._min = Number(this._num.min);
+		this.value = Number(this._num.value);
+
 		this._plusAll = this._items.querySelectorAll('.dropdown__button-plus');
 		this._plusAll.forEach((plus) => {
 			this._plusBtn = plus;
@@ -25,21 +27,9 @@ class DropdownOptions {
 		this._minusAll.forEach((minus) => {
 			this._minusBtn = minus;
 		});
-		console.log(this._min);
 	}
 
-	_allChildSum(index, length_) {
-		let valueAdult = 0;
-		let valueBabies = 0;
-		const item = this._items.querySelector('.dropdown__number');
-		if (index !== length_ - 1) {
-			valueAdult += Number(item.textContent);
-		} else {
-			valueBabies += Number(item.textContent);
-		}
-		return [valueAdult, valueBabies];
-	}
-
+	// Над плюсом и минусом слушаем событи клик
 	_processElem() {
 		this._processPlus = this._processPlus.bind(this);
 		this._plusBtn.addEventListener('click', this._processPlus);
@@ -62,15 +52,17 @@ class DropdownOptions {
 		this.value = value;
 		// Метод добавления в _num текущего значения
 		this._updateNum();
+		// Метод включения-отключения Минуса
 		this._checkValue();
 		this._newDrop(this.value);
 	}
 
 	// Метод добавления в _num текущего значения
 	_updateNum() {
-		this._num.innerHTML = this.value;
+		this._num.value = this.value;
 	}
 
+	// Функция, которая объединяет два метода у минуса
 	_checkValue() {
 		if (this.value === this._min) {
 			this._removeMinus();
@@ -79,26 +71,22 @@ class DropdownOptions {
 		}
 	}
 
+	// Метод, который возвращает значение, равное минимальному
 	isMin() {
 		return this.value === this._min;
 	}
 
+	// Метод, который возвращает значение, равное 0
 	isZerro() {
 		return this.value === 0;
 	}
 
-	getString() {
-		if (this.name !== undefined) {
-			// return this.value;
-		}
-		return this.value;
-	}
-
 	// Функция, которая возвращает значения элементов
-	_getValue() {
+	getValue() {
 		return this.value;
 	}
 
+	// Функция добавления активного и неактивного класса у минуса
 	_addMinus() {
 		if (
 			this._minusBtn.classList.contains('dropdown__minus_disabled')
@@ -107,6 +95,7 @@ class DropdownOptions {
 		}
 	}
 
+	// Функция добавления неактивного класса у минуса
 	_removeMinus() {
 		this._minusBtn.classList.add('dropdown__minus_disabled');
 	}

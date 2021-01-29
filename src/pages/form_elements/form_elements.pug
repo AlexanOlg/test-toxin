@@ -36,7 +36,7 @@ block content
 						.form-elements__wrap-item_flex hover/focus
 					+text-field('This is pretty awesome')
 				.form-elements__wrap-item
-					+dropdown({name: 'room', items: [
+					+dropdown({name: 'room', className: 'guests', items: [
 						{name: 'взрослые', number: 2},
 						{name: 'дети', number: 1},
 						{name: 'младенцы', number: 0},
@@ -110,7 +110,7 @@ block content
 		.form-elements__inner
 			.form-elements__wrap
 				.form-elements__wrap-dropdown
-					+dropdown({name: 'room', items: [
+					+dropdown({name: 'room', className: 'guests', items: [
 						{name: 'взрослые', number: 2},
 						{name: 'дети', number: 1},
 						{name: 'младенцы', number: 0},
@@ -123,14 +123,14 @@ block content
 					],})
 			.form-elements__wrap-centrdrop
 				.form-elements__wrap-item
-					+dropdown({name: 'room', items: [
+					+dropdown({name: 'room', className: 'guests', items: [
 						{name: 'взрослые', number: 2},
 						{name: 'дети', number: 1},
 						{name: 'младенцы', number: 0},
 					],})
 			.form-elements__wrap
 				.form-elements__wrap-item
-					+dropdown({name: 'room', items: [
+					+dropdown({name: 'room', className: 'guests', items: [
 						{name: 'взрослые', number: 2},
 						{name: 'дети', number: 1},
 						{name: 'младенцы', number: 0},
