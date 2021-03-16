@@ -10,11 +10,11 @@ mixin dropdown({name, className, title="Сколько гостей", items = [{
 				button.dropdown__button-reset Очистить
 				button.dropdown__button-used Применить
 
-mixin dropdown-options({name='', number='0', min='0'}={})
+mixin dropdown-options({name='', number='0', min='0', max='10'}={})
 	.dropdown__items
 		.dropdown__wrap
 			.dropdown__title-item= name
 		.dropdown__button-list(data-min='')
 			button.dropdown__button.dropdown__button-minus -
-			input.dropdown__number(value=number, min=min, type='number')
+			input.dropdown__number(value=number, min=min, type='number', max=max)
 			button.dropdown__button.dropdown__button-plus +

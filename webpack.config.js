@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // Переменные утилит
 const path = require('path');
 const fs = require('fs');
@@ -9,6 +10,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // Переменные доступа к страницам
 const pagesDir = path.resolve(__dirname, 'src/pages');
 const pages = fs.readdirSync(pagesDir);
+const ghPages = require('gh-pages');
 
 module.exports = (_, options) => {
 	const isDev = options.mode === 'development';
@@ -132,3 +134,4 @@ module.exports = (_, options) => {
 		},
 	};
 };
+ghPages.publish('dist', (err) => {});

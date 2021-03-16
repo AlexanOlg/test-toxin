@@ -7,6 +7,7 @@
     "dev": "webpack --mode development",
     "start": "npx webpack serve --mode development",
     "build": "webpack --mode production",
+		"deploy": "gh-pages -b main -d dist",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
@@ -54,6 +55,7 @@
   "dependencies": {
     "air-datepicker": "^2.2.3",
     "eslint-cli": "^1.1.1",
+    "gh-pages": "^3.1.0",
     "ion-rangeslider": "^2.3.1",
     "jquery-mask-plugin": "^1.14.16",
     "slick-carousel": "^1.8.1"
