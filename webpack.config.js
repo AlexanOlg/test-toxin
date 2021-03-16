@@ -1,3 +1,5 @@
+/* eslint-disable prefer-arrow-callback */
+/* eslint-disable func-names */
 /* eslint-disable no-unused-vars */
 // Переменные утилит
 const path = require('path');
@@ -10,7 +12,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // Переменные доступа к страницам
 const pagesDir = path.resolve(__dirname, 'src/pages');
 const pages = fs.readdirSync(pagesDir);
-const ghPages = require('gh-pages');
+const ghpages = require('gh-pages');
 
 module.exports = (_, options) => {
 	const isDev = options.mode === 'development';
@@ -134,4 +136,12 @@ module.exports = (_, options) => {
 		},
 	};
 };
-ghPages.publish('dist', (err) => {});
+
+// eslint-disable-next-line func-names
+// eslint-disable-next-line prefer-arrow-callback
+// eslint-disable-next-line func-names
+// eslint-disable-next-line prefer-arrow-callback
+// eslint-disable-next-line func-names
+// eslint-disable-next-line prefer-arrow-callback
+// eslint-disable-next-line space-before-function-paren
+ghpages.publish('dist', function(err) {});
